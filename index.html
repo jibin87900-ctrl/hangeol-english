@@ -336,6 +336,12 @@ textarea{resize:none;line-height:1.45}
 @keyframes micpulse{0%{box-shadow:0 6px 0 var(--red-d),0 0 0 0 rgba(240,80,78,.45)}100%{box-shadow:0 6px 0 var(--red-d),0 0 0 26px rgba(240,80,78,0)}}
 .mic-lab{font-weight:900;color:var(--muted);font-size:15px}
 .qtext{font-weight:800;font-size:15.5px}
+.banner-btns{display:grid;gap:6px;flex:none}
+.backup-card{display:flex;gap:12px;align-items:center;border-color:var(--blue)}
+.backup-card div{flex:1;min-width:0}
+.backup-card b{display:block;font-size:15.5px;font-weight:900}
+.backup-card span{font-size:13px;color:var(--muted);font-weight:700}
+.backup-card .b3{flex:none;min-height:46px;padding:10px 14px}
 .news{display:grid;gap:12px}
 .news-item{display:grid;gap:2px;border-top:2px solid var(--line);padding-top:10px}
 .news-t{font-weight:900;font-size:15.5px}
@@ -947,12 +953,13 @@ function renderLearn(){
     : "좋아요! 오늘 목표까지 " + left + " XP 남았어요.";
   let html = `<div class="hero">${mascot(S.day.goalMet ? "cheer" : "happy", 76)}<div class="bubble">${esc(msg)}<small>오늘 ${S.day.xp} / ${goal} XP</small><div class="goal-bar"><i style="width:${Math.min(100, S.day.xp / goal * 100)}%"></i></div></div></div>`;
   html += dailyCards();
+  if ((S.lessons || 0) >= 1 && (!S.lastBackup || todayNum() - S.lastBackup >= 3)) html += `<div class="card backup-card"><div><b>공부 기록 백업하기</b><span>앱을 지우거나 폰을 바꾸면 기록이 사라져요. 코드를 카톡에 붙여 두세요.</span></div><button class="b3" data-act="backup">복사</button></div>`;
   html += `<div class="quick">${cur ? `<button class="b3 green" data-act="node" data-id="${cur.id}">이어서 하기</button>` : `<span></span>`}<button class="b3 ghost" data-act="weak"${seenN < 4 ? " disabled" : ""}>약한 단어 복습</button></div>`;
   let dailyHead = false;
   units.forEach((u, ui) => {
     const col = u.daily ? "grape" : UCOL[ui % UCOL.length]; const dir = ui % 2 ? -1 : 1;
     if (u.daily && !dailyHead){ dailyHead = true; html += `<h2 class="sec-title">매일 새로 추가되는 단원</h2>`; }
-    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.daily ? "오늘의 단원 · " + fmtDate(u.date) + (isNew(u.date) ? ' <span class="new-badge">NEW</span>' : "") : u.ai ? "AI 단원" : "UNIT " + (ui + 1)}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div>${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}</div>`;
+    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.daily ? "오늘의 단원 · " + fmtDate(u.date) + (isNew(u.date) ? ' <span class="new-badge">NEW</span>' : "") : u.ai ? "AI 단원" : "UNIT " + (ui + 1)}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div><div class="banner-btns">${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}${!u.daily && !u.ai && cur && units.findIndex(x => x.id === cur.u.id) < ui ? `<button class="guide-btn" data-act="skip-ask" data-u="${ui}">여기로 건너뛰기</button>` : ""}</div></div>`;
     html += `<div class="nodes">` + KINDS.map((k, ki) => {
       const id = u.id + "-" + k.k; const done = !!S.nodes[id]; const isCur = u.daily ? (!done && (ki === 0 || !!S.nodes[u.id + "-" + KINDS[ki - 1].k])) : (!!cur && cur.id === id);
       const x = [0, 58, 84, 58, 0][ki] * dir;
@@ -1316,12 +1323,29 @@ function micStart(){
   try { r.start(); } catch (e) { rec = null; if (btn) btn.classList.remove("on"); if (lab) lab.textContent = "눌러서 말하기"; toast("마이크를 켜지 못했어요. 키보드 마이크를 써 보세요"); }
 }
 
+/* ═════════ 건너뛰기 ═════════ */
+function skipAsk(ui){
+  const u = allUnits()[ui]; if (!u) return;
+  openSheet(`<div style="display:grid;justify-items:center;gap:12px;text-align:center">${mascot("happy", 84)}<h3>'${esc(u.name)}' 단원으로 건너뛸까요?</h3><p class="muted" style="font-weight:700">앞 단원들을 모두 완료로 표시하고, 그 단원 단어들은 '본 단어'로 넣어 둘게요. 약한 단어 복습에서 다시 연습할 수 있어요.</p></div><button class="b3 wide" data-act="skip-yes" data-u="${ui}">건너뛰기</button><button class="link-btn" data-act="sheet-close">취소</button>`);
+}
+function skipTo(ui){
+  const units = allUnits(); const tn = todayNum(); let n = 0;
+  units.slice(0, ui).forEach(u => {
+    if (u.daily || u.ai) return;
+    KINDS.forEach(k => { const id = u.id + "-" + k.k; if (!S.nodes[id]){ S.nodes[id] = {at: "skip"}; n++; } });
+    u.words.forEach(w => { if (!S.words[w.id]) S.words[w.id] = {s: 2, n: 1, last: tn}; });
+  });
+  commit(); closeSheet(); toast(n ? "건너뛰었어요! 여기서부터 이어서 해요" : "이미 여기까지 왔어요");
+  go("learn", true);
+}
+
 /* ═════════ 백업 · 복원 ═════════ */
 let restoreOpen = false;
 function doBackup(){
   const code = btoa(unescape(encodeURIComponent(JSON.stringify(S))));
   const fallback = () => openSheet(`<div class="sheet-head"><h3>백업 코드</h3><button class="x-btn" data-act="sheet-close" aria-label="닫기">${IC.x}</button></div><p class="muted" style="font-weight:700">아래 코드를 길게 눌러 전체 선택 후 복사해서 메모장이나 카톡에 보관하세요.</p><textarea rows="6" readonly>${esc(code)}</textarea>`);
-  try { navigator.clipboard.writeText(code).then(() => toast("백업 코드를 복사했어요. 메모장이나 카톡에 붙여 두세요"), fallback); } catch (e) { fallback(); }
+  S.lastBackup = todayNum(); commit(); if (cur === "learn") renderLearn();
+  try { navigator.clipboard.writeText(code).then(() => toast("백업 코드를 복사했어요. 카톡 '나와의 채팅'에 붙여 두세요"), fallback); } catch (e) { fallback(); }
 }
 function doRestore(){
   const raw = ($("#restore-in").value || "").trim(); if (!raw){ toast("백업 코드를 붙여 넣어 주세요"); return; }
@@ -1457,6 +1481,8 @@ document.addEventListener("click", e => {
   else if (a === "xq") exprAnswer(+b.dataset.o);
   else if (a === "say-all"){ if (L && L.queue[0] && L.queue[0].u) sayAll(L.queue[0].u.dialog.map(l => l.en)); }
   else if (a === "backup") doBackup();
+  else if (a === "skip-ask") skipAsk(+b.dataset.u);
+  else if (a === "skip-yes") skipTo(+b.dataset.u);
   else if (a === "restore-open"){ restoreOpen = !restoreOpen; renderMe(); }
   else if (a === "restore") doRestore();
   else if (a === "reset"){ resetArmed = true; renderMe(); }

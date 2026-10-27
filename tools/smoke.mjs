@@ -123,6 +123,24 @@ try {
     check(!$("#v-" + v).hidden && $("#v-" + v).innerHTML.trim().length > 50, "탭 화면이 비어 있음: " + v);
   }
   check(JSON.parse(w.localStorage.getItem("hangeol-english-app") || "{}").v === 2, "공부 기록이 저장되지 않음");
+
+  // 백업 알림 카드 → 백업 코드 창
+  click(d.querySelector('#v-learn [data-act="backup"]'), "백업 알림 카드");
+  await sleep(3);
+  check(w.__hg.S.lastBackup, "백업한 날짜가 저장되지 않음");
+  if (!$("#sheet-wrap").hidden) { click(d.querySelector('[data-act="sheet-close"]'), "백업 창 닫기"); await sleep(3); }
+  check(!d.querySelector('#v-learn [data-act="backup"]'), "백업 후에도 알림 카드가 남아 있음");
+
+  // 여기로 건너뛰기
+  const before = Object.keys(w.__hg.S.nodes).length;
+  const skips = d.querySelectorAll('[data-act="skip-ask"]');
+  check(skips.length > 0, "건너뛰기 버튼이 없음");
+  click(skips[1] || skips[0], "건너뛰기 버튼"); await sleep(3);
+  click(d.querySelector('[data-act="skip-yes"]'), "건너뛰기 확인"); await sleep(3);
+  check(Object.keys(w.__hg.S.nodes).length > before, "건너뛰기 후 완료 단계가 늘지 않음");
+  check($("#sheet-wrap").hidden, "건너뛰기 창이 닫히지 않음");
+  const cur = d.querySelector(".node.cur");
+  check(cur && !d.querySelector(`.unit-banner [data-act="skip-ask"][data-u="0"]`), "건너뛴 뒤 앞 단원에 건너뛰기 버튼이 남음");
 } catch (e) {
   problems.push(e.stack || String(e));
 }
