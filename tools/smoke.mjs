@@ -94,6 +94,7 @@ async function runNode(id) {
   await sleep(3);
   await solve(id.endsWith("-l1"));
   check(w.__hg.S.nodes[id], "단계 완료가 저장되지 않음: " + id);
+  if (id.endsWith("-l1")) check(d.querySelector("#ls-in .miss-list .miss-item"), "결과 화면에 틀린 단어 목록이 없음: " + id);
   click($("#ls-main"), "결과 화면 계속");
   await sleep(3);
   check($("#lesson").hidden, "레슨 화면이 닫히지 않음: " + id);

@@ -242,6 +242,11 @@ textarea{resize:none;line-height:1.45}
 .rstat span{background:var(--c);color:#fff;font-size:12px;font-weight:900;letter-spacing:.06em;padding:4px 0}
 .rstat b{font-size:22px;font-weight:900;color:var(--c);padding:10px 0;display:flex;gap:4px;justify-content:center;align-items:center;font-variant-numeric:tabular-nums}
 .rstat b svg{width:20px;height:20px}
+.miss-list{width:100%;max-width:420px;text-align:left;display:grid;gap:8px}
+.miss-list h3{font-size:15px;font-weight:900;color:var(--muted)}
+.miss-item{display:flex;gap:10px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:14px;padding:8px 12px}
+.miss-item .en{font-weight:900;font-size:17px}
+.miss-item .ko{font-weight:700;color:var(--muted);font-size:14px}
 .streak-up{display:flex;gap:10px;align-items:center;background:var(--sun-soft);border-radius:16px;padding:12px 16px;font-weight:900;color:var(--coral-d);font-size:17px}
 .streak-up svg{width:32px;height:32px;color:var(--coral)}
 .mascot.bounce{animation:hop 1s ease-in-out infinite}
@@ -1038,7 +1043,7 @@ let L = null;
 const PRAISE = ["정답이에요!", "훌륭해요!", "잘했어요!", "완벽해요!", "멋져요!"];
 function startLesson(steps, meta){
   if (!steps.length){ toast("이 단계에 낼 문제가 없어요"); return; }
-  L = {meta: meta || {}, queue: steps.map(s => Object.assign({}, s)), total: steps.length, doneN:0, graded:0, mistakes:0, combo:0, t0: Date.now(), phase:"answer", sel:null};
+  L = {meta: meta || {}, queue: steps.map(s => Object.assign({}, s)), total: steps.length, doneN:0, graded:0, mistakes:0, missed:new Map(), combo:0, t0: Date.now(), phase:"answer", sel:null};
   try { if (speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
   tone([[1, 0, 0.01, "sine", 0.0001]]);
   $("#lesson").hidden = false; document.body.classList.add("in-lesson");
@@ -1211,6 +1216,7 @@ function check(){
   } else return;
   L.graded++;
   if (st.w) touchWord(st.w, ok);
+  if (st.w && !ok) L.missed.set(st.w.id, st.w);
   if (ok){ L.combo++; L.doneN++; L.queue.shift(); }
   else {
     L.mistakes++; L.combo = 0; const s2 = L.queue.shift();
@@ -1254,7 +1260,7 @@ function matchTap(side, id, btn){
       }
     } else {
       m.miss = true; SND.bad();
-      const w = st.ws.find(x => x.id === m.l); if (w) touchWord(w, false);
+      const w = st.ws.find(x => x.id === m.l); if (w){ touchWord(w, false); L.missed.set(w.id, w); }
       [bl, br].forEach(b => { b.classList.remove("sel"); b.classList.add("bad"); });
       setTimeout(() => { [bl, br].forEach(b => b.classList.remove("bad")); }, 450);
       m.l = m.r = null;
@@ -1281,6 +1287,7 @@ function finishLesson(){
       <div class="rstat" style="--c:var(--blue)"><span>시간</span><b>${IC.clock}${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")}</b></div>
     </div>
     ${up ? `<div class="streak-up">${IC.fire}<span>오늘 목표 달성! 연속 ${S.streak}일째</span></div>` : `<p class="muted" style="font-weight:800">오늘 목표까지 ${Math.max(0, S.settings.goal - S.day.xp)} XP${S.day.goalMet ? " · 목표 달성 완료" : ""}</p>`}
+    ${L.missed.size ? `<div class="miss-list"><h3>틀린 단어 다시 보기</h3>${[...L.missed.values()].map(w => `<div class="miss-item"><button class="spk-mini" data-act="say" data-text="${esc(w.en)}" aria-label="듣기">${IC.spk}</button><div><p class="en">${esc(w.en)}</p><p class="ko">${esc(w.ko)}</p></div></div>`).join("")}</div>` : ""}
   </div>`;
   setMain("계속", true, "green");
   SND.win(); confetti();
