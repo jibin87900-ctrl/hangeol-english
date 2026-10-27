@@ -959,7 +959,7 @@ function renderLearn(){
   let html = `<div class="hero">${mascot(S.day.goalMet ? "cheer" : "happy", 76)}<div class="bubble">${esc(msg)}<small>오늘 ${S.day.xp} / ${goal} XP</small><div class="goal-bar"><i style="width:${Math.min(100, S.day.xp / goal * 100)}%"></i></div></div></div>`;
   html += dailyCards();
   if ((S.lessons || 0) >= 1 && (!S.lastBackup || todayNum() - S.lastBackup >= 3)) html += `<div class="card backup-card"><div><b>공부 기록 백업하기</b><span>앱을 지우거나 폰을 바꾸면 기록이 사라져요. 코드를 카톡에 붙여 두세요.</span></div><button class="b3" data-act="backup">복사</button></div>`;
-  html += `<div class="quick">${cur ? `<button class="b3 green" data-act="node" data-id="${cur.id}">이어서 하기</button>` : `<span></span>`}<button class="b3 ghost" data-act="weak"${seenN < 4 ? " disabled" : ""}>약한 단어 복습</button></div>`;
+  html += `<div class="quick">${cur ? `<button class="b3 green" data-act="node" data-id="${cur.id}">이어서 하기</button>` : `<span></span>`}<button class="b3 ghost" data-act="weak"${seenN < 4 ? " disabled" : ""}>약한 단어 복습${seenN >= 4 ? " · " + weakCount() + "개" : ""}</button></div>`;
   let dailyHead = false;
   units.forEach((u, ui) => {
     const col = u.daily ? "grape" : UCOL[ui % UCOL.length]; const dir = ui % 2 ? -1 : 1;
@@ -1027,6 +1027,7 @@ function stepsFor(node){
   }
   return st;
 }
+function weakCount(){ return Math.min(8, Object.keys(S.words).length); }
 function weakSteps(){
   const tn = todayNum(); const all = allWords().filter(w => S.words[w.id]);
   const ws = all.sort((a, b) => (S.words[a.id].s - S.words[b.id].s) || (S.words[a.id].last - S.words[b.id].last)).slice(0, 8);
@@ -1393,7 +1394,7 @@ function renderWords(){
   const units = allUnits(); const seen = Object.keys(S.words).length; const strong = Object.values(S.words).filter(c => c.s >= 4).length;
   $("#v-words").innerHTML = `<h1 class="h-title">단어장</h1>
     <div class="hero">${mascot("happy", 64)}<div class="bubble">지금까지 ${seen}개 단어를 봤고, ${strong}개는 확실히 외웠어요!<small>노란 막대가 많을수록 잘 아는 단어예요</small></div></div>
-    <button class="b3 sun wide" data-act="weak"${seen < 4 ? " disabled" : ""}>${IC.bolt}약한 단어 복습 +10 XP</button>
+    <button class="b3 sun wide" data-act="weak"${seen < 4 ? " disabled" : ""}>${IC.bolt}약한 단어 복습${seen >= 4 ? " " + weakCount() + "개" : ""} +10 XP</button>
     <div class="unit-list">${units.map((u, ui) => {
       const known = u.words.filter(w => S.words[w.id] && S.words[w.id].s >= 4).length;
       return `<details class="u-item"><summary><span>${u.daily ? "NEW · " : u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>

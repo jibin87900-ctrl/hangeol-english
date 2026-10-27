@@ -112,6 +112,7 @@ try {
   for (const k of ["l1", "l2", "l3", "l4", "r"]) await runNode("u0-" + k);
   for (const u of units.slice(-2)) for (const k of ["l1", "l2", "l3", "l4", "r"]) await runNode(u.id + "-" + k);
 
+  check(/약한 단어 복습 · \d+개/.test(d.querySelector('[data-act="weak"]').textContent), "약한 단어 복습 버튼에 단어 개수가 없음");
   click(d.querySelector('[data-act="weak"]'), "약한 단어 복습");
   await sleep(3); await solve(false);
   click($("#ls-main"), "복습 결과 계속"); await sleep(3);

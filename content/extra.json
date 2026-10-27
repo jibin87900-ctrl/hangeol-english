@@ -112,6 +112,124 @@
           "ko": "아니요, 괜찮아요."
         }
       ]
+    },
+    {
+      "id": "d20261028",
+      "date": "2026-10-28",
+      "name": "약국에서",
+      "roles": {
+        "A": "약사",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "pharmacy",
+          "ko": "약국",
+          "ex": "Is there a pharmacy near here?",
+          "exKo": "이 근처에 약국 있어요?",
+          "emo": "⚕️"
+        },
+        {
+          "en": "headache",
+          "ko": "두통",
+          "ex": "I have a headache.",
+          "exKo": "머리가 아파요.",
+          "emo": "🤕"
+        },
+        {
+          "en": "cough",
+          "ko": "기침, 기침하다",
+          "ex": "I have a bad cough.",
+          "exKo": "기침이 심해요.",
+          "emo": "😷"
+        },
+        {
+          "en": "sore throat",
+          "ko": "인후통, 목 아픔",
+          "ex": "I have a sore throat.",
+          "exKo": "목이 아파요.",
+          "emo": "🧣"
+        },
+        {
+          "en": "runny nose",
+          "ko": "콧물",
+          "ex": "My son has a runny nose.",
+          "exKo": "아들이 콧물이 나요.",
+          "emo": "🤧"
+        },
+        {
+          "en": "pill",
+          "ko": "알약",
+          "ex": "Take one pill with water.",
+          "exKo": "물이랑 한 알 드세요.",
+          "emo": "💊"
+        },
+        {
+          "en": "allergy",
+          "ko": "알레르기",
+          "ex": "I have a peanut allergy.",
+          "exKo": "땅콩 알레르기가 있어요.",
+          "emo": "🥜"
+        },
+        {
+          "en": "twice a day",
+          "ko": "하루에 두 번",
+          "ex": "Take this twice a day.",
+          "exKo": "이거 하루에 두 번 드세요.",
+          "emo": "✌️"
+        },
+        {
+          "en": "after meals",
+          "ko": "식후에",
+          "ex": "Take it after meals.",
+          "exKo": "식후에 드세요.",
+          "emo": "🍽️"
+        },
+        {
+          "en": "feel better",
+          "ko": "몸이 나아지다",
+          "ex": "I hope you feel better soon.",
+          "exKo": "빨리 나으시길 바라요.",
+          "emo": "🙂"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, how can I help you?",
+          "ko": "안녕하세요, 뭘 도와드릴까요?"
+        },
+        {
+          "who": "B",
+          "en": "I have a sore throat and a cough.",
+          "ko": "목이 아프고 기침이 나요."
+        },
+        {
+          "who": "A",
+          "en": "Do you have a fever?",
+          "ko": "열도 있으세요?"
+        },
+        {
+          "who": "B",
+          "en": "No, but I have a headache.",
+          "ko": "아니요, 그런데 머리가 아파요."
+        },
+        {
+          "who": "A",
+          "en": "Take this twice a day, after meals.",
+          "ko": "이거 하루에 두 번, 식후에 드세요."
+        },
+        {
+          "who": "B",
+          "en": "Okay. Thank you.",
+          "ko": "네, 감사합니다."
+        },
+        {
+          "who": "A",
+          "en": "I hope you feel better soon.",
+          "ko": "빨리 나으시길 바라요."
+        }
+      ]
     }
   ],
   "grammar": [
@@ -167,6 +285,59 @@
           "k": "케이크 좀 드실래요?"
         }
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "level": "A1+",
+      "t": "should (~하는 게 좋아요)",
+      "s": "상대에게 부드럽게 조언하기",
+      "b": "<b>should</b> + 동사원형 = ~하는 게 좋아요, ~해야 해요 (조언할 때)<br>부정: <b>shouldn't</b> + 동사원형 = ~하지 않는 게 좋아요<br>질문: <b>Should I</b> ~? = 제가 ~해야 할까요?<br>주어가 he, she여도 <b>should</b> 모양은 그대로예요",
+      "ex": [
+        [
+          "You should rest today.",
+          "오늘은 쉬는 게 좋아요."
+        ],
+        [
+          "You shouldn't drink coffee at night.",
+          "밤에는 커피를 안 마시는 게 좋아요."
+        ],
+        [
+          "Should I take this after meals?",
+          "이거 식후에 먹어야 해요?"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "You ___ see a doctor.",
+          "o": [
+            "should",
+            "shoulds",
+            "to should"
+          ],
+          "a": 0,
+          "k": "병원에 가 보는 게 좋겠어요."
+        },
+        {
+          "q": "She should ___ some water.",
+          "o": [
+            "drink",
+            "drinks",
+            "drinking"
+          ],
+          "a": 0,
+          "k": "그녀는 물을 좀 마시는 게 좋아요."
+        },
+        {
+          "q": "You're sick. You ___ go to work today.",
+          "o": [
+            "shouldn't",
+            "should",
+            "are"
+          ],
+          "a": 0,
+          "k": "아프잖아요. 오늘은 출근하지 않는 게 좋겠어요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -194,9 +365,39 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-10-28",
+      "en": "Get well soon.",
+      "ko": "빨리 나으세요.",
+      "note": "아픈 사람에게 빨리 낫기를 바란다고 할 때 써요. 문자나 카드에도 아주 자주 써요.",
+      "ex": [
+        [
+          "Get well soon, Mina!",
+          "미나 씨, 빨리 나으세요!"
+        ],
+        [
+          "I heard you're sick. Get well soon.",
+          "아프다고 들었어요. 빨리 나으세요."
+        ]
+      ],
+      "quiz": {
+        "q": "감기에 걸린 동료에게 '빨리 나으세요'라고 하려면?",
+        "o": [
+          "Get well soon.",
+          "Get good soon.",
+          "Be well fast."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-10-28",
+      "title": "새 단원 '약국에서' + 복습 단어 개수 표시",
+      "body": "약국에서 아픈 곳을 말하고 약 먹는 법을 알아듣는 단원이 생겼어요. 이제 '약한 단어 복습' 버튼에 이번에 복습할 단어가 몇 개인지 나와요."
+    },
     {
       "date": "2026-10-27",
       "title": "레슨 끝에 '틀린 단어 다시 보기'",

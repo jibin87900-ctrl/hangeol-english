@@ -1,5 +1,5 @@
 // 한걸음 영어 — 오프라인 캐시. 앱을 고치면 VERSION만 올린다.
-const VERSION = "v5";
+const VERSION = "v6";
 const CACHE = "hangeol-app-" + VERSION;
 const FONTS = "hangeol-fonts";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png", "./content/extra.json"];
