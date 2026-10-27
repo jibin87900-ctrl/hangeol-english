@@ -1489,6 +1489,8 @@ try { mergeDaily(JSON.parse(localStorage.getItem(LS + "-daily") || "null")); } c
 const hash = (location.hash || "").slice(1);
 go(VIEWS.indexOf(hash) >= 0 ? hash : "learn", true);
 loadDaily();
+// 기기가 공간 정리할 때 공부 기록을 지우지 않도록 요청
+try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); } catch (e) {}
 window.__hg = { get L(){ return L; }, get S(){ return S; } };
 if ("serviceWorker" in navigator && location.protocol === "https:") window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
 </script>
