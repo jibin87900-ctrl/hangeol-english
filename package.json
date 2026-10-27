@@ -1,0 +1,11 @@
+{
+  "name": "hangeol-english",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "python3 tools/validate.py && node tools/smoke.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "25.0.1"
+  }
+}

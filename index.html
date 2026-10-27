@@ -335,6 +335,37 @@ textarea{resize:none;line-height:1.45}
 .mic-big.on{animation:micpulse 1.1s infinite}
 @keyframes micpulse{0%{box-shadow:0 6px 0 var(--red-d),0 0 0 0 rgba(240,80,78,.45)}100%{box-shadow:0 6px 0 var(--red-d),0 0 0 26px rgba(240,80,78,0)}}
 .mic-lab{font-weight:900;color:var(--muted);font-size:15px}
+.qtext{font-weight:800;font-size:15.5px}
+.news{display:grid;gap:12px}
+.news-item{display:grid;gap:2px;border-top:2px solid var(--line);padding-top:10px}
+.news-t{font-weight:900;font-size:15.5px}
+.news-b{font-size:14px;color:var(--muted);font-weight:600}
+.new-badge{display:inline-block;background:var(--sun);color:#3A2A00;font-size:11px;font-weight:900;padding:1px 7px;border-radius:999px;letter-spacing:.04em;vertical-align:1px}
+.feature{--c:var(--grape);--cd:var(--grape-d);background:var(--c);color:#fff;border-radius:20px;box-shadow:0 5px 0 var(--cd);padding:16px 18px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+.feature > div{min-width:0;flex:1}
+.feature small{font-weight:900;letter-spacing:.06em;font-size:12px;opacity:.95}
+.feature h3{font-size:20px;font-weight:900;margin:2px 0}
+.feature p{font-size:13.5px;font-weight:700;opacity:.92;overflow-wrap:anywhere}
+.feature .goal-bar{background:rgba(255,255,255,.3)}
+.feature .goal-bar i{background:#fff}
+.feature .b3{flex:none}
+.done-chip{display:flex;gap:4px;align-items:center;font-weight:900;flex:none}
+.done-chip svg{width:20px;height:20px}
+.expr{display:grid;gap:12px;border-color:var(--sun)}
+.expr-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.expr .kicker{color:var(--sun-d)}
+.expr-main{display:flex;gap:12px;align-items:center}
+.expr-en{font-size:24px;font-weight:900;line-height:1.25;overflow-wrap:anywhere}
+.expr-ko{font-weight:800;color:var(--muted)}
+.expr-note{font-size:14.5px;font-weight:600;background:var(--sun-soft);border-radius:12px;padding:10px 12px}
+.sec-title{font-size:18px;font-weight:900;margin-top:12px}
+.dlg{display:grid;gap:10px}
+.dlg-line{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px;align-items:center}
+.dlg-who{font-size:12px;font-weight:900;color:var(--muted);text-align:center;overflow-wrap:anywhere}
+.dlg-bub{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:10px 14px;min-width:0}
+.dlg-line.me .dlg-bub{background:var(--blue-soft);border-color:transparent}
+.dlg-bub .en{font-weight:900;font-size:17px;overflow-wrap:anywhere}
+.dlg-bub .ko{font-size:13.5px;color:var(--muted);font-weight:700}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -563,7 +594,7 @@ fast|빠른, 빨리|He runs fast.|그는 빨리 달려요.|⚡
 slow|느린|The internet is slow.|인터넷이 느려요.|🐢`]
 ];
 
-const GRAMMAR = [
+const BASE_GRAMMAR = [
 {t:"be동사 am / is / are",s:"'~이다, ~에 있다'를 말하는 기본 동사",
  b:"주어에 따라 모양이 바뀌어요.<br><b>I</b> → am<br><b>He · She · It</b> → is<br><b>You · We · They</b> → are",
  ex:[["I am a student.","나는 학생이에요."],["She is my sister.","그녀는 내 여동생이에요."],["They are at home.","그들은 집에 있어요."]],
@@ -646,6 +677,8 @@ const GRAMMAR = [
  qz:[{q:"___ is your birthday?",o:["What","When","Where"],a:1,k:"생일이 언제예요?"},{q:"___ do you work?",o:["Where","Who","Why"],a:0,k:"어디서 일해요?"},{q:"___ are you?",o:["How","What","Who"],a:0,k:"잘 지내요?"}]}
 ];
 
+let GRAMMAR = BASE_GRAMMAR.slice();
+let DAILY_UNITS = [], EXPR = [], NEWS = [];
 const SCENES = [
  {id:"cafe",emo:"☕",ko:"카페에서 주문하기",tag:"Ordering coffee",en:"At a coffee shop. The learner is a customer ordering a drink.",role:"a friendly barista"},
  {id:"intro",emo:"🤝",ko:"처음 만난 사람과 인사",tag:"Nice to meet you",en:"Meeting someone new at a small party. Talk about names, jobs and hobbies.",role:"a friendly person at the party"},
@@ -664,7 +697,7 @@ WORD_UNITS.forEach(([name, txt], ui) => {
     WORDS.push({id: "w-" + en.replace(/\s+/g, "_"), en, ko, ex, exKo, emo, uid: "u" + ui});
   });
 });
-function tipsFor(ui){ const out = []; GRAMMAR.forEach((g, gi) => { if (Math.floor(gi * 16 / GRAMMAR.length) === ui) out.push(gi); }); return out; }
+function tipsFor(ui){ const out = []; BASE_GRAMMAR.forEach((g, gi) => { if (Math.floor(gi * 16 / BASE_GRAMMAR.length) === ui) out.push(gi); }); return out; }
 
 /* ═════════ 도구 ═════════ */
 const $ = s => document.querySelector(s);
@@ -768,12 +801,12 @@ function say(text, rate){
 
 /* ═════════ 상태 · 저장 ═════════ */
 const LS = "hangeol-english-app";
-function freshState(){ return {v:2, t:0, words:{}, nodes:{}, xp:0, lessons:0, streak:0, best:0, last:null, day:null, hist:{}, custom:[], customUnits:[], settings:{rate:0.85, goal:50, sound:true, auto:true}}; }
+function freshState(){ return {v:2, t:0, words:{}, nodes:{}, xp:0, lessons:0, streak:0, best:0, last:null, day:null, hist:{}, custom:[], customUnits:[], exprDone:{}, settings:{rate:0.85, goal:50, sound:true, auto:true}}; }
 let S = freshState();
 function adopt(o){
   const f = freshState(); S = Object.assign(f, JSON.parse(JSON.stringify(o)));
   S.settings = Object.assign(freshState().settings, S.settings || {});
-  ["words", "nodes", "hist"].forEach(k => { if (!S[k] || typeof S[k] !== "object") S[k] = {}; });
+  ["words", "nodes", "hist", "exprDone"].forEach(k => { if (!S[k] || typeof S[k] !== "object") S[k] = {}; });
   if (!Array.isArray(S.custom)) S.custom = [];
   if (!Array.isArray(S.customUnits)) S.customUnits = [];
 }
@@ -815,11 +848,80 @@ const KINDS = [{k:"l1", name:"새 단어 1", icon:"star"}, {k:"l2", name:"새 �
 function allUnits(){
   const base = WORD_UNITS.map((u, i) => ({id:"u" + i, name:u[0], words: WORDS.filter(w => w.uid === "u" + i), tips: tipsFor(i)}));
   const extra = S.customUnits.map(cu => ({id:cu.id, name:cu.name, ai:true, words: S.custom.filter(w => w.uid === cu.id), tips:[]})).filter(u => u.words.length >= 4);
-  return base.concat(extra);
+  const daily = DAILY_UNITS.map(u => Object.assign({daily:true}, u));
+  return base.concat(daily, extra);
 }
 function allWords(){ return allUnits().reduce((a, u) => a.concat(u.words), []); }
 function allNodes(){ const out = []; allUnits().forEach((u, ui) => KINDS.forEach(k => out.push({id:u.id + "-" + k.k, k:k.k, name:k.name, icon:k.icon, u, ui}))); return out; }
-function currentNode(){ return allNodes().find(n => !S.nodes[n.id]) || null; }
+function currentNode(){ return allNodes().find(n => !n.u.daily && !S.nodes[n.id]) || null; }
+function isOpen(n){
+  if (S.nodes[n.id]) return true;
+  if (n.u.daily){ const i = KINDS.findIndex(k => k.k === n.k); return i === 0 || !!S.nodes[n.u.id + "-" + KINDS[i - 1].k]; }
+  const c = currentNode(); return !!c && c.id === n.id;
+}
+function fmtDate(d){ const p = String(d).split("-"); return (+p[1]) + "월 " + (+p[2]) + "일"; }
+function isNew(d){ return todayNum() - dayNumOf(d) <= 1; }
+
+/* ═════════ 매일 추가 콘텐츠 ═════════ */
+function mergeDaily(d){
+  if (!d || typeof d !== "object") return;
+  const okQ = q => q && typeof q.q === "string" && Array.isArray(q.o) && q.o.length >= 2 && q.a >= 0 && q.a < q.o.length;
+  const gs = (Array.isArray(d.grammar) ? d.grammar : []).filter(g => g && g.date && g.t && g.b && Array.isArray(g.ex) && Array.isArray(g.qz) && g.qz.every(okQ));
+  GRAMMAR = BASE_GRAMMAR.concat(gs);
+  const gBy = {}; gs.forEach((g, i) => { (gBy[g.date] = gBy[g.date] || []).push(BASE_GRAMMAR.length + i); });
+  DAILY_UNITS = (Array.isArray(d.units) ? d.units : [])
+    .filter(u => u && u.id && u.date && Array.isArray(u.words))
+    .sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0)
+    .map(u => ({id: String(u.id), name: String(u.name || ""), date: u.date, roles: u.roles || {A:"상대", B:"나"},
+      dialog: (Array.isArray(u.dialog) ? u.dialog : []).filter(l => l && l.en && l.ko),
+      tips: gBy[u.date] || [],
+      words: u.words.filter(w => w && w.en && w.ko).map(w => ({id: u.id + "-" + String(w.en).toLowerCase().replace(/[^a-z0-9]+/g, "_"), en: w.en, ko: w.ko, ex: w.ex || "", exKo: w.exKo || "", emo: w.emo || "📘", uid: String(u.id)}))}))
+    .filter(u => u.words.length >= 4);
+  NEWS = (Array.isArray(d.news) ? d.news : []).filter(n => n && n.date && n.title).sort((a, b) => a.date < b.date ? 1 : -1);
+  EXPR = (Array.isArray(d.expressions) ? d.expressions : []).filter(e => e && e.date && e.en && e.ko && (!e.quiz || okQ(e.quiz)));
+}
+function loadDaily(){
+  if (typeof fetch !== "function") return;
+  fetch("content/extra.json", {cache:"no-store"}).then(r => r.ok ? r.text() : null).then(t => {
+    if (!t) return;
+    let old = null; try { old = localStorage.getItem(LS + "-daily"); } catch (e) {}
+    if (t === old) return;
+    mergeDaily(JSON.parse(t));
+    try { localStorage.setItem(LS + "-daily", t); } catch (e) {}
+    if (!L) refresh();
+  }).catch(() => {});
+}
+function latestDailyUnit(){ const tn = todayNum(); const us = allUnits().filter(u => u.daily && dayNumOf(u.date) <= tn); return us[us.length - 1] || null; }
+function todayExpr(){ const tn = todayNum(); const xs = EXPR.filter(e => dayNumOf(e.date) <= tn).sort((a, b) => a.date < b.date ? -1 : 1); return xs[xs.length - 1] || null; }
+function dailyCards(){
+  let h = "";
+  const e = todayExpr();
+  if (e){
+    const done = S.exprDone[e.date]; const q = e.quiz;
+    h += `<div class="card expr"><div class="expr-head"><span class="kicker">오늘의 표현</span><span class="muted small">${fmtDate(e.date)}</span></div>
+      <div class="expr-main"><button class="spk-mini" data-act="say" data-text="${esc(e.en)}" aria-label="듣기">${IC.spk}</button><div><p class="expr-en">${esc(e.en)}</p><p class="expr-ko">${esc(e.ko)}</p></div></div>
+      ${e.note ? `<p class="expr-note">${esc(e.note)}</p>` : ""}
+      ${(Array.isArray(e.ex) ? e.ex : []).map(x => `<div class="ex-item"><button class="spk-mini" data-act="say" data-text="${esc(x[0])}" aria-label="듣기">${IC.spk}</button><div><p>${esc(x[0])}</p><p>${esc(x[1])}</p></div></div>`).join("")}
+      ${q ? `<p class="qtext">${esc(q.q)}${done == null ? " <span class='muted small'>+5 XP</span>" : ""}</p><div class="opts">${q.o.map((o, k) => { let c = "tile"; if (done != null){ if (k === q.a) c += " ok"; else if (k === done) c += " bad"; } return `<button class="${c}" data-act="xq" data-o="${k}"${done != null ? " disabled" : ""}>${esc(o)}</button>`; }).join("")}</div>` : ""}
+    </div>`;
+  }
+  const u = latestDailyUnit();
+  if (u){
+    const ids = KINDS.map(k => u.id + "-" + k.k); const dn = ids.filter(id => S.nodes[id]).length; const next = ids.find(id => !S.nodes[id]);
+    h += `<div class="feature"><div><small>오늘의 새 단원${isNew(u.date) ? ' <span class="new-badge">NEW</span>' : ""}</small><h3>${esc(u.name)}</h3><p>${u.words.slice(0, 4).map(w => w.emo + " " + esc(w.en)).join(" · ")} …</p><div class="goal-bar"><i style="width:${dn / 5 * 100}%"></i></div></div>${next ? `<button class="b3 sun" data-act="node" data-id="${next}">${dn ? "이어서" : "시작"}</button>` : `<span class="done-chip">${IC.check}완료</span>`}</div>`;
+  }
+  return h;
+}
+function exprAnswer(k){
+  const e = todayExpr(); if (!e || !e.quiz || S.exprDone[e.date] != null) return;
+  S.exprDone[e.date] = k;
+  if (k === e.quiz.a){ SND.ok(); award(5); toast("정답! +5 XP"); } else { SND.bad(); commit(); toast("정답은 " + e.quiz.o[e.quiz.a]); }
+  say(e.quiz.o[e.quiz.a]); renderLearn();
+}
+function sayAll(lines){
+  if (!("speechSynthesis" in window)) return;
+  try { speechSynthesis.cancel(); const v = pickVoice(); lines.forEach(t => { const u = new SpeechSynthesisUtterance(t); u.lang = "en-US"; if (v) u.voice = v; u.rate = S.settings.rate; speechSynthesis.speak(u); }); } catch (e) {}
+}
 
 /* ═════════ 상단 · 학습 지도 ═════════ */
 function renderTop(){
@@ -833,6 +935,7 @@ function sentencesOf(u){
   const out = [];
   u.words.forEach(w => { if (w.ex) out.push({en:w.ex, ko:w.exKo}); });
   u.tips.forEach(gi => GRAMMAR[gi].ex.forEach(e => out.push({en:e[0], ko:e[1]})));
+  (u.dialog || []).forEach(l => out.push({en:l.en, ko:l.ko}));
   return out.filter(s => { const n = toks(s.en).length; return n >= 2 && n <= 9; });
 }
 function renderLearn(){
@@ -843,12 +946,15 @@ function renderLearn(){
     : S.day.xp === 0 ? (S.lessons ? "다시 왔네요! 오늘도 한 걸음 가 볼까요?" : "안녕하세요! 저랑 영어 첫걸음 떼 봐요.")
     : "좋아요! 오늘 목표까지 " + left + " XP 남았어요.";
   let html = `<div class="hero">${mascot(S.day.goalMet ? "cheer" : "happy", 76)}<div class="bubble">${esc(msg)}<small>오늘 ${S.day.xp} / ${goal} XP</small><div class="goal-bar"><i style="width:${Math.min(100, S.day.xp / goal * 100)}%"></i></div></div></div>`;
+  html += dailyCards();
   html += `<div class="quick">${cur ? `<button class="b3 green" data-act="node" data-id="${cur.id}">이어서 하기</button>` : `<span></span>`}<button class="b3 ghost" data-act="weak"${seenN < 4 ? " disabled" : ""}>약한 단어 복습</button></div>`;
+  let dailyHead = false;
   units.forEach((u, ui) => {
-    const col = UCOL[ui % UCOL.length]; const dir = ui % 2 ? -1 : 1;
-    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.ai ? "AI 단원" : "UNIT " + (ui + 1)}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div>${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}</div>`;
+    const col = u.daily ? "grape" : UCOL[ui % UCOL.length]; const dir = ui % 2 ? -1 : 1;
+    if (u.daily && !dailyHead){ dailyHead = true; html += `<h2 class="sec-title">매일 새로 추가되는 단원</h2>`; }
+    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.daily ? "오늘의 단원 · " + fmtDate(u.date) + (isNew(u.date) ? ' <span class="new-badge">NEW</span>' : "") : u.ai ? "AI 단원" : "UNIT " + (ui + 1)}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div>${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}</div>`;
     html += `<div class="nodes">` + KINDS.map((k, ki) => {
-      const id = u.id + "-" + k.k; const done = !!S.nodes[id]; const isCur = cur && cur.id === id;
+      const id = u.id + "-" + k.k; const done = !!S.nodes[id]; const isCur = u.daily ? (!done && (ki === 0 || !!S.nodes[u.id + "-" + KINDS[ki - 1].k])) : (!!cur && cur.id === id);
       const x = [0, 58, 84, 58, 0][ki] * dir;
       const cls = done ? "done" : isCur ? "cur" : "lock";
       return `<div class="node-wrap" style="--x:${x}">${isCur ? `<span class="node-tip" style="--c:var(--${col})">${S.lessons ? "시작" : "여기서 시작!"}</span>` : ""}<button class="node ${cls}" ${cls !== "lock" ? `style="--c:var(--${col});--cd:var(--${col}-d)"` : ""} data-act="node" data-id="${id}" aria-label="${esc(u.name + " " + k.name)}${done ? " 완료" : cls === "lock" ? " 잠김" : ""}">${done ? IC.check : cls === "lock" ? (k.k === "r" ? IC.trophy : IC.lock) : IC[k.icon]}</button></div>`;
@@ -860,7 +966,8 @@ function renderLearn(){
 function nodeTap(id){
   const n = allNodes().find(x => x.id === id); if (!n) return;
   const cur = currentNode();
-  if (!S.nodes[id] && (!cur || cur.id !== id)){ toast("앞 단계를 먼저 끝내면 열려요"); return; }
+  void cur;
+  if (!isOpen(n)){ toast("앞 단계를 먼저 끝내면 열려요"); return; }
   if (n.k === "l3" && !sentencesOf(n.u).length && !n.u.tips.length){ S.nodes[id] = {at:todayStr()}; commit(); renderLearn(); return; }
   startLesson(stepsFor(n), {node:n});
 }
@@ -885,6 +992,7 @@ function stepsFor(node){
     if (node.k === "l2") pickN(A, 2).forEach(w => st.push({t:"pickEn", w}));
     if (set.length >= 3) st.push({t:"match", ws: set.slice(0, 5)});
   } else if (node.k === "l3"){
+    if (u.dialog && u.dialog.length) st.push({t:"dialog", u});
     u.tips.forEach(gi => st.push({t:"tip", g:gi}));
     pickN(gramSteps(u), 4).forEach(x => st.push(x));
     pickN(sents, 4).forEach(s => st.push({t:"build", s}));
@@ -1003,6 +1111,13 @@ function renderStep(){
       <div class="rule">${g.b}</div>
       <div class="ex-list">${g.ex.map(e => `<div class="ex-item"><button class="spk-mini" data-act="say" data-text="${esc(e[0])}" aria-label="듣기">${IC.spk}</button><div><p>${esc(e[0])}</p><p>${esc(e[1])}</p></div></div>`).join("")}</div>`;
     setMain("알겠어요", true);
+  } else if (st.t === "dialog"){
+    L.phase = "intro";
+    const u = st.u, roles = u.roles || {A:"상대", B:"나"};
+    h = `<p class="kicker">회화 듣기</p><h2 class="q-title">${esc(u.name)} 상황 대화</h2>
+      <button class="b3 ghost" data-act="say-all" style="justify-self:start">${IC.spk}전체 듣기</button>
+      <div class="dlg">${u.dialog.map(l => `<div class="dlg-line${l.who === "B" ? " me" : ""}"><span class="dlg-who">${esc(roles[l.who] || l.who)}</span><div class="dlg-bub"><p class="en">${esc(l.en)}</p><p class="ko">${esc(l.ko)}</p></div><button class="spk-mini" data-act="say" data-text="${esc(l.en)}" aria-label="듣기">${IC.spk}</button></div>`).join("")}</div>`;
+    setMain("다 읽었어요", true);
   } else if (st.t === "speak"){
     h = `<p class="kicker">따라 말해 보세요</p>
       <div class="speak-target"><button class="spk-mini" data-act="say" data-text="${esc(st.s.en)}" aria-label="듣기">${IC.spk}</button><div><p class="en">${esc(st.s.en)}</p><p class="ko">${esc(st.s.ko)}</p></div></div>
@@ -1071,9 +1186,10 @@ function check(){
     detail = (ok ? "" : "정답: ") + `<span class="en">${esc(st.s.en)}</span> · ${esc(st.s.ko)}`;
     say(st.s.en);
   } else if (st.t === "type"){
-    const v = ($("#ls-text").value || "").trim().toLowerCase().replace(/[.!?]+$/, "").replace(/^to\s+/, "").replace(/\s+/g, " ");
+    const clean = s => String(s).trim().toLowerCase().replace(/[’‘]/g, "'").replace(/[.!?]+$/, "").replace(/\s+/g, " ");
+    const v = clean($("#ls-text").value || ""), want = clean(st.w.en);
     if (!v) return;
-    ok = v === st.w.en.toLowerCase();
+    ok = v === want || v.replace(/^to /, "") === want.replace(/^to /, "");
     detail = (ok ? "" : "정답: ") + `<span class="en">${esc(st.w.en)}</span> · ${esc(st.w.ko)}`;
     say(st.w.en);
   } else if (st.t === "speak"){
@@ -1089,7 +1205,12 @@ function check(){
   L.graded++;
   if (st.w) touchWord(st.w, ok);
   if (ok){ L.combo++; L.doneN++; L.queue.shift(); }
-  else { L.mistakes++; L.combo = 0; const s2 = L.queue.shift(); L.queue.push(Object.assign({}, s2, {opts:null, order:null, tiles:null, left:null, right:null})); }
+  else {
+    L.mistakes++; L.combo = 0; const s2 = L.queue.shift();
+    // 틀린 문제는 레슨 끝에 한 번만 다시 낸다
+    if (!s2.tries) L.queue.push(Object.assign({}, s2, {tries:1, opts:null, order:null, tiles:null, left:null, right:null}));
+    else L.doneN++;
+  }
   updateBar();
   showFb(ok, ok ? PRAISE[Math.floor(Math.random() * PRAISE.length)] : "아쉬워요", detail);
 }
@@ -1244,7 +1365,7 @@ function renderWords(){
     <button class="b3 sun wide" data-act="weak"${seen < 4 ? " disabled" : ""}>${IC.bolt}약한 단어 복습 +10 XP</button>
     <div class="unit-list">${units.map((u, ui) => {
       const known = u.words.filter(w => S.words[w.id] && S.words[w.id].s >= 4).length;
-      return `<details class="u-item"><summary><span>${u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>
+      return `<details class="u-item"><summary><span>${u.daily ? "NEW · " : u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>
         <ul class="w-list">${u.words.map(w => { const c = S.words[w.id]; const s = c ? c.s : 0;
           return `<li><button class="w-row" data-act="say" data-text="${esc(w.en)}"><span class="emo">${w.emo || "📘"}</span><span><b>${esc(w.en)}</b><span class="ko">${esc(w.ko)}</span></span><span class="lvl" aria-label="숙련도 ${s}/5">${[1,2,3,4,5].map(i => `<i class="${s >= i ? "on" : ""}"></i>`).join("")}</span></button></li>`; }).join("")}</ul></details>`;
     }).join("")}</div>`;
@@ -1267,6 +1388,7 @@ function renderMe(){
     </div>
     <div class="card"><p style="font-weight:900">최근 7일 경험치</p><p class="muted small" style="font-weight:700">초록 막대는 그날 목표(${S.settings.goal} XP)를 채운 날이에요</p>
       <div class="week">${days.map(d => `<div class="wk${d.today ? " today" : ""}"><em>${d.xp || ""}</em><div class="col"><i class="${d.xp >= S.settings.goal ? "met" : ""}" style="height:${d.xp ? Math.max(6, d.xp / mx * 100) : 0}%"></i></div><span>${d.today ? "오늘" : d.wd}</span></div>`).join("")}</div></div>
+    ${NEWS.length ? `<div class="card news"><p style="font-weight:900;font-size:17px">앱 업데이트 소식</p>${NEWS.slice(0, 6).map(n => `<div class="news-item"><span class="muted small">${fmtDate(n.date)}${isNew(n.date) ? ' <span class="new-badge">NEW</span>' : ""}</span><p class="news-t">${esc(n.title)}</p>${n.body ? `<p class="news-b">${esc(n.body)}</p>` : ""}</div>`).join("")}</div>` : ""}
     <div class="card settings">
       <p style="font-weight:900;font-size:17px">설정</p>
       <div class="set-row"><label class="lab" for="set-goal">하루 목표</label>
@@ -1332,6 +1454,8 @@ document.addEventListener("click", e => {
   else if (a === "bank"){ if (!L || L.phase !== "answer") return; const k = +b.dataset.k; if (L.ans.indexOf(k) < 0){ L.ans.push(k); SND.tap(); renderTiles(); } }
   else if (a === "ans"){ if (!L || L.phase !== "answer") return; const k = +b.dataset.k; L.ans = L.ans.filter(x => x !== k); renderTiles(); }
   else if (a === "mic") micStart();
+  else if (a === "xq") exprAnswer(+b.dataset.o);
+  else if (a === "say-all"){ if (L && L.queue[0] && L.queue[0].u) sayAll(L.queue[0].u.dialog.map(l => l.en)); }
   else if (a === "backup") doBackup();
   else if (a === "restore-open"){ restoreOpen = !restoreOpen; renderMe(); }
   else if (a === "restore") doRestore();
@@ -1355,14 +1479,17 @@ document.addEventListener("keydown", e => {
   if (L && !$("#lesson").hidden && $("#sheet-wrap").hidden && (e.target.id === "ls-text" || e.target === document.body || e.target.closest("#lesson"))){ e.preventDefault(); if (!$("#ls-main").disabled) lsMain(); }
 });
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible"){ const before = S.day && S.day.d; ensureDay(); if (before !== S.day.d && !L) refresh(); }
+  if (document.visibilityState === "visible"){ const before = S.day && S.day.d; ensureDay(); if (before !== S.day.d && !L) refresh(); loadDaily(); }
 });
 
 /* ═════════ 시작 ═════════ */
 const local = loadLocal(); if (local) adopt(local);
 ensureDay();
+try { mergeDaily(JSON.parse(localStorage.getItem(LS + "-daily") || "null")); } catch (e) {}
 const hash = (location.hash || "").slice(1);
 go(VIEWS.indexOf(hash) >= 0 ? hash : "learn", true);
+loadDaily();
+window.__hg = { get L(){ return L; }, get S(){ return S; } };
 if ("serviceWorker" in navigator && location.protocol === "https:") window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
 </script>
 </body>

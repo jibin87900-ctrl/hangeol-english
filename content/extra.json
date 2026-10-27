@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "d20261027",
+      "date": "2026-10-27",
+      "name": "카페에서",
+      "roles": {"A": "직원", "B": "나"},
+      "words": [
+        {"en": "menu", "ko": "메뉴", "ex": "Can I see the menu?", "exKo": "메뉴 좀 볼 수 있을까요?", "emo": "📋"},
+        {"en": "order", "ko": "주문하다, 주문", "ex": "Are you ready to order?", "exKo": "주문하시겠어요?", "emo": "🛎️"},
+        {"en": "latte", "ko": "라테", "ex": "I'd like a latte.", "exKo": "라테 주세요.", "emo": "🥛"},
+        {"en": "iced", "ko": "아이스, 얼음을 넣은", "ex": "An iced coffee, please.", "exKo": "아이스 커피 주세요.", "emo": "🧊"},
+        {"en": "cup", "ko": "컵, 잔", "ex": "Two cups of tea, please.", "exKo": "차 두 잔 주세요.", "emo": "🍵"},
+        {"en": "sugar", "ko": "설탕", "ex": "No sugar, please.", "exKo": "설탕은 빼 주세요.", "emo": "🍬"},
+        {"en": "cake", "ko": "케이크", "ex": "This cake is so good.", "exKo": "이 케이크 정말 맛있어요.", "emo": "🍰"},
+        {"en": "sweet", "ko": "달콤한, 단", "ex": "I like sweet drinks.", "exKo": "나는 단 음료를 좋아해요.", "emo": "🍯"},
+        {"en": "to go", "ko": "포장(가져가기)", "ex": "For here or to go?", "exKo": "드시고 가세요, 가져가세요?", "emo": "🥡"},
+        {"en": "straw", "ko": "빨대", "ex": "Can I have a straw?", "exKo": "빨대 하나 주실래요?", "emo": "🥤"}
+      ],
+      "dialog": [
+        {"who": "A", "en": "Hi! What can I get for you?", "ko": "안녕하세요! 뭐 드릴까요?"},
+        {"who": "B", "en": "I'd like an iced latte, please.", "ko": "아이스 라테 주세요."},
+        {"who": "A", "en": "Sure. For here or to go?", "ko": "네. 드시고 가세요, 가져가세요?"},
+        {"who": "B", "en": "To go, please.", "ko": "가져갈게요."},
+        {"who": "A", "en": "Anything else?", "ko": "더 필요한 거 있으세요?"},
+        {"who": "B", "en": "No, thank you.", "ko": "아니요, 괜찮아요."}
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "date": "2026-10-27",
+      "level": "A1+",
+      "t": "I'd like ~ (공손하게 원하기)",
+      "s": "want보다 부드럽게 주문하고 부탁하기",
+      "b": "<b>I'd like</b> + 명사 = ~ 주세요, ~를 원해요 (I want보다 공손해요)<br>I'd는 <b>I would</b>의 줄임말이에요<br><b>I'd like to</b> + 동사원형 = ~하고 싶어요<br>질문: <b>Would you like</b> ~? = ~ 드릴까요?",
+      "ex": [["I'd like a latte.", "라테 주세요."], ["I'd like to order now.", "지금 주문하고 싶어요."], ["Would you like some water?", "물 좀 드릴까요?"]],
+      "qz": [
+        {"q": "I'd ___ a coffee, please.", "o": ["like", "likes", "liking"], "a": 0, "k": "커피 한 잔 주세요."},
+        {"q": "I'd like ___ pay by card.", "o": ["to", "for", "at"], "a": 0, "k": "카드로 계산하고 싶어요."},
+        {"q": "___ you like some cake?", "o": ["Would", "Are", "Is"], "a": 0, "k": "케이크 좀 드실래요?"}
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "date": "2026-10-27",
+      "en": "It's on me.",
+      "ko": "내가 낼게.",
+      "note": "밥값이나 커피값을 내가 계산하겠다고 할 때 써요. 친구나 동료 사이에서 아주 자주 쓰는 말이에요.",
+      "ex": [["Put your wallet away. It's on me.", "지갑 넣어 둬. 내가 낼게."], ["Lunch is on me today.", "오늘 점심은 내가 살게."]],
+      "quiz": {"q": "친구에게 '이번 커피는 내가 살게'라고 하려면?", "o": ["Coffee is on me.", "Coffee is in me.", "Coffee is at me."], "a": 0}
+    }
+  ],
+  "news": [
+    {"date": "2026-10-27", "title": "매일 업데이트 시작!", "body": "이제 매일 새벽 5시에 새 단원, 오늘의 표현, 문법 새 과가 추가돼요. 첫 단원은 '카페에서'예요."}
+  ]
+}
