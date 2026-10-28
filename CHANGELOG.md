@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-10-29
+- 새 단원 '은행에서' (bank account, cash, withdraw, ID, sign 등 10단어 + 은행 직원과의 대화)
+- 문법 23과 'have to (~해야 해요)', 오늘의 표현 'Here you go.'
+- 오늘의 표현 카드에 '지난 표현 다시 보기' 목록 (발음 듣기) · 점검 항목 추가 · 캐시 v7
+- 다듬기: 'pill' 예문 해석을 '물이랑 같이 한 알 드세요.'로
+- 리서치: Cake 매일 표현·말해보카 문법모드 (`research/2026-10-29.md`)
+
 ## 2026-10-28
 - 새 단원 '약국에서' (pharmacy, headache, sore throat, twice a day 등 10단어 + 약사와의 대화)
 - 문법 22과 'should (~하는 게 좋아요)', 오늘의 표현 'Get well soon.'

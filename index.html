@@ -369,6 +369,9 @@ textarea{resize:none;line-height:1.45}
 .expr-en{font-size:24px;font-weight:900;line-height:1.25;overflow-wrap:anywhere}
 .expr-ko{font-weight:800;color:var(--muted)}
 .expr-note{font-size:14.5px;font-weight:600;background:var(--sun-soft);border-radius:12px;padding:10px 12px}
+.expr-past summary{cursor:pointer;list-style:none;font-weight:900;font-size:14.5px;color:var(--sun-d);padding:4px 0}
+.expr-past summary::-webkit-details-marker{display:none}
+.expr-past-list{display:grid;gap:8px;margin-top:10px}
 .sec-title{font-size:18px;font-weight:900;margin-top:12px}
 .dlg{display:grid;gap:10px}
 .dlg-line{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:8px;align-items:center}
@@ -909,11 +912,14 @@ function dailyCards(){
   const e = todayExpr();
   if (e){
     const done = S.exprDone[e.date]; const q = e.quiz;
+    // 지난 표현: 오늘 것을 뺀 이전 표현, 최근 것부터
+    const past = EXPR.filter(x => x.date < e.date).sort((a, b) => a.date < b.date ? 1 : -1);
     h += `<div class="card expr"><div class="expr-head"><span class="kicker">오늘의 표현</span><span class="muted small">${fmtDate(e.date)}</span></div>
       <div class="expr-main"><button class="spk-mini" data-act="say" data-text="${esc(e.en)}" aria-label="듣기">${IC.spk}</button><div><p class="expr-en">${esc(e.en)}</p><p class="expr-ko">${esc(e.ko)}</p></div></div>
       ${e.note ? `<p class="expr-note">${esc(e.note)}</p>` : ""}
       ${(Array.isArray(e.ex) ? e.ex : []).map(x => `<div class="ex-item"><button class="spk-mini" data-act="say" data-text="${esc(x[0])}" aria-label="듣기">${IC.spk}</button><div><p>${esc(x[0])}</p><p>${esc(x[1])}</p></div></div>`).join("")}
       ${q ? `<p class="qtext">${esc(q.q)}${done == null ? " <span class='muted small'>+5 XP</span>" : ""}</p><div class="opts">${q.o.map((o, k) => { let c = "tile"; if (done != null){ if (k === q.a) c += " ok"; else if (k === done) c += " bad"; } return `<button class="${c}" data-act="xq" data-o="${k}"${done != null ? " disabled" : ""}>${esc(o)}</button>`; }).join("")}</div>` : ""}
+      ${past.length ? `<details class="expr-past"><summary>지난 표현 다시 보기 · ${past.length}개</summary><div class="expr-past-list">${past.map(x => `<div class="ex-item"><button class="spk-mini" data-act="say" data-text="${esc(x.en)}" aria-label="듣기">${IC.spk}</button><div><p>${esc(x.en)}</p><p>${esc(x.ko)}</p></div></div>`).join("")}</div></details>` : ""}
     </div>`;
   }
   const u = latestDailyUnit();

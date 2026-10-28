@@ -161,7 +161,7 @@
           "en": "pill",
           "ko": "알약",
           "ex": "Take one pill with water.",
-          "exKo": "물이랑 한 알 드세요.",
+          "exKo": "물이랑 같이 한 알 드세요.",
           "emo": "💊"
         },
         {
@@ -228,6 +228,129 @@
           "who": "A",
           "en": "I hope you feel better soon.",
           "ko": "빨리 나으시길 바라요."
+        }
+      ]
+    },
+    {
+      "id": "d20261029",
+      "date": "2026-10-29",
+      "name": "은행에서",
+      "roles": {
+        "A": "은행 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "bank account",
+          "ko": "은행 계좌",
+          "ex": "I want to open a bank account.",
+          "exKo": "은행 계좌를 만들고 싶어요.",
+          "emo": "🏦"
+        },
+        {
+          "en": "cash",
+          "ko": "현금",
+          "ex": "Do you have any cash?",
+          "exKo": "현금 있어요?",
+          "emo": "💵"
+        },
+        {
+          "en": "ATM",
+          "ko": "현금인출기, ATM",
+          "ex": "The ATM is next to the door.",
+          "exKo": "ATM은 문 옆에 있어요.",
+          "emo": "🏧"
+        },
+        {
+          "en": "withdraw",
+          "ko": "(돈을) 찾다, 인출하다",
+          "ex": "I need to withdraw some cash.",
+          "exKo": "현금을 좀 찾아야 해요.",
+          "emo": "💸"
+        },
+        {
+          "en": "deposit",
+          "ko": "입금하다, 예금",
+          "ex": "I'd like to deposit some money.",
+          "exKo": "돈을 좀 입금하고 싶어요.",
+          "emo": "📥"
+        },
+        {
+          "en": "ID",
+          "ko": "신분증",
+          "ex": "Can I see your ID?",
+          "exKo": "신분증 좀 볼 수 있을까요?",
+          "emo": "🪪"
+        },
+        {
+          "en": "form",
+          "ko": "서류, 신청서",
+          "ex": "Please fill out this form.",
+          "exKo": "이 신청서를 작성해 주세요.",
+          "emo": "📝"
+        },
+        {
+          "en": "sign",
+          "ko": "서명하다, 사인하다",
+          "ex": "Please sign here.",
+          "exKo": "여기에 서명해 주세요.",
+          "emo": "✍️"
+        },
+        {
+          "en": "exchange",
+          "ko": "환전하다, 바꾸다",
+          "ex": "Can I exchange dollars for won?",
+          "exKo": "달러를 원화로 바꿀 수 있어요?",
+          "emo": "💱"
+        },
+        {
+          "en": "wait in line",
+          "ko": "줄 서서 기다리다",
+          "ex": "Please wait in line here.",
+          "exKo": "여기서 줄 서서 기다려 주세요.",
+          "emo": "🧍"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, how can I help you today?",
+          "ko": "안녕하세요, 무엇을 도와드릴까요?"
+        },
+        {
+          "who": "B",
+          "en": "I'd like to open a bank account.",
+          "ko": "은행 계좌를 만들고 싶어요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. Can I see your ID?",
+          "ko": "네. 신분증 좀 볼 수 있을까요?"
+        },
+        {
+          "who": "B",
+          "en": "Here you go.",
+          "ko": "여기 있어요."
+        },
+        {
+          "who": "A",
+          "en": "Thanks. Please fill out this form and sign here.",
+          "ko": "감사합니다. 이 신청서를 작성하시고 여기에 서명해 주세요."
+        },
+        {
+          "who": "B",
+          "en": "Okay. Can I also withdraw some cash?",
+          "ko": "네. 현금도 좀 찾을 수 있을까요?"
+        },
+        {
+          "who": "A",
+          "en": "Of course. How much do you need?",
+          "ko": "물론이죠. 얼마나 필요하세요?"
+        },
+        {
+          "who": "B",
+          "en": "Two hundred dollars, please.",
+          "ko": "200달러 부탁드려요."
         }
       ]
     }
@@ -338,6 +461,59 @@
           "k": "아프잖아요. 오늘은 출근하지 않는 게 좋겠어요."
         }
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "level": "A2",
+      "t": "have to (~해야 해요)",
+      "s": "꼭 해야 하는 일과 안 해도 되는 일 말하기",
+      "b": "<b>have to</b> + 동사원형 = ~해야 해요 (규칙이나 상황 때문에 꼭 해야 할 때)<br>주어가 he, she, it이면 <b>has to</b><br>부정: <b>don't have to</b> = ~하지 않아도 돼요 (하지 말라는 뜻이 아니에요!)<br>질문: <b>Do I have to</b> ~? = 제가 ~해야 해요?",
+      "ex": [
+        [
+          "You have to sign here.",
+          "여기에 서명하셔야 해요."
+        ],
+        [
+          "She has to work on Saturday.",
+          "그녀는 토요일에 일해야 해요."
+        ],
+        [
+          "You don't have to pay now.",
+          "지금 안 내셔도 돼요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "You ___ to show your ID.",
+          "o": [
+            "have",
+            "has",
+            "having"
+          ],
+          "a": 0,
+          "k": "신분증을 보여 주셔야 해요."
+        },
+        {
+          "q": "He ___ to get up early tomorrow.",
+          "o": [
+            "has",
+            "have",
+            "is"
+          ],
+          "a": 0,
+          "k": "그는 내일 일찍 일어나야 해요."
+        },
+        {
+          "q": "It's free. You don't ___ to pay.",
+          "o": [
+            "have",
+            "has",
+            "must"
+          ],
+          "a": 0,
+          "k": "무료예요. 돈 안 내셔도 돼요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -390,9 +566,39 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-10-29",
+      "en": "Here you go.",
+      "ko": "여기 있어요.",
+      "note": "물건이나 돈을 건네줄 때 써요. 가게, 은행, 식당 어디서나 아주 자주 들어요.",
+      "ex": [
+        [
+          "Here you go. Here's your change.",
+          "여기 있어요. 거스름돈이에요."
+        ],
+        [
+          "Can I borrow a pen? — Sure, here you go.",
+          "펜 좀 빌려도 될까요? — 네, 여기요."
+        ]
+      ],
+      "quiz": {
+        "q": "직원이 신분증을 보여 달라고 해요. 건네면서 하는 말은?",
+        "o": [
+          "Here you go.",
+          "There you come.",
+          "Here you going."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-10-29",
+      "title": "새 단원 '은행에서' + 지난 표현 다시 보기",
+      "body": "은행에서 계좌를 만들고 현금을 찾는 단원이 생겼어요. 오늘의 표현 카드 아래 '지난 표현 다시 보기'를 누르면 그동안 배운 표현을 모아 보고 발음도 다시 들을 수 있어요."
+    },
     {
       "date": "2026-10-28",
       "title": "새 단원 '약국에서' + 복습 단어 개수 표시",

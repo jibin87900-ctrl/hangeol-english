@@ -117,6 +117,10 @@ try {
   await sleep(3); await solve(false);
   click($("#ls-main"), "복습 결과 계속"); await sleep(3);
 
+  if (data.expressions && data.expressions.length > 1) {
+    const past = d.querySelector("#v-learn .expr-past");
+    check(past && past.querySelectorAll('[data-act="say"]').length >= 1, "지난 표현 다시 보기 목록이 없음");
+  }
   const xq = d.querySelector('[data-act="xq"]');
   if (xq) { click(xq, "오늘의 표현 퀴즈"); await sleep(3); }
 
