@@ -353,6 +353,124 @@
           "ko": "200달러 부탁드려요."
         }
       ]
+    },
+    {
+      "id": "d20261030",
+      "date": "2026-10-30",
+      "name": "길 묻기",
+      "roles": {
+        "A": "길 가던 사람",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "lost",
+          "ko": "길을 잃은",
+          "ex": "Excuse me, I'm lost.",
+          "exKo": "실례합니다, 길을 잃었어요.",
+          "emo": "🧭"
+        },
+        {
+          "en": "map",
+          "ko": "지도",
+          "ex": "Can you show me on the map?",
+          "exKo": "지도에서 보여 주실 수 있어요?",
+          "emo": "🗺️"
+        },
+        {
+          "en": "go straight",
+          "ko": "곧장 가다, 직진하다",
+          "ex": "Go straight for two blocks.",
+          "exKo": "두 블록 쭉 가세요.",
+          "emo": "⬆️"
+        },
+        {
+          "en": "turn",
+          "ko": "돌다, 꺾다",
+          "ex": "Turn left at the corner.",
+          "exKo": "모퉁이에서 왼쪽으로 도세요.",
+          "emo": "↪️"
+        },
+        {
+          "en": "corner",
+          "ko": "모퉁이",
+          "ex": "The bank is on the corner.",
+          "exKo": "은행은 모퉁이에 있어요.",
+          "emo": "📐"
+        },
+        {
+          "en": "block",
+          "ko": "블록, 구역",
+          "ex": "It's two blocks from here.",
+          "exKo": "여기서 두 블록 가면 있어요.",
+          "emo": "🏘️"
+        },
+        {
+          "en": "traffic light",
+          "ko": "신호등",
+          "ex": "Turn right at the traffic light.",
+          "exKo": "신호등에서 오른쪽으로 도세요.",
+          "emo": "🚦"
+        },
+        {
+          "en": "crosswalk",
+          "ko": "횡단보도",
+          "ex": "Please use the crosswalk.",
+          "exKo": "횡단보도로 건너세요.",
+          "emo": "🚸"
+        },
+        {
+          "en": "across from",
+          "ko": "~ 맞은편에",
+          "ex": "It's across from the park.",
+          "exKo": "공원 맞은편에 있어요.",
+          "emo": "↔️"
+        },
+        {
+          "en": "next to",
+          "ko": "~ 옆에",
+          "ex": "The café is next to the bank.",
+          "exKo": "카페는 은행 옆에 있어요.",
+          "emo": "📍"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "B",
+          "en": "Excuse me. I think I'm lost.",
+          "ko": "실례합니다. 길을 잃은 것 같아요."
+        },
+        {
+          "who": "A",
+          "en": "Oh, where are you going?",
+          "ko": "아, 어디 가세요?"
+        },
+        {
+          "who": "B",
+          "en": "I'm looking for the subway station.",
+          "ko": "지하철역을 찾고 있어요."
+        },
+        {
+          "who": "A",
+          "en": "Go straight for two blocks and turn left at the traffic light.",
+          "ko": "두 블록 쭉 가서 신호등에서 왼쪽으로 도세요."
+        },
+        {
+          "who": "B",
+          "en": "Is it far from here?",
+          "ko": "여기서 멀어요?"
+        },
+        {
+          "who": "A",
+          "en": "No, it's close. It's across from the park.",
+          "ko": "아니요, 가까워요. 공원 맞은편에 있어요."
+        },
+        {
+          "who": "B",
+          "en": "Thank you so much!",
+          "ko": "정말 감사합니다!"
+        }
+      ]
     }
   ],
   "grammar": [
@@ -514,6 +632,59 @@
           "k": "무료예요. 돈 안 내셔도 돼요."
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "level": "A2",
+      "t": "Could you ~? (공손하게 부탁하기)",
+      "s": "모르는 사람에게 정중하게 부탁하고 허락 구하기",
+      "b": "<b>Could you</b> + 동사원형 ~? = ~해 주실 수 있어요? (Can you보다 공손해요)<br>끝에 <b>please</b>를 붙이면 더 부드러워요<br>대답: <b>Sure.</b> / <b>Of course.</b> / <b>Sorry, I can't.</b><br><b>Could I</b> + 동사원형 ~? = 제가 ~해도 될까요?",
+      "ex": [
+        [
+          "Could you help me, please?",
+          "좀 도와주실 수 있어요?"
+        ],
+        [
+          "Could you say that again?",
+          "다시 한 번 말씀해 주시겠어요?"
+        ],
+        [
+          "Could I use your phone?",
+          "전화 좀 써도 될까요?"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "___ you show me on the map?",
+          "o": [
+            "Could",
+            "Are",
+            "Is"
+          ],
+          "a": 0,
+          "k": "지도에서 보여 주실 수 있어요?"
+        },
+        {
+          "q": "Could you ___ slowly, please?",
+          "o": [
+            "speak",
+            "speaks",
+            "speaking"
+          ],
+          "a": 0,
+          "k": "천천히 말씀해 주시겠어요?"
+        },
+        {
+          "q": "Could ___ sit here?",
+          "o": [
+            "I",
+            "my",
+            "me"
+          ],
+          "a": 0,
+          "k": "제가 여기 앉아도 될까요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -591,9 +762,39 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-10-30",
+      "en": "I'm not from around here.",
+      "ko": "저도 이 동네 사람이 아니에요.",
+      "note": "누가 길을 물었는데 나도 잘 모를 때 써요. 내가 길을 물을 때 '이 동네를 잘 몰라서요'라고 먼저 말할 때도 써요.",
+      "ex": [
+        [
+          "Sorry, I'm not from around here.",
+          "죄송해요, 저도 이 동네 사람이 아니에요."
+        ],
+        [
+          "I'm not from around here. Could you help me?",
+          "제가 이 동네를 잘 몰라서요. 좀 도와주시겠어요?"
+        ]
+      ],
+      "quiz": {
+        "q": "누가 길을 물었는데, 나도 이 동네를 잘 몰라요. 뭐라고 할까요?",
+        "o": [
+          "Sorry, I'm not from around here.",
+          "Sorry, I'm not around from here.",
+          "Sorry, I don't from here."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-10-30",
+      "title": "새 단원 '길 묻기' + 매일 달라지는 축하 문구",
+      "body": "길을 잃었을 때 묻고, 알려 주는 길을 알아듣는 단원이 생겼어요. 이제 하루 목표를 채우면 학습 탭의 축하 문구가 날마다 조금씩 달라져요."
+    },
     {
       "date": "2026-10-29",
       "title": "새 단원 '은행에서' + 지난 표현 다시 보기",

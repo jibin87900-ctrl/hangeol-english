@@ -955,11 +955,12 @@ function sentencesOf(u){
   (u.dialog || []).forEach(l => out.push({en:l.en, ko:l.ko}));
   return out.filter(s => { const n = toks(s.en).length; return n >= 2 && n <= 9; });
 }
+const GOAL_MSGS = ["오늘 목표 달성! 대단해요. 더 하면 실력이 쑥쑥 늘어요.", "목표 달성! 오늘도 한 걸음 더 나아갔어요.", "해냈어요! 이렇게 매일 하면 영어가 귀에 들어오기 시작해요.", "오늘 몫은 끝! 여유가 있으면 복습 한 번 더 해 볼까요?", "멋져요! 꾸준함이 최고의 실력이에요.", "목표 채웠어요! 오늘 배운 단어를 한 번 소리 내어 말해 보세요.", "최고예요! 내일도 이 시간에 만나요."];
 function renderLearn(){
   ensureDay();
   const units = allUnits(); const cur = currentNode(); const goal = S.settings.goal; const left = Math.max(0, goal - S.day.xp);
   const seenN = Object.keys(S.words).length;
-  const msg = S.day.goalMet ? "오늘 목표 달성! 대단해요. 더 하면 실력이 쑥쑥 늘어요."
+  const msg = S.day.goalMet ? GOAL_MSGS[todayNum() % GOAL_MSGS.length]
     : S.day.xp === 0 ? (S.lessons ? "다시 왔네요! 오늘도 한 걸음 가 볼까요?" : "안녕하세요! 저랑 영어 첫걸음 떼 봐요.")
     : "좋아요! 오늘 목표까지 " + left + " XP 남았어요.";
   let html = `<div class="hero">${mascot(S.day.goalMet ? "cheer" : "happy", 76)}<div class="bubble">${esc(msg)}<small>오늘 ${S.day.xp} / ${goal} XP</small><div class="goal-bar"><i style="width:${Math.min(100, S.day.xp / goal * 100)}%"></i></div></div></div>`;

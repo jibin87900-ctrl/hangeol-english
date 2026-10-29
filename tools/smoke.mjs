@@ -124,6 +124,10 @@ try {
   const xq = d.querySelector('[data-act="xq"]');
   if (xq) { click(xq, "오늘의 표현 퀴즈"); await sleep(3); }
 
+  if (w.__hg.S.day.goalMet) {
+    const bub = d.querySelector("#v-learn .hero .bubble");
+    check(bub && /목표|해냈어요|오늘 몫|멋져요|최고예요/.test(bub.textContent), "목표 달성 문구가 없음");
+  }
   for (const v of ["chat", "words", "me", "learn"]) {
     click(d.querySelector(`.tab[data-v="${v}"]`), "탭 " + v); await sleep(3);
     check(!$("#v-" + v).hidden && $("#v-" + v).innerHTML.trim().length > 50, "탭 화면이 비어 있음: " + v);

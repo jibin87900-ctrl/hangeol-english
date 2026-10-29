@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-10-30
+- 새 단원 '길 묻기' (lost, map, go straight, turn, traffic light, across from 등 10단어 + 길 가던 사람과의 대화)
+- 문법 24과 'Could you ~? (공손하게 부탁하기)', 오늘의 표현 'I'm not from around here.'
+- 하루 목표 달성 축하 문구를 날마다 다르게 (7가지) · 점검 항목 추가 · 캐시 v8
+- 다듬기: 최근 3일 콘텐츠(카페·약국·은행) 다시 확인, 고칠 곳 없음
+- 리서치: Memrise 원어민 영상·Babbel 대화 레슨·간격 반복 (`research/2026-10-30.md`)
+
 ## 2026-10-29
 - 새 단원 '은행에서' (bank account, cash, withdraw, ID, sign 등 10단어 + 은행 직원과의 대화)
 - 문법 23과 'have to (~해야 해요)', 오늘의 표현 'Here you go.'
