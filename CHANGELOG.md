@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-10-31
+- 새 단원 '식당에서' (reservation, table for two, recommend, spicy, check, split the bill 등 10단어 + 식당 직원과의 대화)
+- 문법 25과 'some · any (조금, 하나도)', 오늘의 표현 'I'll have the same.'
+- 학습 탭 첫 인사에 연속 학습 일수 / 끊겼을 때 최고 기록과 함께 다시 시작 응원 · 점검 항목 추가 · 캐시 v9
+- 다듬기: 최근 3일(은행·길 묻기·식당) 다시 확인, 'recommend' 예문 해석을 '추천해 주실 메뉴 있어요?'로
+- 리서치: Duolingo 스트릭 설계·Praktika AI 튜터 (`research/2026-10-31.md`)
+
 ## 2026-10-30
 - 새 단원 '길 묻기' (lost, map, go straight, turn, traffic light, across from 등 10단어 + 길 가던 사람과의 대화)
 - 문법 24과 'Could you ~? (공손하게 부탁하기)', 오늘의 표현 'I'm not from around here.'

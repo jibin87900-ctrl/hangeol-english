@@ -471,6 +471,129 @@
           "ko": "정말 감사합니다!"
         }
       ]
+    },
+    {
+      "id": "d20261031",
+      "date": "2026-10-31",
+      "name": "식당에서",
+      "roles": {
+        "A": "식당 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "reservation",
+          "ko": "예약",
+          "ex": "I have a reservation at seven.",
+          "exKo": "7시에 예약했어요.",
+          "emo": "📅"
+        },
+        {
+          "en": "table for two",
+          "ko": "두 명 자리",
+          "ex": "A table for two, please.",
+          "exKo": "두 명 자리 부탁해요.",
+          "emo": "🪑"
+        },
+        {
+          "en": "server",
+          "ko": "(식당) 서빙 직원",
+          "ex": "Our server is very nice.",
+          "exKo": "저희 담당 직원이 정말 친절해요.",
+          "emo": "🤵"
+        },
+        {
+          "en": "recommend",
+          "ko": "추천하다",
+          "ex": "What do you recommend?",
+          "exKo": "추천해 주실 메뉴 있어요?",
+          "emo": "🌟"
+        },
+        {
+          "en": "dish",
+          "ko": "요리, 음식",
+          "ex": "This dish is really good.",
+          "exKo": "이 요리 정말 맛있어요.",
+          "emo": "🥘"
+        },
+        {
+          "en": "spicy",
+          "ko": "매운",
+          "ex": "Is this spicy?",
+          "exKo": "이거 매워요?",
+          "emo": "🌶️"
+        },
+        {
+          "en": "refill",
+          "ko": "리필",
+          "ex": "Can I get a refill?",
+          "exKo": "리필해 주실 수 있어요?",
+          "emo": "🔄"
+        },
+        {
+          "en": "check",
+          "ko": "계산서",
+          "ex": "Can we get the check, please?",
+          "exKo": "계산서 좀 주시겠어요?",
+          "emo": "🧾"
+        },
+        {
+          "en": "tip",
+          "ko": "팁",
+          "ex": "Is the tip included?",
+          "exKo": "팁이 포함돼 있어요?",
+          "emo": "💰"
+        },
+        {
+          "en": "split the bill",
+          "ko": "나눠서 계산하다",
+          "ex": "Can we split the bill?",
+          "exKo": "나눠서 계산해도 될까요?",
+          "emo": "💳"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, welcome! Do you have a reservation?",
+          "ko": "안녕하세요, 어서 오세요! 예약하셨어요?"
+        },
+        {
+          "who": "B",
+          "en": "Yes, a table for two at seven.",
+          "ko": "네, 7시에 두 명이요."
+        },
+        {
+          "who": "A",
+          "en": "Great. This way, please.",
+          "ko": "좋아요. 이쪽으로 오세요."
+        },
+        {
+          "who": "B",
+          "en": "What do you recommend?",
+          "ko": "뭐가 맛있어요?"
+        },
+        {
+          "who": "A",
+          "en": "The chicken pasta is our most popular dish.",
+          "ko": "치킨 파스타가 저희 집에서 제일 인기 있는 메뉴예요."
+        },
+        {
+          "who": "B",
+          "en": "Is it spicy?",
+          "ko": "매워요?"
+        },
+        {
+          "who": "A",
+          "en": "Just a little.",
+          "ko": "아주 조금요."
+        },
+        {
+          "who": "B",
+          "en": "Okay, I'll have that.",
+          "ko": "좋아요, 그걸로 할게요."
+        }
+      ]
     }
   ],
   "grammar": [
@@ -685,6 +808,59 @@
           "k": "제가 여기 앉아도 될까요?"
         }
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "level": "A2",
+      "t": "some · any (조금, 하나도)",
+      "s": "있는지 묻고, 조금 달라고 하고, 없다고 말하기",
+      "b": "<b>some</b> = 조금, 몇 개 (긍정문에서)<br><b>any</b> = 조금이라도, 하나라도 (부정문과 질문에서)<br><b>not ~ any</b> = 하나도 없어요<br>권하거나 부탁할 때는 질문이어도 <b>some</b>을 써요: Would you like <b>some</b> water?",
+      "ex": [
+        [
+          "I'd like some water, please.",
+          "물 좀 주세요."
+        ],
+        [
+          "Do you have any tables for four?",
+          "네 명 앉을 자리 있어요?"
+        ],
+        [
+          "Sorry, we don't have any tables right now.",
+          "죄송해요, 지금은 빈자리가 하나도 없어요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "We don't have ___ milk.",
+          "o": [
+            "any",
+            "some",
+            "a"
+          ],
+          "a": 0,
+          "k": "우유가 하나도 없어요."
+        },
+        {
+          "q": "I'd like ___ coffee, please.",
+          "o": [
+            "some",
+            "any",
+            "many"
+          ],
+          "a": 0,
+          "k": "커피 좀 주세요."
+        },
+        {
+          "q": "Do you have ___ questions?",
+          "o": [
+            "any",
+            "a",
+            "much"
+          ],
+          "a": 0,
+          "k": "질문 있으세요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -787,9 +963,39 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-10-31",
+      "en": "I'll have the same.",
+      "ko": "저도 같은 걸로 할게요.",
+      "note": "함께 간 사람이 먼저 주문했는데, 나도 똑같은 걸 먹고 싶을 때 써요. 식당이나 카페에서 아주 자주 들어요.",
+      "ex": [
+        [
+          "I'll have the same, please.",
+          "저도 같은 걸로 주세요."
+        ],
+        [
+          "She'll have the pasta. — I'll have the same.",
+          "이분은 파스타로 할게요. — 저도 같은 걸로요."
+        ]
+      ],
+      "quiz": {
+        "q": "친구가 먼저 주문했어요. 나도 똑같은 걸 먹고 싶다면?",
+        "o": [
+          "I'll have the same.",
+          "I'll have the equal.",
+          "I'll have the copy."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-10-31",
+      "title": "새 단원 '식당에서' + 연속 학습 인사",
+      "body": "식당에서 자리를 잡고, 메뉴를 추천받고, 계산하는 단원이 생겼어요. 이제 학습 탭 첫 인사에서 며칠째 연속으로 공부 중인지 알려 줘요. 기록이 끊겨도 괜찮아요. 최고 기록을 보여 주며 다시 시작하도록 응원해요."
+    },
     {
       "date": "2026-10-30",
       "title": "새 단원 '길 묻기' + 매일 달라지는 축하 문구",

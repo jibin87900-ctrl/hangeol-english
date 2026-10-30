@@ -128,6 +128,17 @@ try {
     const bub = d.querySelector("#v-learn .hero .bubble");
     check(bub && /목표|해냈어요|오늘 몫|멋져요|최고예요/.test(bub.textContent), "목표 달성 문구가 없음");
   }
+  // 연속 학습 상황별 첫 인사 (어제까지 이어 옴 / 끊김)
+  {
+    const S = w.__hg.S, saved = JSON.stringify({ day: S.day, last: S.last, streak: S.streak, best: S.best });
+    const ymd = t => { const x = new Date(t); return x.getFullYear() + "-" + String(x.getMonth() + 1).padStart(2, "0") + "-" + String(x.getDate()).padStart(2, "0"); };
+    const bubble = async () => { click(d.querySelector('.tab[data-v="me"]'), "탭 me"); await sleep(3); click(d.querySelector('.tab[data-v="learn"]'), "탭 learn"); await sleep(3); return (d.querySelector("#v-learn .hero .bubble") || {}).textContent || ""; };
+    S.day.xp = 0; S.day.goalMet = false; S.last = ymd(Date.now() - 864e5); S.streak = 3; S.best = Math.max(S.best || 0, 3);
+    check(/연속 3일째/.test(await bubble()), "연속 학습 중 인사 문구가 없음");
+    S.last = ymd(Date.now() - 3 * 864e5); S.best = 5;
+    check(/다시 시작.*최고 기록은 5일/.test(await bubble()), "연속 기록이 끊겼을 때 인사 문구가 없음");
+    Object.assign(S, JSON.parse(saved));
+  }
   for (const v of ["chat", "words", "me", "learn"]) {
     click(d.querySelector(`.tab[data-v="${v}"]`), "탭 " + v); await sleep(3);
     check(!$("#v-" + v).hidden && $("#v-" + v).innerHTML.trim().length > 50, "탭 화면이 비어 있음: " + v);

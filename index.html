@@ -959,9 +959,12 @@ const GOAL_MSGS = ["오늘 목표 달성! 대단해요. 더 하면 실력이 쑥
 function renderLearn(){
   ensureDay();
   const units = allUnits(); const cur = currentNode(); const goal = S.settings.goal; const left = Math.max(0, goal - S.day.xp);
-  const seenN = Object.keys(S.words).length;
+  const seenN = Object.keys(S.words).length; const st = streakNow();
   const msg = S.day.goalMet ? GOAL_MSGS[todayNum() % GOAL_MSGS.length]
-    : S.day.xp === 0 ? (S.lessons ? "다시 왔네요! 오늘도 한 걸음 가 볼까요?" : "안녕하세요! 저랑 영어 첫걸음 떼 봐요.")
+    : S.day.xp === 0 ? (!S.lessons ? "안녕하세요! 저랑 영어 첫걸음 떼 봐요."
+      : st > 0 ? "연속 " + st + "일째 공부 중이에요! 오늘도 목표를 채워서 이어 가 봐요."
+      : (S.best || 0) >= 2 ? "괜찮아요, 오늘부터 다시 시작하면 돼요. 최고 기록은 " + S.best + "일이에요."
+      : "다시 왔네요! 오늘도 한 걸음 가 볼까요?")
     : "좋아요! 오늘 목표까지 " + left + " XP 남았어요.";
   let html = `<div class="hero">${mascot(S.day.goalMet ? "cheer" : "happy", 76)}<div class="bubble">${esc(msg)}<small>오늘 ${S.day.xp} / ${goal} XP</small><div class="goal-bar"><i style="width:${Math.min(100, S.day.xp / goal * 100)}%"></i></div></div></div>`;
   html += dailyCards();
