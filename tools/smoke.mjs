@@ -162,6 +162,9 @@ try {
   check($("#sheet-wrap").hidden, "건너뛰기 창이 닫히지 않음");
   const cur = d.querySelector(".node.cur");
   check(cur && !d.querySelector(`.unit-banner [data-act="skip-ask"][data-u="0"]`), "건너뛴 뒤 앞 단원에 건너뛰기 버튼이 남음");
+  // 단원 배너 진도 표시: 다 끝낸 단원에 왕관
+  const doneUnit = [...d.querySelectorAll(".unit-banner")].some(b => (b.querySelector(".unit-prog") || {}).textContent === "👑 완료");
+  check(doneUnit, "다 끝낸 단원 배너에 '👑 완료' 표시가 없음");
 } catch (e) {
   problems.push(e.stack || String(e));
 }

@@ -594,6 +594,129 @@
           "ko": "좋아요, 그걸로 할게요."
         }
       ]
+    },
+    {
+      "id": "d20261101",
+      "date": "2026-11-01",
+      "name": "호텔에서",
+      "roles": {
+        "A": "호텔 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "check in",
+          "ko": "체크인하다",
+          "ex": "I'd like to check in, please.",
+          "exKo": "체크인하려고요.",
+          "emo": "🛎️"
+        },
+        {
+          "en": "front desk",
+          "ko": "프런트, 안내 데스크",
+          "ex": "Please ask at the front desk.",
+          "exKo": "프런트에 물어보세요.",
+          "emo": "🏨"
+        },
+        {
+          "en": "room key",
+          "ko": "방 열쇠, 카드키",
+          "ex": "Here's your room key.",
+          "exKo": "여기 방 카드키예요.",
+          "emo": "🔑"
+        },
+        {
+          "en": "floor",
+          "ko": "층",
+          "ex": "Your room is on the fifth floor.",
+          "exKo": "방은 5층이에요.",
+          "emo": "🏢"
+        },
+        {
+          "en": "elevator",
+          "ko": "엘리베이터",
+          "ex": "The elevator is on your right.",
+          "exKo": "엘리베이터는 오른쪽에 있어요.",
+          "emo": "🛗"
+        },
+        {
+          "en": "Wi-Fi password",
+          "ko": "와이파이 비밀번호",
+          "ex": "What's the Wi-Fi password?",
+          "exKo": "와이파이 비밀번호가 뭐예요?",
+          "emo": "📶"
+        },
+        {
+          "en": "included",
+          "ko": "포함된",
+          "ex": "Is breakfast included?",
+          "exKo": "조식 포함이에요?",
+          "emo": "✅"
+        },
+        {
+          "en": "towel",
+          "ko": "수건",
+          "ex": "Can I get some extra towels?",
+          "exKo": "수건 좀 더 주실 수 있어요?",
+          "emo": "🛁"
+        },
+        {
+          "en": "check out",
+          "ko": "체크아웃하다",
+          "ex": "I need to check out by eleven.",
+          "exKo": "11시까지 체크아웃해야 해요.",
+          "emo": "🧳"
+        },
+        {
+          "en": "one night",
+          "ko": "1박, 하룻밤",
+          "ex": "I'm staying for one night.",
+          "exKo": "하룻밤 묵을 거예요.",
+          "emo": "🌙"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, welcome! How can I help you?",
+          "ko": "안녕하세요, 어서 오세요! 무엇을 도와드릴까요?"
+        },
+        {
+          "who": "B",
+          "en": "Hi, I'd like to check in. I have a reservation.",
+          "ko": "안녕하세요, 체크인하려고요. 예약했어요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. Can I see your ID, please?",
+          "ko": "네. 신분증 좀 보여 주시겠어요?"
+        },
+        {
+          "who": "B",
+          "en": "Here you go. Is breakfast included?",
+          "ko": "여기 있어요. 조식 포함이에요?"
+        },
+        {
+          "who": "A",
+          "en": "Yes, from seven to ten. Here's your room key.",
+          "ko": "네, 7시부터 10시까지예요. 여기 방 카드키예요."
+        },
+        {
+          "who": "B",
+          "en": "Thanks. Which floor is my room on?",
+          "ko": "감사해요. 제 방은 몇 층이에요?"
+        },
+        {
+          "who": "A",
+          "en": "The fifth floor. The elevator is on your right.",
+          "ko": "5층이에요. 엘리베이터는 오른쪽에 있어요."
+        },
+        {
+          "who": "B",
+          "en": "Great, thank you!",
+          "ko": "좋아요, 감사합니다!"
+        }
+      ]
     }
   ],
   "grammar": [
@@ -716,7 +839,7 @@
         ],
         [
           "She has to work on Saturday.",
-          "그녀는 토요일에 일해야 해요."
+          "그 친구는 토요일에 일해야 해요."
         ],
         [
           "You don't have to pay now.",
@@ -742,7 +865,7 @@
             "is"
           ],
           "a": 0,
-          "k": "그는 내일 일찍 일어나야 해요."
+          "k": "그 사람은 내일 일찍 일어나야 해요."
         },
         {
           "q": "It's free. You don't ___ to pay.",
@@ -861,6 +984,59 @@
           "k": "질문 있으세요?"
         }
       ]
+    },
+    {
+      "date": "2026-11-01",
+      "level": "A2",
+      "t": "from ~ to · until · by (시간 범위)",
+      "s": "언제부터 언제까지인지, 늦어도 몇 시까지인지 말하기",
+      "b": "<b>from</b> A <b>to</b> B = A부터 B까지<br><b>until</b> + 시간 = ~까지 (그때까지 계속)<br><b>by</b> + 시간 = 늦어도 ~까지 (그 전에 끝내기)<br>예: I'm staying <b>until</b> Sunday. (일요일까지 계속 머물러요) / Please check out <b>by</b> 11. (늦어도 11시까지 나가 주세요)",
+      "ex": [
+        [
+          "Breakfast is from seven to ten.",
+          "아침 식사는 7시부터 10시까지예요."
+        ],
+        [
+          "Please check out by eleven.",
+          "11시까지 체크아웃해 주세요."
+        ],
+        [
+          "I'm staying until Sunday.",
+          "일요일까지 머물러요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "The front desk is open from 7 a.m. ___ 11 p.m.",
+          "o": [
+            "to",
+            "at",
+            "on"
+          ],
+          "a": 0,
+          "k": "프런트는 오전 7시부터 밤 11시까지 열어요."
+        },
+        {
+          "q": "Please check out ___ 11 a.m.",
+          "o": [
+            "by",
+            "since",
+            "on"
+          ],
+          "a": 0,
+          "k": "오전 11시까지 체크아웃해 주세요."
+        },
+        {
+          "q": "I'll stay here ___ Sunday.",
+          "o": [
+            "until",
+            "by",
+            "at"
+          ],
+          "a": 0,
+          "k": "일요일까지 여기 머물 거예요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -942,7 +1118,7 @@
     {
       "date": "2026-10-30",
       "en": "I'm not from around here.",
-      "ko": "저도 이 동네 사람이 아니에요.",
+      "ko": "이 동네 사람이 아니에요.",
       "note": "누가 길을 물었는데 나도 잘 모를 때 써요. 내가 길을 물을 때 '이 동네를 잘 몰라서요'라고 먼저 말할 때도 써요.",
       "ex": [
         [
@@ -988,9 +1164,39 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-01",
+      "en": "I'm all set.",
+      "ko": "다 됐어요. / 필요한 거 없어요.",
+      "note": "직원이 '더 필요한 거 있으세요?'라고 물을 때 괜찮다고 답하는 말이에요. 준비가 다 끝났다고 할 때도 써요.",
+      "ex": [
+        [
+          "Do you need anything else? — No, I'm all set. Thanks.",
+          "더 필요한 거 있으세요? — 아니요, 괜찮아요. 감사해요."
+        ],
+        [
+          "I'm all set. Let's go!",
+          "준비 다 됐어요. 가요!"
+        ]
+      ],
+      "quiz": {
+        "q": "호텔 직원이 '더 필요한 거 있으세요?'라고 물어요. 다 괜찮다면?",
+        "o": [
+          "No, I'm all set. Thanks.",
+          "No, I'm all setting. Thanks.",
+          "No, I set all. Thanks."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-11-01",
+      "title": "새 단원 '호텔에서' + 단원 진도 표시",
+      "body": "호텔에 체크인하고, 조식과 와이파이를 묻는 단원이 생겼어요. 이제 학습 탭의 단원 배너에 몇 단계를 끝냈는지(예: 3/5) 나오고, 다 끝낸 단원에는 👑 완료 표시가 붙어요."
+    },
     {
       "date": "2026-10-31",
       "title": "새 단원 '식당에서' + 연속 학습 인사",

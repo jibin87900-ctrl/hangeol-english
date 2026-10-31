@@ -123,6 +123,7 @@ textarea{resize:none;line-height:1.45}
 .unit-banner small{display:block;opacity:.9;font-weight:900;letter-spacing:.08em;font-size:12px}
 .unit-banner h2{font-size:20px;font-weight:900;letter-spacing:-.01em;margin-top:2px}
 .unit-banner p{font-size:13px;opacity:.92;font-weight:700}
+.unit-prog{display:inline-block;margin-left:4px;padding:1px 7px;border-radius:999px;background:rgba(255,255,255,.22);letter-spacing:0;font-size:11px}
 .guide-btn{flex:none;appearance:none;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;border-radius:14px;padding:9px 12px;font-weight:900;font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer}
 .guide-btn svg{width:18px;height:18px}
 .nodes{display:grid;justify-items:center;gap:22px;padding:34px 0 30px}
@@ -974,7 +975,9 @@ function renderLearn(){
   units.forEach((u, ui) => {
     const col = u.daily ? "grape" : UCOL[ui % UCOL.length]; const dir = ui % 2 ? -1 : 1;
     if (u.daily && !dailyHead){ dailyHead = true; html += `<h2 class="sec-title">매일 새로 추가되는 단원</h2>`; }
-    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.daily ? "오늘의 단원 · " + fmtDate(u.date) + (isNew(u.date) ? ' <span class="new-badge">NEW</span>' : "") : u.ai ? "AI 단원" : "UNIT " + (ui + 1)}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div><div class="banner-btns">${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}${!u.daily && !u.ai && cur && units.findIndex(x => x.id === cur.u.id) < ui ? `<button class="guide-btn" data-act="skip-ask" data-u="${ui}">여기로 건너뛰기</button>` : ""}</div></div>`;
+    const nDone = KINDS.filter(k => S.nodes[u.id + "-" + k.k]).length;
+    const prog = nDone >= KINDS.length ? ' <span class="unit-prog">👑 완료</span>' : nDone ? ' <span class="unit-prog">' + nDone + "/" + KINDS.length + "</span>" : "";
+    html += `<div class="unit-banner" style="--c:var(--${col});--cd:var(--${col}-d)"><div><small>${u.daily ? "오늘의 단원 · " + fmtDate(u.date) + (isNew(u.date) ? ' <span class="new-badge">NEW</span>' : "") : u.ai ? "AI 단원" : "UNIT " + (ui + 1)}${prog}</small><h2>${esc(u.name)}</h2>${u.tips.length ? `<p>${esc(u.tips.map(gi => GRAMMAR[gi].t).join(" · "))}</p>` : ""}</div><div class="banner-btns">${u.tips.length ? `<button class="guide-btn" data-act="guide" data-u="${ui}">${IC.book}가이드</button>` : ""}${!u.daily && !u.ai && cur && units.findIndex(x => x.id === cur.u.id) < ui ? `<button class="guide-btn" data-act="skip-ask" data-u="${ui}">여기로 건너뛰기</button>` : ""}</div></div>`;
     html += `<div class="nodes">` + KINDS.map((k, ki) => {
       const id = u.id + "-" + k.k; const done = !!S.nodes[id]; const isCur = u.daily ? (!done && (ki === 0 || !!S.nodes[u.id + "-" + KINDS[ki - 1].k])) : (!!cur && cur.id === id);
       const x = [0, 58, 84, 58, 0][ki] * dir;

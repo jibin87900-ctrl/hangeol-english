@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-01
+- 새 단원 '호텔에서' (check in, front desk, room key, floor, Wi-Fi password, included, check out 등 10단어 + 호텔 직원과의 대화)
+- 문법 26과 'from ~ to · until · by (시간 범위)', 오늘의 표현 'I'm all set.'
+- 단원 배너에 진도(N/5)와 다 끝낸 단원 '👑 완료' 표시 · 점검 항목 추가 · 캐시 v10
+- 다듬기: 'have to' 예문 해석의 '그녀는/그는'을 자연스러운 말로, 'I'm not from around here.' 뜻을 '이 동네 사람이 아니에요.'로
+- 리서치: Mondly 매일→주간→월간 구조·Lingvist 문장 속 단어 카드 (`research/2026-11-01.md`)
+
 ## 2026-10-31
 - 새 단원 '식당에서' (reservation, table for two, recommend, spicy, check, split the bill 등 10단어 + 식당 직원과의 대화)
 - 문법 25과 'some · any (조금, 하나도)', 오늘의 표현 'I'll have the same.'
