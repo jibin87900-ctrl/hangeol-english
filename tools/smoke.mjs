@@ -143,6 +143,9 @@ try {
     click(d.querySelector(`.tab[data-v="${v}"]`), "탭 " + v); await sleep(3);
     check(!$("#v-" + v).hidden && $("#v-" + v).innerHTML.trim().length > 50, "탭 화면이 비어 있음: " + v);
   }
+  click(d.querySelector('.tab[data-v="words"]'), "탭 words"); await sleep(3);
+  check(/오늘 봤어요|어제 봤어요|일 전에 봤어요/.test($("#v-words").textContent), "단어장에 '마지막으로 본 날'이 없음");
+  click(d.querySelector('.tab[data-v="learn"]'), "탭 learn"); await sleep(3);
   check(JSON.parse(w.localStorage.getItem("hangeol-english-app") || "{}").v === 2, "공부 기록이 저장되지 않음");
 
   // 백업 알림 카드 → 백업 코드 창

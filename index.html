@@ -271,6 +271,7 @@ textarea{resize:none;line-height:1.45}
 .w-row .emo{font-size:26px;text-align:center}
 .w-row b{display:block;font-size:17px;font-weight:900}
 .w-row span.ko{display:block;font-size:13.5px;color:var(--muted);font-weight:700;overflow-wrap:anywhere}
+.w-row span.seen{display:block;font-size:12px;color:var(--muted);font-weight:700;opacity:.8;margin-top:2px}
 .lvl{display:flex;gap:3px}
 .lvl i{width:6px;height:16px;border-radius:3px;background:var(--line)}
 .lvl i.on{background:var(--sun)}
@@ -1412,8 +1413,13 @@ function renderWords(){
       const known = u.words.filter(w => S.words[w.id] && S.words[w.id].s >= 4).length;
       return `<details class="u-item"><summary><span>${u.daily ? "NEW · " : u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>
         <ul class="w-list">${u.words.map(w => { const c = S.words[w.id]; const s = c ? c.s : 0;
-          return `<li><button class="w-row" data-act="say" data-text="${esc(w.en)}"><span class="emo">${w.emo || "📘"}</span><span><b>${esc(w.en)}</b><span class="ko">${esc(w.ko)}</span></span><span class="lvl" aria-label="숙련도 ${s}/5">${[1,2,3,4,5].map(i => `<i class="${s >= i ? "on" : ""}"></i>`).join("")}</span></button></li>`; }).join("")}</ul></details>`;
+          return `<li><button class="w-row" data-act="say" data-text="${esc(w.en)}"><span class="emo">${w.emo || "📘"}</span><span><b>${esc(w.en)}</b><span class="ko">${esc(w.ko)}</span>${seenAgo(c)}</span><span class="lvl" aria-label="숙련도 ${s}/5">${[1,2,3,4,5].map(i => `<i class="${s >= i ? "on" : ""}"></i>`).join("")}</span></button></li>`; }).join("")}</ul></details>`;
     }).join("")}</div>`;
+}
+function seenAgo(c){
+  if (!c || !c.last) return "";
+  const d = todayNum() - c.last;
+  return `<span class="seen">${d <= 0 ? "오늘 봤어요" : d === 1 ? "어제 봤어요" : d + "일 전에 봤어요"}</span>`;
 }
 /* ═════════ 기록 ═════════ */
 let resetArmed = false;

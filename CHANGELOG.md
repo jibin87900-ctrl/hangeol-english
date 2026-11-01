@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-02
+- 새 단원 '헬스장에서' (membership, sign up, work out, per month, locker, treadmill, stretch, trainer 등 10단어 + 헬스장 직원과의 대화)
+- 문법 27과 'always · usually · never (얼마나 자주)', 오늘의 표현 'Take it easy.'
+- 단어장 단어마다 마지막으로 본 날('오늘/어제/N일 전에 봤어요') 표시 · 점검 항목 추가 · 캐시 v11
+- 다듬기: 최근 3일(길 묻기·식당·호텔) 다시 확인, 'by' 예문 해석을 '늦어도 11시까지'로 바꿔 until과 차이가 보이게
+- 리서치: Quizlet Learn 모드·Duolingo Explain My Answer (`research/2026-11-02.md`)
+
 ## 2026-11-01
 - 새 단원 '호텔에서' (check in, front desk, room key, floor, Wi-Fi password, included, check out 등 10단어 + 호텔 직원과의 대화)
 - 문법 26과 'from ~ to · until · by (시간 범위)', 오늘의 표현 'I'm all set.'

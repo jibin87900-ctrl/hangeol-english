@@ -717,6 +717,129 @@
           "ko": "좋아요, 감사합니다!"
         }
       ]
+    },
+    {
+      "id": "d20261102",
+      "date": "2026-11-02",
+      "name": "헬스장에서",
+      "roles": {
+        "A": "헬스장 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "membership",
+          "ko": "회원권, 회원 등록",
+          "ex": "How much is a membership?",
+          "exKo": "회원권은 얼마예요?",
+          "emo": "🎫"
+        },
+        {
+          "en": "sign up",
+          "ko": "등록하다, 가입하다",
+          "ex": "I want to sign up today.",
+          "exKo": "오늘 등록하고 싶어요.",
+          "emo": "✍️"
+        },
+        {
+          "en": "work out",
+          "ko": "운동하다",
+          "ex": "I work out three times a week.",
+          "exKo": "일주일에 세 번 운동해요.",
+          "emo": "💪"
+        },
+        {
+          "en": "per month",
+          "ko": "한 달에",
+          "ex": "It's fifty dollars per month.",
+          "exKo": "한 달에 50달러예요.",
+          "emo": "📆"
+        },
+        {
+          "en": "locker",
+          "ko": "사물함",
+          "ex": "You can use any locker.",
+          "exKo": "아무 사물함이나 쓰셔도 돼요.",
+          "emo": "🔐"
+        },
+        {
+          "en": "shower",
+          "ko": "샤워, 샤워실",
+          "ex": "The showers are over there.",
+          "exKo": "샤워실은 저쪽에 있어요.",
+          "emo": "🚿"
+        },
+        {
+          "en": "treadmill",
+          "ko": "러닝머신",
+          "ex": "I run on the treadmill.",
+          "exKo": "러닝머신에서 달려요.",
+          "emo": "🏃"
+        },
+        {
+          "en": "weights",
+          "ko": "아령, 웨이트 기구",
+          "ex": "I lift weights after work.",
+          "exKo": "퇴근하고 웨이트를 해요.",
+          "emo": "🏋️"
+        },
+        {
+          "en": "stretch",
+          "ko": "스트레칭하다",
+          "ex": "Always stretch before you run.",
+          "exKo": "달리기 전에는 꼭 스트레칭하세요.",
+          "emo": "🤸"
+        },
+        {
+          "en": "trainer",
+          "ko": "트레이너",
+          "ex": "My trainer is really nice.",
+          "exKo": "제 트레이너는 정말 친절해요.",
+          "emo": "🧑‍🏫"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "B",
+          "en": "Hi, I'd like to sign up for a membership.",
+          "ko": "안녕하세요, 회원 등록하고 싶어요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. It's fifty dollars per month.",
+          "ko": "네. 한 달에 50달러예요."
+        },
+        {
+          "who": "B",
+          "en": "Okay. Do you have lockers?",
+          "ko": "좋아요. 사물함도 있어요?"
+        },
+        {
+          "who": "A",
+          "en": "Yes, the lockers are next to the showers.",
+          "ko": "네, 사물함은 샤워실 옆에 있어요."
+        },
+        {
+          "who": "B",
+          "en": "Great. I usually work out after work.",
+          "ko": "좋네요. 저는 보통 퇴근하고 운동해요."
+        },
+        {
+          "who": "A",
+          "en": "No problem. We're open until eleven.",
+          "ko": "괜찮아요. 저희는 11시까지 열어요."
+        },
+        {
+          "who": "B",
+          "en": "Perfect. Can I start today?",
+          "ko": "딱 좋아요. 오늘부터 시작해도 돼요?"
+        },
+        {
+          "who": "A",
+          "en": "Of course! Welcome to the gym.",
+          "ko": "그럼요! 저희 헬스장에 오신 걸 환영해요."
+        }
+      ]
     }
   ],
   "grammar": [
@@ -998,7 +1121,7 @@
         ],
         [
           "Please check out by eleven.",
-          "11시까지 체크아웃해 주세요."
+          "늦어도 11시까지 체크아웃해 주세요."
         ],
         [
           "I'm staying until Sunday.",
@@ -1024,7 +1147,7 @@
             "on"
           ],
           "a": 0,
-          "k": "오전 11시까지 체크아웃해 주세요."
+          "k": "늦어도 오전 11시까지 체크아웃해 주세요."
         },
         {
           "q": "I'll stay here ___ Sunday.",
@@ -1035,6 +1158,59 @@
           ],
           "a": 0,
           "k": "일요일까지 여기 머물 거예요."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "level": "A2",
+      "t": "always · usually · never (얼마나 자주)",
+      "s": "평소에 얼마나 자주 하는지 말하고 묻기",
+      "b": "<b>always</b> 항상 · <b>usually</b> 보통 · <b>often</b> 자주 · <b>sometimes</b> 가끔 · <b>never</b> 전혀 안 해요<br>자리: 일반동사 <b>앞</b>, be동사 <b>뒤</b><br>예: I <b>usually</b> work out at night. / I'm <b>always</b> tired.<br>얼마나 자주 하는지 물을 때: <b>How often</b> do you ~?",
+      "ex": [
+        [
+          "I always stretch before I run.",
+          "저는 달리기 전에 항상 스트레칭해요."
+        ],
+        [
+          "How often do you work out?",
+          "얼마나 자주 운동해요?"
+        ],
+        [
+          "She is never late.",
+          "그 사람은 절대 늦지 않아요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "I ___ drink coffee. I don't like it.",
+          "o": [
+            "never",
+            "always",
+            "usually"
+          ],
+          "a": 0,
+          "k": "저는 커피를 전혀 안 마셔요. 안 좋아하거든요."
+        },
+        {
+          "q": "___ often do you go to the gym?",
+          "o": [
+            "How",
+            "What",
+            "When"
+          ],
+          "a": 0,
+          "k": "헬스장에 얼마나 자주 가요?"
+        },
+        {
+          "q": "She ___ late for work.",
+          "o": [
+            "is never",
+            "never is",
+            "never"
+          ],
+          "a": 0,
+          "k": "그 사람은 회사에 절대 늦지 않아요."
         }
       ]
     }
@@ -1189,9 +1365,44 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-02",
+      "en": "Take it easy.",
+      "ko": "무리하지 마세요. / 쉬엄쉬엄 하세요.",
+      "note": "너무 열심히 하는 사람에게 '무리하지 마'라고 할 때 써요. 친구와 헤어질 때 '잘 지내'라는 가벼운 인사로도 써요.",
+      "ex": [
+        [
+          "It's your first day. Take it easy.",
+          "첫날이니까 무리하지 마세요."
+        ],
+        [
+          "See you tomorrow. Take it easy!",
+          "내일 봐요. 잘 지내요!"
+        ]
+      ],
+      "quiz": {
+        "q": "친구가 헬스장에서 너무 무리하게 운동해요. '무리하지 마'라고 하려면?",
+        "o": [
+          "Take it easy.",
+          "Take it easily.",
+          "Take easy it."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
+    {
+      "date": "2026-11-02",
+      "title": "단어장에 '마지막으로 본 날' 표시",
+      "body": "단어장에서 단어마다 '오늘 봤어요', '3일 전에 봤어요'처럼 마지막으로 본 날이 작게 나와요. 오래된 단어는 한 번 눌러 발음을 다시 들어 보세요."
+    },
+    {
+      "date": "2026-11-02",
+      "title": "새 단원 '헬스장에서' 추가",
+      "body": "회원 등록, 사물함, 러닝머신처럼 헬스장에서 쓰는 단어 10개를 배워요. 문법은 '얼마나 자주'(always · usually · never)예요."
+    },
     {
       "date": "2026-11-01",
       "title": "새 단원 '호텔에서' + 단원 진도 표시",
