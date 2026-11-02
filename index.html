@@ -271,6 +271,9 @@ textarea{resize:none;line-height:1.45}
 .w-row .emo{font-size:26px;text-align:center}
 .w-row b{display:block;font-size:17px;font-weight:900}
 .w-row span.ko{display:block;font-size:13.5px;color:var(--muted);font-weight:700;overflow-wrap:anywhere}
+.w-filter{display:flex;justify-content:flex-end}
+.chip.on{border-color:var(--blue);color:var(--blue-ink)}
+.w-filter-note{font-size:13px;font-weight:700;margin:-4px 2px 0}
 .w-row span.seen{display:block;font-size:12px;color:var(--muted);font-weight:700;opacity:.8;margin-top:2px}
 .lvl{display:flex;gap:3px}
 .lvl i{width:6px;height:16px;border-radius:3px;background:var(--line)}
@@ -1404,15 +1407,21 @@ function openGuide(ui){
     ${u.tips.map(gi => { const g = GRAMMAR[gi]; return `<div style="display:grid;gap:10px"><p style="font-weight:900;font-size:17px">${esc(g.t)}</p><div class="rule">${g.b}</div><div class="ex-list">${g.ex.map(e => `<div class="ex-item"><button class="spk-mini" data-act="say" data-text="${esc(e[0])}" aria-label="듣기">${IC.spk}</button><div><p>${esc(e[0])}</p><p>${esc(e[1])}</p></div></div>`).join("")}</div></div>`; }).join("")}`);
 }
 /* ═════════ 단어장 ═════════ */
+let wordsWeakOnly = false;
+function isWeakWord(w){ const c = S.words[w.id]; return !!c && c.s <= 1; }
 function renderWords(){
   const units = allUnits(); const seen = Object.keys(S.words).length; const strong = Object.values(S.words).filter(c => c.s >= 4).length;
+  const weakN = units.reduce((n, u) => n + u.words.filter(isWeakWord).length, 0); if (!weakN) wordsWeakOnly = false;
   $("#v-words").innerHTML = `<h1 class="h-title">단어장</h1>
     <div class="hero">${mascot("happy", 64)}<div class="bubble">지금까지 ${seen}개 단어를 봤고, ${strong}개는 확실히 외웠어요!<small>노란 막대가 많을수록 잘 아는 단어예요</small></div></div>
     <button class="b3 sun wide" data-act="weak"${seen < 4 ? " disabled" : ""}>${IC.bolt}약한 단어 복습${seen >= 4 ? " " + weakCount() + "개" : ""} +10 XP</button>
+    ${weakN ? `<div class="w-filter"><button class="chip${wordsWeakOnly ? " on" : ""}" data-act="words-weak" aria-pressed="${wordsWeakOnly}">${wordsWeakOnly ? "모든 단어 보기" : "자주 틀린 단어만 보기 " + weakN + "개"}</button></div>` : ""}
+    ${wordsWeakOnly ? `<p class="muted w-filter-note">숙련도 막대가 1칸 이하인 단어예요. 눌러서 발음을 들어 보세요.</p>` : ""}
     <div class="unit-list">${units.map((u, ui) => {
       const known = u.words.filter(w => S.words[w.id] && S.words[w.id].s >= 4).length;
-      return `<details class="u-item"><summary><span>${u.daily ? "NEW · " : u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>
-        <ul class="w-list">${u.words.map(w => { const c = S.words[w.id]; const s = c ? c.s : 0;
+      const list = wordsWeakOnly ? u.words.filter(isWeakWord) : u.words; if (!list.length) return "";
+      return `<details class="u-item"${wordsWeakOnly ? " open" : ""}><summary><span>${u.daily ? "NEW · " : u.ai ? "AI · " : (ui + 1) + ". "}${esc(u.name)}</span><span class="muted">${known}/${u.words.length} 익힘</span></summary>
+        <ul class="w-list">${list.map(w => { const c = S.words[w.id]; const s = c ? c.s : 0;
           return `<li><button class="w-row" data-act="say" data-text="${esc(w.en)}"><span class="emo">${w.emo || "📘"}</span><span><b>${esc(w.en)}</b><span class="ko">${esc(w.ko)}</span>${seenAgo(c)}</span><span class="lvl" aria-label="숙련도 ${s}/5">${[1,2,3,4,5].map(i => `<i class="${s >= i ? "on" : ""}"></i>`).join("")}</span></button></li>`; }).join("")}</ul></details>`;
     }).join("")}</div>`;
 }
@@ -1493,6 +1502,7 @@ document.addEventListener("click", e => {
   else if (a === "say") say(b.dataset.text);
   else if (a === "say-slow") say(b.dataset.text, 0.55);
   else if (a === "node") nodeTap(b.dataset.id);
+  else if (a === "words-weak"){ wordsWeakOnly = !wordsWeakOnly; renderWords(); }
   else if (a === "weak"){ if (Object.keys(S.words).length >= 4) startLesson(weakSteps(), {weak:true}); }
   else if (a === "guide") openGuide(+b.dataset.u);
   else if (a === "sheet-close") closeSheet();

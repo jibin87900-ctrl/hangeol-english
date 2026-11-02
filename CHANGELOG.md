@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-03
+- 새 단원 '배달·택배 받기' (package, delivery, deliver, address, on the way, front door, doorbell, missing 등 10단어 + 배달 기사와의 대화)
+- 문법 28과 'mine · yours (누구의 것)', 오늘의 표현 'Keep the change.'
+- 단어장에 '자주 틀린 단어만 보기' 필터 (숙련도 1칸 이하 단어만, 다시 누르면 전체) · 점검 항목 추가 · 캐시 v12
+- 다듬기: 최근 3일(식당·호텔·헬스장) 다시 확인, 헬스장 대화 'No problem.' 해석을 '문제없어요. 저희는 밤 11시까지 열어요.'로
+- 리서치: Drops 5분 단어 세션·LingQ Mini Stories (`research/2026-11-03.md`)
+
 ## 2026-11-02
 - 새 단원 '헬스장에서' (membership, sign up, work out, per month, locker, treadmill, stretch, trainer 등 10단어 + 헬스장 직원과의 대화)
 - 문법 27과 'always · usually · never (얼마나 자주)', 오늘의 표현 'Take it easy.'

@@ -827,7 +827,7 @@
         {
           "who": "A",
           "en": "No problem. We're open until eleven.",
-          "ko": "괜찮아요. 저희는 11시까지 열어요."
+          "ko": "문제없어요. 저희는 밤 11시까지 열어요."
         },
         {
           "who": "B",
@@ -838,6 +838,124 @@
           "who": "A",
           "en": "Of course! Welcome to the gym.",
           "ko": "그럼요! 저희 헬스장에 오신 걸 환영해요."
+        }
+      ]
+    },
+    {
+      "id": "d20261103",
+      "date": "2026-11-03",
+      "name": "배달·택배 받기",
+      "roles": {
+        "A": "배달 기사",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "package",
+          "ko": "택배, 소포",
+          "ex": "Your package is here.",
+          "exKo": "택배 왔어요.",
+          "emo": "📦"
+        },
+        {
+          "en": "delivery",
+          "ko": "배달",
+          "ex": "Delivery is free today.",
+          "exKo": "오늘은 배달비가 무료예요.",
+          "emo": "🛵"
+        },
+        {
+          "en": "address",
+          "ko": "주소",
+          "ex": "What's your address?",
+          "exKo": "주소가 어떻게 되세요?",
+          "emo": "🏠"
+        },
+        {
+          "en": "deliver",
+          "ko": "배달하다",
+          "ex": "Do you deliver to this area?",
+          "exKo": "이 동네도 배달돼요?",
+          "emo": "🚚"
+        },
+        {
+          "en": "on the way",
+          "ko": "가는 중인, 오는 중인",
+          "ex": "Your food is on the way.",
+          "exKo": "음식이 지금 가고 있어요.",
+          "emo": "🛣️"
+        },
+        {
+          "en": "front door",
+          "ko": "현관문",
+          "ex": "Someone is at the front door.",
+          "exKo": "현관에 누가 왔어요.",
+          "emo": "🚪"
+        },
+        {
+          "en": "leave",
+          "ko": "두고 가다",
+          "ex": "You can leave it here.",
+          "exKo": "여기 두고 가셔도 돼요.",
+          "emo": "👐"
+        },
+        {
+          "en": "doorbell",
+          "ko": "초인종",
+          "ex": "I didn't hear the doorbell.",
+          "exKo": "초인종 소리를 못 들었어요.",
+          "emo": "🔔"
+        },
+        {
+          "en": "apartment",
+          "ko": "아파트, (아파트) 집",
+          "ex": "I live in apartment 302.",
+          "exKo": "저는 302호에 살아요.",
+          "emo": "🏘️"
+        },
+        {
+          "en": "missing",
+          "ko": "빠진, 없어진",
+          "ex": "One drink is missing.",
+          "exKo": "음료가 하나 빠졌어요.",
+          "emo": "❓"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, I have a delivery for apartment 302.",
+          "ko": "안녕하세요, 302호에 배달 왔어요."
+        },
+        {
+          "who": "B",
+          "en": "Oh, that's me. Thank you!",
+          "ko": "아, 저예요. 감사해요!"
+        },
+        {
+          "who": "A",
+          "en": "Here's your order. Enjoy!",
+          "ko": "주문하신 음식이에요. 맛있게 드세요!"
+        },
+        {
+          "who": "B",
+          "en": "Wait, I think one drink is missing.",
+          "ko": "잠깐만요, 음료가 하나 빠진 것 같아요."
+        },
+        {
+          "who": "A",
+          "en": "Oh, I'm so sorry. I'll bring it in about ten minutes.",
+          "ko": "아, 정말 죄송해요. 10분쯤 뒤에 갖다드릴게요."
+        },
+        {
+          "who": "B",
+          "en": "Thanks. Can you just leave it at the front door?",
+          "ko": "감사해요. 그냥 현관문 앞에 두고 가 주실 수 있어요?"
+        },
+        {
+          "who": "A",
+          "en": "Sure, no problem.",
+          "ko": "네, 그럴게요."
         }
       ]
     }
@@ -1213,6 +1331,59 @@
           "k": "그 사람은 회사에 절대 늦지 않아요."
         }
       ]
+    },
+    {
+      "date": "2026-11-03",
+      "level": "A2",
+      "t": "mine · yours (누구의 것)",
+      "s": "'제 거예요', '누구 거예요?' 말하기",
+      "b": "<b>mine</b> 내 것 · <b>yours</b> 당신 것 · <b>his</b> 그 남자 것 · <b>hers</b> 그 여자 것 · <b>ours</b> 우리 것 · <b>theirs</b> 그 사람들 것<br>my bag → <b>mine</b> 처럼, '내 + 물건'을 한 단어로 줄여요<br>뒤에 명사를 붙이지 않아요: This is <b>mine</b>. (O) / This is mine bag. (X)<br>누구 것인지 물을 때: <b>Whose</b> ~ is this?",
+      "ex": [
+        [
+          "Is this package yours?",
+          "이 택배 당신 거예요?"
+        ],
+        [
+          "Yes, it's mine. Thank you.",
+          "네, 제 거예요. 감사해요."
+        ],
+        [
+          "Whose phone is this?",
+          "이거 누구 휴대폰이에요?"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "This coffee isn't ___. I ordered tea.",
+          "o": [
+            "mine",
+            "my",
+            "me"
+          ],
+          "a": 0,
+          "k": "이 커피는 제 게 아니에요. 저는 차를 주문했어요."
+        },
+        {
+          "q": "Is this umbrella ___?",
+          "o": [
+            "yours",
+            "your",
+            "you"
+          ],
+          "a": 0,
+          "k": "이 우산 당신 거예요?"
+        },
+        {
+          "q": "___ bag is this?",
+          "o": [
+            "Whose",
+            "Who",
+            "Where"
+          ],
+          "a": 0,
+          "k": "이거 누구 가방이에요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -1390,6 +1561,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-03",
+      "en": "Keep the change.",
+      "ko": "잔돈은 가지세요.",
+      "note": "현금으로 내고 거스름돈을 받지 않을 때 써요. 택시 기사님이나 배달 기사님께 팁처럼 남길 때 자주 해요.",
+      "ex": [
+        [
+          "Here's twenty dollars. Keep the change.",
+          "여기 20달러예요. 잔돈은 가지세요."
+        ],
+        [
+          "Thanks for the ride. Keep the change!",
+          "태워 주셔서 감사해요. 잔돈은 괜찮아요!"
+        ]
+      ],
+      "quiz": {
+        "q": "택시비가 18달러인데 20달러를 냈어요. 거스름돈을 안 받으려면?",
+        "o": [
+          "Keep the change.",
+          "Keep the changes.",
+          "Hold the change."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -1442,6 +1638,11 @@
       "date": "2026-10-27",
       "title": "매일 업데이트 시작!",
       "body": "이제 매일 새벽 5시에 새 단원, 오늘의 표현, 문법 새 과가 추가돼요. 첫 단원은 '카페에서'예요."
+    },
+    {
+      "date": "2026-11-03",
+      "title": "새 단원 '배달·택배 받기' · '자주 틀린 단어만 보기' 추가",
+      "body": "배달 기사님과 나누는 짧은 대화로 package, delivery, missing 같은 단어를 배워요. 단어장 위쪽 버튼을 누르면 숙련도가 낮은 단어만 모아서 볼 수 있어요. 한 번 더 누르면 모든 단어가 다시 보여요."
     }
   ]
 }

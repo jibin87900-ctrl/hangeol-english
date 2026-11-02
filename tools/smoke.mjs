@@ -145,6 +145,22 @@ try {
   }
   click(d.querySelector('.tab[data-v="words"]'), "탭 words"); await sleep(3);
   check(/오늘 봤어요|어제 봤어요|일 전에 봤어요/.test($("#v-words").textContent), "단어장에 '마지막으로 본 날'이 없음");
+  // 자주 틀린 단어만 보기 필터
+  {
+    const S = w.__hg.S, ids = Object.keys(S.words), saved = JSON.stringify(S.words);
+    ids.forEach((id, i) => { S.words[id].s = i === 0 ? 0 : 3; });
+    click(d.querySelector('.tab[data-v="me"]'), "탭 me"); await sleep(3);
+    click(d.querySelector('.tab[data-v="words"]'), "탭 words"); await sleep(3);
+    const chip = d.querySelector('#v-words [data-act="words-weak"]');
+    check(chip && /자주 틀린 단어만 보기 1개/.test(chip.textContent), "단어장에 '자주 틀린 단어만 보기' 버튼이 없음");
+    if (chip) {
+      click(chip, "자주 틀린 단어만 보기"); await sleep(3);
+      check(d.querySelectorAll("#v-words .w-row").length === 1, "자주 틀린 단어 필터가 단어를 거르지 않음");
+      click(d.querySelector('#v-words [data-act="words-weak"]'), "모든 단어 보기"); await sleep(3);
+      check(d.querySelectorAll("#v-words .w-row").length > 1, "모든 단어 보기로 돌아가지 않음");
+    }
+    S.words = JSON.parse(saved);
+  }
   click(d.querySelector('.tab[data-v="learn"]'), "탭 learn"); await sleep(3);
   check(JSON.parse(w.localStorage.getItem("hangeol-english-app") || "{}").v === 2, "공부 기록이 저장되지 않음");
 
