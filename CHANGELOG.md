@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-04
+- 새 단원 '미용실에서' (haircut, appointment, trim, bangs, shorter, hairstyle, shampoo, mirror, dye, look great 10단어 + 미용사와의 대화)
+- 문법 29과 'How long · How much · How many (얼마나 ~)', 오늘의 표현 'I love it!'
+- 다듬기: 최근 3일(헬스장·배달·미용실) 다시 확인, 'on the way' 예문 해석을 '음식이 지금 가는 중이에요.'로
+- 기능 변경 없음 (바로 넣을 만한 S 크기 후보가 없어 건너뜀)
+- 리서치: Pimsleur 회상 드릴·LingoDeer 문법 지식 카드 (`research/2026-11-04.md`)
+
 ## 2026-11-03
 - 새 단원 '배달·택배 받기' (package, delivery, deliver, address, on the way, front door, doorbell, missing 등 10단어 + 배달 기사와의 대화)
 - 문법 28과 'mine · yours (누구의 것)', 오늘의 표현 'Keep the change.'

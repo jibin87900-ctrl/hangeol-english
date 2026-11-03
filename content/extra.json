@@ -882,7 +882,7 @@
           "en": "on the way",
           "ko": "가는 중인, 오는 중인",
           "ex": "Your food is on the way.",
-          "exKo": "음식이 지금 가고 있어요.",
+          "exKo": "음식이 지금 가는 중이에요.",
           "emo": "🛣️"
         },
         {
@@ -956,6 +956,124 @@
           "who": "A",
           "en": "Sure, no problem.",
           "ko": "네, 그럴게요."
+        }
+      ]
+    },
+    {
+      "id": "d20261104",
+      "date": "2026-11-04",
+      "name": "미용실에서",
+      "roles": {
+        "A": "미용사",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "haircut",
+          "ko": "머리 자르기, 커트",
+          "ex": "I need a haircut.",
+          "exKo": "머리 좀 잘라야 해요.",
+          "emo": "💇"
+        },
+        {
+          "en": "appointment",
+          "ko": "예약",
+          "ex": "Do I need an appointment?",
+          "exKo": "예약해야 해요?",
+          "emo": "📅"
+        },
+        {
+          "en": "trim",
+          "ko": "다듬기, 살짝 자르기",
+          "ex": "Just a trim, please.",
+          "exKo": "살짝 다듬어만 주세요.",
+          "emo": "✂️"
+        },
+        {
+          "en": "bangs",
+          "ko": "앞머리",
+          "ex": "Can you cut my bangs?",
+          "exKo": "앞머리 좀 잘라 주실 수 있어요?",
+          "emo": "💁"
+        },
+        {
+          "en": "shorter",
+          "ko": "더 짧게, 더 짧은",
+          "ex": "A little shorter, please.",
+          "exKo": "조금만 더 짧게 해 주세요.",
+          "emo": "📏"
+        },
+        {
+          "en": "hairstyle",
+          "ko": "헤어스타일, 머리 모양",
+          "ex": "I want a new hairstyle.",
+          "exKo": "새로운 헤어스타일로 하고 싶어요.",
+          "emo": "💈"
+        },
+        {
+          "en": "shampoo",
+          "ko": "샴푸, 머리 감기",
+          "ex": "The shampoo smells nice.",
+          "exKo": "샴푸 냄새가 좋아요.",
+          "emo": "🧴"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울",
+          "ex": "Take a look in the mirror.",
+          "exKo": "거울 한번 보세요.",
+          "emo": "🪞"
+        },
+        {
+          "en": "dye",
+          "ko": "염색하다",
+          "ex": "I want to dye my hair brown.",
+          "exKo": "머리를 갈색으로 염색하고 싶어요.",
+          "emo": "🎨"
+        },
+        {
+          "en": "look great",
+          "ko": "멋져 보이다, 잘 어울리다",
+          "ex": "You look great!",
+          "exKo": "정말 잘 어울려요!",
+          "emo": "✨"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi! Do you have an appointment?",
+          "ko": "안녕하세요! 예약하셨어요?"
+        },
+        {
+          "who": "B",
+          "en": "Yes, at three. I need a haircut.",
+          "ko": "네, 3시로요. 머리 좀 자르려고요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. How short do you want it?",
+          "ko": "네. 얼마나 짧게 해 드릴까요?"
+        },
+        {
+          "who": "B",
+          "en": "Just a trim, please. And my bangs a little shorter.",
+          "ko": "살짝 다듬어만 주세요. 앞머리는 조금만 더 짧게요."
+        },
+        {
+          "who": "A",
+          "en": "Okay. All done! Take a look in the mirror.",
+          "ko": "알겠어요. 다 됐어요! 거울 한번 보세요."
+        },
+        {
+          "who": "B",
+          "en": "Wow, I love it. Thank you!",
+          "ko": "와, 정말 마음에 들어요. 감사해요!"
+        },
+        {
+          "who": "A",
+          "en": "You look great!",
+          "ko": "정말 잘 어울려요!"
         }
       ]
     }
@@ -1384,6 +1502,59 @@
           "k": "이거 누구 가방이에요?"
         }
       ]
+    },
+    {
+      "date": "2026-11-04",
+      "level": "A2",
+      "t": "How long · How much · How many (얼마나 ~)",
+      "s": "시간·값·개수를 '얼마나'로 묻기",
+      "b": "<b>How</b> + 형용사 = 얼마나 ~해요?<br><b>How long</b> 얼마나 오래 · <b>How much</b> 얼마(값, 양) · <b>How many</b> 몇 개, 몇 명<br><b>How much</b> + 셀 수 없는 것 (money, water) / <b>How many</b> + 셀 수 있는 것의 복수형 (people, days)<br>예: <b>How long</b> does it take? (얼마나 걸려요?)",
+      "ex": [
+        [
+          "How long does a haircut take?",
+          "커트는 얼마나 걸려요?"
+        ],
+        [
+          "How much is a trim?",
+          "다듬는 건 얼마예요?"
+        ],
+        [
+          "How many people are waiting?",
+          "몇 명이 기다리고 있어요?"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "___ much is the haircut?",
+          "o": [
+            "How",
+            "What",
+            "Which"
+          ],
+          "a": 0,
+          "k": "커트는 얼마예요?"
+        },
+        {
+          "q": "How ___ people are in your family?",
+          "o": [
+            "many",
+            "much",
+            "long"
+          ],
+          "a": 0,
+          "k": "가족이 몇 명이에요?"
+        },
+        {
+          "q": "How ___ does it take to get there?",
+          "o": [
+            "long",
+            "many",
+            "old"
+          ],
+          "a": 0,
+          "k": "거기까지 가는 데 얼마나 걸려요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -1586,6 +1757,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-04",
+      "en": "I love it!",
+      "ko": "정말 마음에 들어요!",
+      "note": "새 머리, 선물, 음식이 아주 마음에 들 때 써요. 'I like it.'보다 훨씬 기쁜 느낌이에요.",
+      "ex": [
+        [
+          "Do you like your new haircut? — I love it!",
+          "새 머리 마음에 들어요? — 정말 마음에 들어요!"
+        ],
+        [
+          "Thank you for the gift. I love it!",
+          "선물 고마워요. 정말 마음에 들어요!"
+        ]
+      ],
+      "quiz": {
+        "q": "미용실에서 머리를 자르고 거울을 봤는데, 아주 마음에 들어요. 뭐라고 할까요?",
+        "o": [
+          "I love it!",
+          "I love!",
+          "It loves me!"
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -1643,6 +1839,11 @@
       "date": "2026-11-03",
       "title": "새 단원 '배달·택배 받기' · '자주 틀린 단어만 보기' 추가",
       "body": "배달 기사님과 나누는 짧은 대화로 package, delivery, missing 같은 단어를 배워요. 단어장 위쪽 버튼을 누르면 숙련도가 낮은 단어만 모아서 볼 수 있어요. 한 번 더 누르면 모든 단어가 다시 보여요."
+    },
+    {
+      "date": "2026-11-04",
+      "title": "새 단원 '미용실에서' 추가",
+      "body": "예약하고, '살짝 다듬어 주세요', '앞머리는 조금만 더 짧게요'처럼 미용실에서 바로 쓰는 말을 배워요. 문법은 '얼마나 ~'를 묻는 How long · How much · How many예요."
     }
   ]
 }
