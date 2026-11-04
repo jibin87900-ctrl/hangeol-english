@@ -6,9 +6,10 @@
 | 아이디어 | 근거·출처 | 크기 | 위험 |
 |---|---|---|---|
 | 문법 퀴즈에 '왜 이 답인지' 한 줄 설명 (qz[].why 선택 필드) | Duolingo Explain My Answer (research/2026-11-02.md) | M | 낮음 |
-| 회화 듣기에서 내 역할(B) 문장 가리기 → 떠올린 뒤 탭해서 확인 | Speak 말하기 드릴 (research/2026-10-28.md), Pimsleur 기대 원리 (research/2026-11-04.md) | M | 낮음 |
+| 회화 듣기에서 내 역할(B) 문장 가리기 → 떠올린 뒤 탭해서 확인 | Speak 말하기 드릴 (research/2026-10-28.md), Pimsleur 기대 원리 (research/2026-11-04.md), Rosetta Stone Milestone (research/2026-11-05.md) | M | 낮음 |
 | 문법 탭에 '문법 카드' 목록 (끝낸 과의 제목·핵심 한 줄·예문 1개, 저장 키 추가 없음) | LingoDeer 지식 카드 (research/2026-11-04.md) | M | 낮음 |
 | 지난 매일 단원 대화를 단원 목록에서 바로 다시 듣기 | Pimsleur '지난 대화 찾기 어렵다' 불만 (research/2026-11-04.md) | M | 낮음 |
+| 말하기 판정 '너그럽게/보통' 설정 (저장 키 추가) | Rosetta Stone TruAccent 민감도 조절 (research/2026-11-05.md) | M | 낮음 |
 | 오늘의 표현 따라 말하기(마이크) 버튼 | Cake 표현 말하기 (research/2026-10-29.md) | M | 낮음 |
 | 회화 대화 줄의 단어를 눌러 뜻 보기·단어장에 담기 | Praktika 단어 저장 (research/2026-10-31.md) | M | 낮음 |
 | 매일 단원에 '나의 시점으로 다시 보기' 요약 1~2문장 (retell 선택 필드) | LingQ Mini Stories 다시 말하기 (research/2026-11-03.md) | M | 낮음 |
@@ -23,7 +24,9 @@
 | 회화 듣기에서 오늘 단어가 들어간 부분 강조 | Babbel 대화 속 단어 (research/2026-10-30.md) | M | 낮음 |
 | 레슨 안에서 틀린 단어를 끝나기 전에 한 번 더 출제 | Quizlet Learn 재시험 (research/2026-11-02.md) | M | 중간 |
 | 대화 전체 듣기 뒤 내용 확인 퀴즈 1문제 | Babbel 듣기→퀴즈 (research/2026-10-30.md), LingQ 질문 레슨 (research/2026-11-03.md) | M | 중간 |
-| 예문 빈칸 채우기 문제 (단어 예문에서 단어 빼기) | Lingvist 문장 속 카드 (research/2026-11-01.md) | M | 중간 |
+| 예문 빈칸 채우기 문제 (그 단원 단어의 짧은 예문에서 단어 빼기) | Lingvist 문장 속 카드 (research/2026-11-01.md), Clozemaster 빈칸 문장·초보자 부담 비판 (research/2026-11-05.md) | M | 중간 |
+| 듣고 맞는 이모지 고르기 문제 (번역 없이 소리→그림, 기존 emo 사용) | Rosetta Stone 그림 연결 (research/2026-11-05.md) | M | 중간 |
+| 새 레슨 중간에 '복습할 때가 된 단어' 1~2개 섞기 | Clozemaster Play 모드 (research/2026-11-05.md) | M | 중간 |
 | 복습 문제 유형 섞기 (듣기·쓰기·예문 빈칸, 영어→뜻/뜻→영어 번갈아) | Busuu 리뷰의 '복습이 반복적' 불만 (research/2026-10-27.md), Pimsleur 객관식 게임 비판·양방향 카드 (research/2026-11-04.md) | M | 중간 |
 | 일주일에 한 번 '쉬는 날'(하루 빠져도 연속 기록 유지, 저장 키 추가) | Duolingo Streak Freeze (research/2026-10-31.md) | M | 중간 |
 | 끊긴 다음 날 레슨 3개 하면 연속 기록 되살리기 | Duolingo 스트릭 되찾기 이벤트 (research/2026-10-31.md) | M | 중간 |
@@ -55,3 +58,4 @@
 | 2026-11-02 | Quizlet Learn 모드(틀린 것 재출제), Duolingo Explain My Answer(무료화) — 오답 처리·설명 관점 |
 | 2026-11-03 | Drops 5분 그림 단어 세션·아는 단어 건너뛰기, LingQ Mini Stories 다시 말하기·질문 — 짧은 세션·이야기 반복 관점 |
 | 2026-11-04 | Pimsleur 회상 드릴(간격 반복·기대 원리)·앱 복습 도구 평가, LingoDeer 문법 팁·지식 카드 — 먼저 떠올리기·문법 다시 보기 관점 |
+| 2026-11-05 | Clozemaster 문장 빈칸·간격 반복·초보자 부담 비판, Rosetta Stone 그림 몰입식 수업·TruAccent 민감도 — 문장 맥락·번역 없는 연결 관점 |

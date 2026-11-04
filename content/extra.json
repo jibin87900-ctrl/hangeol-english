@@ -944,8 +944,8 @@
         },
         {
           "who": "A",
-          "en": "Oh, I'm so sorry. I'll bring it in about ten minutes.",
-          "ko": "아, 정말 죄송해요. 10분쯤 뒤에 갖다드릴게요."
+          "en": "Oh, I'm so sorry. I'll bring it to you in ten minutes.",
+          "ko": "아, 정말 죄송해요. 10분 뒤에 갖다드릴게요."
         },
         {
           "who": "B",
@@ -1074,6 +1074,124 @@
           "who": "A",
           "en": "You look great!",
           "ko": "정말 잘 어울려요!"
+        }
+      ]
+    },
+    {
+      "id": "d20261105",
+      "date": "2026-11-05",
+      "name": "이웃과 인사",
+      "roles": {
+        "A": "이웃",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "neighbor",
+          "ko": "이웃",
+          "ex": "My neighbor is very friendly.",
+          "exKo": "제 이웃은 정말 친절해요.",
+          "emo": "🙋"
+        },
+        {
+          "en": "next door",
+          "ko": "옆집(에)",
+          "ex": "She lives next door.",
+          "exKo": "그분은 옆집에 살아요.",
+          "emo": "🚪"
+        },
+        {
+          "en": "move in",
+          "ko": "이사 오다, 입주하다",
+          "ex": "We moved in last week.",
+          "exKo": "저희는 지난주에 이사 왔어요.",
+          "emo": "🔑"
+        },
+        {
+          "en": "upstairs",
+          "ko": "위층(에)",
+          "ex": "My friend lives upstairs.",
+          "exKo": "제 친구가 위층에 살아요.",
+          "emo": "⬆️"
+        },
+        {
+          "en": "downstairs",
+          "ko": "아래층(에)",
+          "ex": "The laundry room is downstairs.",
+          "exKo": "세탁실은 아래층에 있어요.",
+          "emo": "⬇️"
+        },
+        {
+          "en": "garbage",
+          "ko": "쓰레기",
+          "ex": "Where do I put the garbage?",
+          "exKo": "쓰레기는 어디에 버려요?",
+          "emo": "🗑️"
+        },
+        {
+          "en": "recycling",
+          "ko": "분리수거, 재활용",
+          "ex": "Recycling day is Monday.",
+          "exKo": "분리수거 날은 월요일이에요.",
+          "emo": "♻️"
+        },
+        {
+          "en": "borrow",
+          "ko": "빌리다",
+          "ex": "Can I borrow your pen?",
+          "exKo": "펜 좀 빌려도 돼요?",
+          "emo": "🖊️"
+        },
+        {
+          "en": "stop by",
+          "ko": "잠깐 들르다",
+          "ex": "Stop by anytime.",
+          "exKo": "언제든 들르세요.",
+          "emo": "🚶"
+        },
+        {
+          "en": "noise",
+          "ko": "소음, 시끄러운 소리",
+          "ex": "Sorry about the noise.",
+          "exKo": "시끄럽게 해서 죄송해요.",
+          "emo": "🔊"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi! Are you new here?",
+          "ko": "안녕하세요! 새로 오셨어요?"
+        },
+        {
+          "who": "B",
+          "en": "Yes, I just moved in next door. I'm Jin.",
+          "ko": "네, 옆집에 막 이사 왔어요. 저는 진이에요."
+        },
+        {
+          "who": "A",
+          "en": "Nice to meet you, Jin. I'm Sarah. I live upstairs.",
+          "ko": "반가워요, 진 씨. 저는 세라예요. 위층에 살아요."
+        },
+        {
+          "who": "B",
+          "en": "Nice to meet you, too. Where does the garbage go?",
+          "ko": "저도 반가워요. 쓰레기는 어디에 버려요?"
+        },
+        {
+          "who": "A",
+          "en": "Behind the building. Recycling goes there, too.",
+          "ko": "건물 뒤에요. 분리수거도 거기에 하면 돼요."
+        },
+        {
+          "who": "B",
+          "en": "Thanks. Sorry about the noise this week.",
+          "ko": "감사해요. 이번 주에 시끄럽게 해서 죄송해요."
+        },
+        {
+          "who": "A",
+          "en": "Don't worry. Stop by anytime!",
+          "ko": "괜찮아요. 언제든 들르세요!"
         }
       ]
     }
@@ -1555,6 +1673,59 @@
           "k": "거기까지 가는 데 얼마나 걸려요?"
         }
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "level": "A2",
+      "t": "Can I ~? · May I ~? (해도 돼요?)",
+      "s": "내가 해도 되는지 허락 구하기",
+      "b": "<b>Can I</b> + 동사원형? = 제가 ~해도 돼요?<br><b>May I</b> + 동사원형? = 더 공손하게 (가게·회사·처음 보는 사람에게)<br>대답: <b>Sure.</b> / <b>Of course.</b> / <b>Sorry, you can't.</b><br>헷갈리지 마세요: <b>Can I</b> ~? 는 내가 해도 되는지 묻는 말, <b>Could you</b> ~? 는 상대에게 부탁하는 말이에요",
+      "ex": [
+        [
+          "Can I borrow your umbrella?",
+          "우산 좀 빌려도 돼요?"
+        ],
+        [
+          "May I come in?",
+          "들어가도 될까요?"
+        ],
+        [
+          "Can I park here? — Sorry, you can't.",
+          "여기 주차해도 돼요? — 죄송하지만 안 돼요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "___ I borrow your pen?",
+          "o": [
+            "Can",
+            "Do",
+            "Am"
+          ],
+          "a": 0,
+          "k": "펜 좀 빌려도 돼요?"
+        },
+        {
+          "q": "Can I ___ a question?",
+          "o": [
+            "ask",
+            "asking",
+            "asks"
+          ],
+          "a": 0,
+          "k": "질문 하나 해도 돼요?"
+        },
+        {
+          "q": "May I ___ your bathroom?",
+          "o": [
+            "use",
+            "to use",
+            "using"
+          ],
+          "a": 0,
+          "k": "화장실 좀 써도 될까요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -1782,6 +1953,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-05",
+      "en": "Let me know if you need anything.",
+      "ko": "필요한 거 있으면 말해 주세요.",
+      "note": "도와줄 마음이 있다는 걸 친절하게 전할 때 써요. 새 이웃, 회사 동료, 손님에게 두루 쓸 수 있어요.",
+      "ex": [
+        [
+          "Welcome! Let me know if you need anything.",
+          "환영해요! 필요한 거 있으면 말해 주세요."
+        ],
+        [
+          "I live next door. Let me know if you need anything.",
+          "저 옆집에 살아요. 필요한 거 있으면 말해 주세요."
+        ]
+      ],
+      "quiz": {
+        "q": "새로 이사 온 이웃에게 '필요한 거 있으면 말해 주세요'라고 하려면?",
+        "o": [
+          "Let me know if you need anything.",
+          "Let me knowing if you need anything.",
+          "Let me know if you needs anything."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -1844,6 +2040,11 @@
       "date": "2026-11-04",
       "title": "새 단원 '미용실에서' 추가",
       "body": "예약하고, '살짝 다듬어 주세요', '앞머리는 조금만 더 짧게요'처럼 미용실에서 바로 쓰는 말을 배워요. 문법은 '얼마나 ~'를 묻는 How long · How much · How many예요."
+    },
+    {
+      "date": "2026-11-05",
+      "title": "새 단원 '이웃과 인사' 추가",
+      "body": "새로 이사 와서 이웃과 인사하고, 쓰레기·분리수거는 어디에 하는지 묻는 말을 배워요. 문법은 '제가 ~해도 돼요?'를 묻는 Can I ~? · May I ~?예요."
     }
   ]
 }

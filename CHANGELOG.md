@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-05
+- 새 단원 '이웃과 인사' (neighbor, next door, move in, upstairs, downstairs, garbage, recycling, borrow, stop by, noise 10단어 + 이웃과의 대화)
+- 문법 30과 'Can I ~? · May I ~? (해도 돼요?)', 오늘의 표현 'Let me know if you need anything.'
+- 다듬기: 최근 3일(헬스장·배달·미용실) 다시 확인, 배달 대화 'I'll bring it in about ten minutes.'를 'bring it in'(안으로 들이다)으로 헷갈리지 않게 'I'll bring it to you in ten minutes.'로
+- 기능 변경 없음 (바로 넣을 만한 S 크기 후보가 없어 건너뜀)
+- 리서치: Clozemaster 문장 빈칸 학습·Rosetta Stone 그림 몰입식 수업 (`research/2026-11-05.md`)
+
 ## 2026-11-04
 - 새 단원 '미용실에서' (haircut, appointment, trim, bangs, shorter, hairstyle, shampoo, mirror, dye, look great 10단어 + 미용사와의 대화)
 - 문법 29과 'How long · How much · How many (얼마나 ~)', 오늘의 표현 'I love it!'
