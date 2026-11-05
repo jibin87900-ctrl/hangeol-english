@@ -1194,6 +1194,129 @@
           "ko": "괜찮아요. 언제든 들르세요!"
         }
       ]
+    },
+    {
+      "id": "d20261106",
+      "date": "2026-11-06",
+      "name": "병원에서",
+      "roles": {
+        "A": "의사",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "symptom",
+          "ko": "증상",
+          "ex": "What are your symptoms?",
+          "exKo": "어떤 증상이 있으세요?",
+          "emo": "📋"
+        },
+        {
+          "en": "dizzy",
+          "ko": "어지러운",
+          "ex": "I feel dizzy.",
+          "exKo": "어지러워요.",
+          "emo": "😵‍💫"
+        },
+        {
+          "en": "throw up",
+          "ko": "토하다",
+          "ex": "I feel like I'm going to throw up.",
+          "exKo": "토할 것 같아요.",
+          "emo": "🤢"
+        },
+        {
+          "en": "temperature",
+          "ko": "체온",
+          "ex": "Let me take your temperature.",
+          "exKo": "체온 좀 잴게요.",
+          "emo": "🌡️"
+        },
+        {
+          "en": "blood pressure",
+          "ko": "혈압",
+          "ex": "The nurse will check your blood pressure.",
+          "exKo": "간호사가 혈압을 잴 거예요.",
+          "emo": "🩺"
+        },
+        {
+          "en": "shot",
+          "ko": "주사",
+          "ex": "Do I need a shot?",
+          "exKo": "주사 맞아야 해요?",
+          "emo": "💉"
+        },
+        {
+          "en": "nurse",
+          "ko": "간호사",
+          "ex": "The nurse will call your name.",
+          "exKo": "간호사가 이름을 불러 줄 거예요.",
+          "emo": "👩‍⚕️"
+        },
+        {
+          "en": "waiting room",
+          "ko": "대기실",
+          "ex": "Please have a seat in the waiting room.",
+          "exKo": "대기실에 앉아서 기다려 주세요.",
+          "emo": "🪑"
+        },
+        {
+          "en": "insurance card",
+          "ko": "보험 카드",
+          "ex": "Do you have your insurance card?",
+          "exKo": "보험 카드 가지고 계세요?",
+          "emo": "💳"
+        },
+        {
+          "en": "get some rest",
+          "ko": "푹 쉬다",
+          "ex": "Go home and get some rest.",
+          "exKo": "집에 가서 푹 쉬세요.",
+          "emo": "🛌"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi, come on in. What brings you in today?",
+          "ko": "안녕하세요, 들어오세요. 오늘은 어디가 불편해서 오셨어요?"
+        },
+        {
+          "who": "B",
+          "en": "I have a fever, and I feel dizzy.",
+          "ko": "열이 나고 어지러워요."
+        },
+        {
+          "who": "A",
+          "en": "When did it start?",
+          "ko": "언제부터 그랬어요?"
+        },
+        {
+          "who": "B",
+          "en": "Last night. I threw up, too.",
+          "ko": "어젯밤부터요. 토하기도 했어요."
+        },
+        {
+          "who": "A",
+          "en": "Let me take your temperature. Hmm, it's a little high.",
+          "ko": "체온 좀 잴게요. 음, 조금 높네요."
+        },
+        {
+          "who": "B",
+          "en": "Do I need a shot?",
+          "ko": "주사 맞아야 해요?"
+        },
+        {
+          "who": "A",
+          "en": "No. Just drink lots of water and get some rest.",
+          "ko": "아니요. 물 많이 마시고 푹 쉬세요."
+        },
+        {
+          "who": "B",
+          "en": "Okay. Thank you, doctor.",
+          "ko": "네. 감사합니다, 선생님."
+        }
+      ]
     }
   ],
   "grammar": [
@@ -1726,6 +1849,59 @@
           "k": "화장실 좀 써도 될까요?"
         }
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "level": "A2",
+      "t": "feel · look · sound + 형용사 (~한 느낌이에요)",
+      "s": "몸 상태와 느낌 말하기",
+      "b": "<b>feel</b> + 형용사 = (내가) ~하게 느껴요 → I <b>feel</b> sick.<br><b>look</b> + 형용사 = ~해 보여요 → You <b>look</b> tired.<br><b>sound</b> + 형용사 = ~하게 들려요 → That <b>sounds</b> good.<br>주의: 뒤에는 <b>-ly(부사)</b>가 아니라 <b>형용사</b>를 써요. You look tiredly. (X)<br>He · She · It 뒤에서는 <b>feels · looks · sounds</b>",
+      "ex": [
+        [
+          "I feel much better today.",
+          "오늘은 몸이 훨씬 나아요."
+        ],
+        [
+          "You look tired. Are you okay?",
+          "피곤해 보여요. 괜찮아요?"
+        ],
+        [
+          "Pizza tonight? That sounds great!",
+          "오늘 저녁에 피자요? 좋아요!"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "You look ___. Are you okay?",
+          "o": [
+            "tired",
+            "tiredly",
+            "tire"
+          ],
+          "a": 0,
+          "k": "피곤해 보여요. 괜찮아요?"
+        },
+        {
+          "q": "I ___ much better now.",
+          "o": [
+            "feel",
+            "am feel",
+            "feeling"
+          ],
+          "a": 0,
+          "k": "이제 몸이 훨씬 나아요."
+        },
+        {
+          "q": "Coffee after lunch? That ___ good.",
+          "o": [
+            "sounds",
+            "sound",
+            "is sound"
+          ],
+          "a": 0,
+          "k": "점심 먹고 커피요? 좋아요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -1978,6 +2154,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-06",
+      "en": "I'm not feeling well.",
+      "ko": "몸이 좀 안 좋아요.",
+      "note": "몸이 아플 때 부드럽게 말하는 표현이에요. 병원에서 처음 말을 꺼낼 때나, 회사에서 일찍 들어가 봐야 할 때 써요.",
+      "ex": [
+        [
+          "I'm not feeling well. Can I go home early?",
+          "몸이 좀 안 좋아요. 일찍 집에 가도 될까요?"
+        ],
+        [
+          "Sorry, I'm not feeling well today.",
+          "미안해요, 오늘 몸이 좀 안 좋아요."
+        ]
+      ],
+      "quiz": {
+        "q": "동료에게 '저 몸이 좀 안 좋아요'라고 하려면?",
+        "o": [
+          "I'm not feeling well.",
+          "I'm not feel well.",
+          "I don't feeling well."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -2045,6 +2246,11 @@
       "date": "2026-11-05",
       "title": "새 단원 '이웃과 인사' 추가",
       "body": "새로 이사 와서 이웃과 인사하고, 쓰레기·분리수거는 어디에 하는지 묻는 말을 배워요. 문법은 '제가 ~해도 돼요?'를 묻는 Can I ~? · May I ~?예요."
+    },
+    {
+      "date": "2026-11-06",
+      "title": "새 단원 '병원에서' + 대화 따라 읽기",
+      "body": "어지럽다, 체온, 주사처럼 병원에서 증상을 말하고 진료받는 표현을 배워요. 문법은 몸 상태와 느낌을 말하는 feel · look · sound + 형용사예요. 이제 회화 듣기에서 '전체 듣기'를 누르면 지금 읽는 줄에 파란 테두리가 생겨서 소리를 따라 읽기 쉬워요."
     }
   ]
 }

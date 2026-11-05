@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-06
+- 새 단원 '병원에서' (symptom, dizzy, throw up, temperature, blood pressure, shot, nurse, waiting room, insurance card, get some rest 10단어 + 의사와의 대화)
+- 문법 31과 'feel · look · sound + 형용사 (~한 느낌이에요)', 오늘의 표현 'I'm not feeling well.'
+- 회화 듣기 '전체 듣기' 중 지금 읽는 줄을 파란 테두리로 강조 (노래방식 따라 읽기) · 점검 항목 추가 · 캐시 v13
+- 다듬기: 최근 3일(미용실·이웃·병원) 다시 확인, 고칠 곳 없음
+- 리서치: Mango Languages 대화 중심 수업·Beelinguapp 노래방식 읽기 (`research/2026-11-06.md`)
+
 ## 2026-11-05
 - 새 단원 '이웃과 인사' (neighbor, next door, move in, upstairs, downstairs, garbage, recycling, borrow, stop by, noise 10단어 + 이웃과의 대화)
 - 문법 30과 'Can I ~? · May I ~? (해도 돼요?)', 오늘의 표현 'Let me know if you need anything.'

@@ -20,7 +20,7 @@ const dom = new JSDOM(html, {
   pretendToBeVisual: true,
   virtualConsole: vc,
   beforeParse(w) {
-    w.speechSynthesis = { speak() {}, cancel() {}, getVoices() { return []; }, onvoiceschanged: null };
+    w.speechSynthesis = { speak(u) { if (w.__spoken) w.__spoken.push(u); }, cancel() {}, getVoices() { return []; }, onvoiceschanged: null };
     w.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
     w.matchMedia = () => ({ matches: false, addEventListener() {}, removeEventListener() {} });
     w.scrollTo = () => {};
@@ -43,6 +43,7 @@ function click(el, what) {
   el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
 }
 const check = (cond, msg) => { if (!cond) problems.push(msg); };
+let dlgChecked = false;
 
 async function solve(wrongOnce) {
   const H = w.__hg;
@@ -51,6 +52,20 @@ async function solve(wrongOnce) {
     const L = H.L;
     if (!L) throw new Error("레슨이 열리지 않음");
     if (L.phase === "finish") return;
+    if (L.phase === "intro" && L.queue[0] && L.queue[0].t === "dialog" && !dlgChecked) {
+      dlgChecked = true;
+      w.__spoken = [];
+      click(d.querySelector('#ls-in [data-act="say-all"]'), "전체 듣기");
+      const utt = w.__spoken; w.__spoken = null;
+      check(utt.length === L.queue[0].u.dialog.length, "전체 듣기가 대화 줄을 모두 읽지 않음");
+      if (utt.length > 1 && utt[1].onstart) {
+        utt[1].onstart();
+        const lines = [...d.querySelectorAll("#ls-in .dlg-line")];
+        check(lines[1] && lines[1].classList.contains("now") && d.querySelectorAll("#ls-in .dlg-line.now").length === 1, "전체 듣기 중 지금 읽는 줄 강조가 없음");
+        utt[utt.length - 1].onend && utt[utt.length - 1].onend();
+        check(!d.querySelector("#ls-in .dlg-line.now"), "전체 듣기가 끝나도 강조가 남아 있음");
+      } else check(false, "전체 듣기에 줄 강조 연결이 없음");
+    }
     if (L.phase === "feedback" || L.phase === "intro") { click($("#ls-main"), "계속 버튼"); await sleep(3); continue; }
     const st = L.queue[0];
     if (!st) throw new Error("문제가 비었는데 레슨이 끝나지 않음");
@@ -184,6 +199,7 @@ try {
   // 단원 배너 진도 표시: 다 끝낸 단원에 왕관
   const doneUnit = [...d.querySelectorAll(".unit-banner")].some(b => (b.querySelector(".unit-prog") || {}).textContent === "👑 완료");
   check(doneUnit, "다 끝낸 단원 배너에 '👑 완료' 표시가 없음");
+  check(dlgChecked, "회화 듣기 화면을 점검하지 못함");
 } catch (e) {
   problems.push(e.stack || String(e));
 }
@@ -193,5 +209,5 @@ if (problems.length) {
   problems.forEach(p => console.log(" - " + p));
   process.exit(1);
 }
-console.log("앱 점검 통과: 지도, 기본 단원 5단계, 매일 단원, 복습, 오늘의 표현, 탭 4개");
+console.log("앱 점검 통과: 지도, 기본 단원 5단계, 매일 단원, 복습, 오늘의 표현, 회화 줄 강조, 탭 4개");
 process.exit(0);

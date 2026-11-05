@@ -383,6 +383,8 @@ textarea{resize:none;line-height:1.45}
 .dlg-who{font-size:12px;font-weight:900;color:var(--muted);text-align:center;overflow-wrap:anywhere}
 .dlg-bub{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:10px 14px;min-width:0}
 .dlg-line.me .dlg-bub{background:var(--blue-soft);border-color:transparent}
+.dlg-bub{transition:border-color .2s,box-shadow .2s}
+.dlg-line.now .dlg-bub{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-soft)}
 .dlg-bub .en{font-weight:900;font-size:17px;overflow-wrap:anywhere}
 .dlg-bub .ko{font-size:13.5px;color:var(--muted);font-weight:700}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
@@ -940,10 +942,14 @@ function exprAnswer(k){
   if (k === e.quiz.a){ SND.ok(); award(5); toast("정답! +5 XP"); } else { SND.bad(); commit(); toast("정답은 " + e.quiz.o[e.quiz.a]); }
   say(e.quiz.o[e.quiz.a]); renderLearn();
 }
-function sayAll(lines){
+function sayAll(lines, onLine){
   if (!("speechSynthesis" in window)) return;
-  try { speechSynthesis.cancel(); const v = pickVoice(); lines.forEach(t => { const u = new SpeechSynthesisUtterance(t); u.lang = "en-US"; if (v) u.voice = v; u.rate = S.settings.rate; speechSynthesis.speak(u); }); } catch (e) {}
+  try { speechSynthesis.cancel(); const v = pickVoice(); lines.forEach((t, i) => { const u = new SpeechSynthesisUtterance(t); u.lang = "en-US"; if (v) u.voice = v; u.rate = S.settings.rate;
+    if (onLine){ u.onstart = () => onLine(i); if (i === lines.length - 1){ u.onend = () => onLine(-1); u.onerror = () => onLine(-1); } }
+    speechSynthesis.speak(u); }); } catch (e) {}
 }
+/* 전체 듣기: 지금 읽는 대화 줄을 노래방처럼 강조 */
+function markDlgLine(i){ document.querySelectorAll(".dlg .dlg-line").forEach((el, j) => el.classList.toggle("now", j === i)); }
 
 /* ═════════ 상단 · 학습 지도 ═════════ */
 function renderTop(){
@@ -1516,7 +1522,7 @@ document.addEventListener("click", e => {
   else if (a === "ans"){ if (!L || L.phase !== "answer") return; const k = +b.dataset.k; L.ans = L.ans.filter(x => x !== k); renderTiles(); }
   else if (a === "mic") micStart();
   else if (a === "xq") exprAnswer(+b.dataset.o);
-  else if (a === "say-all"){ if (L && L.queue[0] && L.queue[0].u) sayAll(L.queue[0].u.dialog.map(l => l.en)); }
+  else if (a === "say-all"){ if (L && L.queue[0] && L.queue[0].u) sayAll(L.queue[0].u.dialog.map(l => l.en), markDlgLine); }
   else if (a === "backup") doBackup();
   else if (a === "skip-ask") skipAsk(+b.dataset.u);
   else if (a === "skip-yes") skipTo(+b.dataset.u);
