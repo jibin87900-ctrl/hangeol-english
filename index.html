@@ -387,6 +387,9 @@ textarea{resize:none;line-height:1.45}
 .dlg-line.now .dlg-bub{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-soft)}
 .dlg-bub .en{font-weight:900;font-size:17px;overflow-wrap:anywhere}
 .dlg-bub .ko{font-size:13.5px;color:var(--muted);font-weight:700}
+.dlg-tools{display:flex;flex-wrap:wrap;gap:8px}
+.dlg.hide-ko .dlg-bub{cursor:pointer}
+.dlg.hide-ko .dlg-line:not(.reveal) .ko{color:transparent;background:var(--line);border-radius:6px;user-select:none}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -1064,6 +1067,8 @@ function weakSteps(){
 
 /* ═════════ 레슨 엔진 ═════════ */
 let L = null;
+/* 회화 듣기 '해석 가리기' (이번 실행 동안만 기억, 저장 안 함) */
+let dlgHideKo = false;
 const PRAISE = ["정답이에요!", "훌륭해요!", "잘했어요!", "완벽해요!", "멋져요!"];
 function startLesson(steps, meta){
   if (!steps.length){ toast("이 단계에 낼 문제가 없어요"); return; }
@@ -1151,8 +1156,8 @@ function renderStep(){
     L.phase = "intro";
     const u = st.u, roles = u.roles || {A:"상대", B:"나"};
     h = `<p class="kicker">회화 듣기</p><h2 class="q-title">${esc(u.name)} 상황 대화</h2>
-      <button class="b3 ghost" data-act="say-all" style="justify-self:start">${IC.spk}전체 듣기</button>
-      <div class="dlg">${u.dialog.map(l => `<div class="dlg-line${l.who === "B" ? " me" : ""}"><span class="dlg-who">${esc(roles[l.who] || l.who)}</span><div class="dlg-bub"><p class="en">${esc(l.en)}</p><p class="ko">${esc(l.ko)}</p></div><button class="spk-mini" data-act="say" data-text="${esc(l.en)}" aria-label="듣기">${IC.spk}</button></div>`).join("")}</div>`;
+      <div class="dlg-tools"><button class="b3 ghost" data-act="say-all">${IC.spk}전체 듣기</button><button class="b3 ghost" data-act="dlg-ko" id="dlg-ko-btn" aria-pressed="${dlgHideKo}">${dlgHideKo ? "해석 보기" : "해석 가리기"}</button></div>
+      <div class="dlg${dlgHideKo ? " hide-ko" : ""}">${u.dialog.map(l => `<div class="dlg-line${l.who === "B" ? " me" : ""}"><span class="dlg-who">${esc(roles[l.who] || l.who)}</span><div class="dlg-bub" data-act="dlg-line-ko"><p class="en">${esc(l.en)}</p><p class="ko">${esc(l.ko)}</p></div><button class="spk-mini" data-act="say" data-text="${esc(l.en)}" aria-label="듣기">${IC.spk}</button></div>`).join("")}</div>`;
     setMain("다 읽었어요", true);
   } else if (st.t === "speak"){
     h = `<p class="kicker">따라 말해 보세요</p>
@@ -1522,6 +1527,13 @@ document.addEventListener("click", e => {
   else if (a === "ans"){ if (!L || L.phase !== "answer") return; const k = +b.dataset.k; L.ans = L.ans.filter(x => x !== k); renderTiles(); }
   else if (a === "mic") micStart();
   else if (a === "xq") exprAnswer(+b.dataset.o);
+  else if (a === "dlg-ko"){
+    dlgHideKo = !dlgHideKo; SND.tap();
+    const box = document.querySelector("#ls-in .dlg");
+    if (box){ box.classList.toggle("hide-ko", dlgHideKo); box.querySelectorAll(".dlg-line.reveal").forEach(x => x.classList.remove("reveal")); }
+    b.textContent = dlgHideKo ? "해석 보기" : "해석 가리기"; b.setAttribute("aria-pressed", String(dlgHideKo));
+  }
+  else if (a === "dlg-line-ko"){ if (dlgHideKo){ const ln = b.closest(".dlg-line"); if (ln){ ln.classList.toggle("reveal"); SND.tap(); } } }
   else if (a === "say-all"){ if (L && L.queue[0] && L.queue[0].u) sayAll(L.queue[0].u.dialog.map(l => l.en), markDlgLine); }
   else if (a === "backup") doBackup();
   else if (a === "skip-ask") skipAsk(+b.dataset.u);

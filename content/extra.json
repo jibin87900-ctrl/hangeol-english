@@ -1317,6 +1317,129 @@
           "ko": "네. 감사합니다, 선생님."
         }
       ]
+    },
+    {
+      "id": "d20261112",
+      "date": "2026-11-12",
+      "name": "마트에서 장보기",
+      "roles": {
+        "A": "마트 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "grocery store",
+          "ko": "마트, 식료품점",
+          "ex": "I go to the grocery store on Sundays.",
+          "exKo": "저는 일요일마다 마트에 가요.",
+          "emo": "🏪"
+        },
+        {
+          "en": "cart",
+          "ko": "카트",
+          "ex": "Can you push the cart?",
+          "exKo": "카트 좀 밀어 줄래요?",
+          "emo": "🛒"
+        },
+        {
+          "en": "aisle",
+          "ko": "(마트의) 통로, 코너",
+          "ex": "The bread is in aisle three.",
+          "exKo": "빵은 3번 통로에 있어요.",
+          "emo": "🪧"
+        },
+        {
+          "en": "on sale",
+          "ko": "할인 중인",
+          "ex": "These apples are on sale.",
+          "exKo": "이 사과는 할인 중이에요.",
+          "emo": "🏷️"
+        },
+        {
+          "en": "fresh",
+          "ko": "신선한",
+          "ex": "The fish is very fresh.",
+          "exKo": "생선이 아주 신선해요.",
+          "emo": "🥬"
+        },
+        {
+          "en": "frozen",
+          "ko": "냉동된",
+          "ex": "I need some frozen pizza.",
+          "exKo": "냉동 피자가 좀 필요해요.",
+          "emo": "🧊"
+        },
+        {
+          "en": "a dozen",
+          "ko": "열두 개",
+          "ex": "I'll take a dozen eggs.",
+          "exKo": "달걀 열두 개 살게요.",
+          "emo": "🥚"
+        },
+        {
+          "en": "checkout",
+          "ko": "계산대",
+          "ex": "The checkout line is long.",
+          "exKo": "계산대 줄이 길어요.",
+          "emo": "🧾"
+        },
+        {
+          "en": "coupon",
+          "ko": "쿠폰",
+          "ex": "Can I use this coupon?",
+          "exKo": "이 쿠폰 써도 돼요?",
+          "emo": "🎟️"
+        },
+        {
+          "en": "bag",
+          "ko": "봉투",
+          "ex": "Do you need a bag?",
+          "exKo": "봉투 필요하세요?",
+          "emo": "🛍️"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "B",
+          "en": "Excuse me. Where can I find the eggs?",
+          "ko": "실례지만, 달걀은 어디에 있어요?"
+        },
+        {
+          "who": "A",
+          "en": "They're in aisle five, next to the milk.",
+          "ko": "5번 통로에 있어요. 우유 옆이에요."
+        },
+        {
+          "who": "B",
+          "en": "Thanks. Are they on sale?",
+          "ko": "고마워요. 달걀 할인하나요?"
+        },
+        {
+          "who": "A",
+          "en": "Yes. They're three dollars a dozen this week.",
+          "ko": "네. 이번 주엔 열두 개에 3달러예요."
+        },
+        {
+          "who": "B",
+          "en": "Great. Do you have any fresh strawberries?",
+          "ko": "좋네요. 신선한 딸기도 있어요?"
+        },
+        {
+          "who": "A",
+          "en": "Sorry, we only have frozen ones today.",
+          "ko": "죄송해요, 오늘은 냉동 딸기만 있어요."
+        },
+        {
+          "who": "B",
+          "en": "That's okay. I'll take those.",
+          "ko": "괜찮아요. 그걸로 할게요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. You can pay at the checkout over there.",
+          "ko": "네. 저쪽 계산대에서 계산하시면 돼요."
+        }
+      ]
     }
   ],
   "grammar": [
@@ -1902,6 +2025,59 @@
           "k": "점심 먹고 커피요? 좋아요."
         }
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "level": "A2",
+      "t": "a few · a little (조금 있어요)",
+      "s": "셀 수 있는 것과 없는 것의 '조금'",
+      "b": "<b>a few</b> + 셀 수 있는 명사(복수) → <b>a few</b> apples (사과 몇 개)<br><b>a little</b> + 셀 수 없는 명사 → <b>a little</b> milk (우유 조금)<br>셀 수 있는 것: apple, egg, minute, question<br>셀 수 없는 것: water, milk, sugar, time<br>주의: a few 뒤에는 <b>복수형</b>을 써요. a few apple (X)",
+      "ex": [
+        [
+          "I need a few eggs.",
+          "달걀이 몇 개 필요해요."
+        ],
+        [
+          "Can I have a little water?",
+          "물 조금만 주시겠어요?"
+        ],
+        [
+          "I'll be there in a few minutes.",
+          "몇 분 뒤에 도착해요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "I need ___ apples.",
+          "o": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "a": 0,
+          "k": "사과가 몇 개 필요해요."
+        },
+        {
+          "q": "Add ___ sugar, please.",
+          "o": [
+            "a few",
+            "a little",
+            "many"
+          ],
+          "a": 1,
+          "k": "설탕을 조금 넣어 주세요."
+        },
+        {
+          "q": "I have a few ___.",
+          "o": [
+            "question",
+            "questions",
+            "water"
+          ],
+          "a": 1,
+          "k": "질문이 몇 개 있어요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -2179,6 +2355,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-12",
+      "en": "Where can I find the eggs?",
+      "ko": "달걀은 어디에 있어요?",
+      "note": "마트나 가게에서 물건이 어디 있는지 직원에게 물을 때 써요. the eggs 자리에 찾는 물건을 넣으면 돼요.",
+      "ex": [
+        [
+          "Excuse me. Where can I find the milk?",
+          "실례지만, 우유는 어디에 있어요?"
+        ],
+        [
+          "Where can I find the restroom?",
+          "화장실은 어디에 있어요?"
+        ]
+      ],
+      "quiz": {
+        "q": "마트 직원에게 '빵은 어디에 있어요?'라고 물으려면?",
+        "o": [
+          "Where can I find the bread?",
+          "Where I can find the bread?",
+          "Where can find I the bread?"
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -2251,6 +2452,11 @@
       "date": "2026-11-06",
       "title": "새 단원 '병원에서' + 대화 따라 읽기",
       "body": "어지럽다, 체온, 주사처럼 병원에서 증상을 말하고 진료받는 표현을 배워요. 문법은 몸 상태와 느낌을 말하는 feel · look · sound + 형용사예요. 이제 회화 듣기에서 '전체 듣기'를 누르면 지금 읽는 줄에 파란 테두리가 생겨서 소리를 따라 읽기 쉬워요."
+    },
+    {
+      "date": "2026-11-12",
+      "title": "새 단원 '마트에서 장보기' + 해석 가리기",
+      "body": "카트, 할인 중, 냉동, 계산대처럼 마트에서 장 볼 때 쓰는 말을 배워요. 문법은 '조금'을 말하는 a few · a little이에요. 이제 회화 듣기에서 '해석 가리기'를 누르면 한국어 해석이 가려져요. 영어만 보고 뜻을 떠올린 뒤, 말풍선을 눌러 해석을 확인해 보세요."
     }
   ]
 }

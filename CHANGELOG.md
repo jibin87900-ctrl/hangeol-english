@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-12
+- 새 단원 '마트에서 장보기' (grocery store, cart, aisle, on sale, fresh, frozen, a dozen, checkout, coupon, bag 10단어 + 마트 직원과의 대화)
+- 문법 32과 'a few · a little (조금 있어요)', 오늘의 표현 'Where can I find the eggs?'
+- 회화 듣기에 '해석 가리기' 버튼 (한국어 해석을 가리고, 말풍선을 누르면 그 줄만 보임) · 점검 항목 추가 · 캐시 v14
+- 다듬기: 최근 3일(미용실·이웃·병원) 다시 확인, 고칠 곳 없음
+- 리서치: Duolingo Video Call 초보자 통화·산타 진단과 오답노트 (`research/2026-11-12.md`)
+
 ## 2026-11-06
 - 새 단원 '병원에서' (symptom, dizzy, throw up, temperature, blood pressure, shot, nurse, waiting room, insurance card, get some rest 10단어 + 의사와의 대화)
 - 문법 31과 'feel · look · sound + 형용사 (~한 느낌이에요)', 오늘의 표현 'I'm not feeling well.'

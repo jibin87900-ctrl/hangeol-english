@@ -65,6 +65,15 @@ async function solve(wrongOnce) {
         utt[utt.length - 1].onend && utt[utt.length - 1].onend();
         check(!d.querySelector("#ls-in .dlg-line.now"), "전체 듣기가 끝나도 강조가 남아 있음");
       } else check(false, "전체 듣기에 줄 강조 연결이 없음");
+      const koBtn = d.querySelector('#ls-in [data-act="dlg-ko"]');
+      click(koBtn, "해석 가리기");
+      const box = d.querySelector("#ls-in .dlg");
+      check(box && box.classList.contains("hide-ko") && koBtn.textContent === "해석 보기", "해석 가리기가 동작하지 않음");
+      const ln0 = d.querySelector("#ls-in .dlg-line");
+      click(ln0 && ln0.querySelector(".dlg-bub"), "가린 해석 줄");
+      check(ln0 && ln0.classList.contains("reveal"), "가린 해석을 눌러도 보이지 않음");
+      click(koBtn, "해석 보기");
+      check(!box.classList.contains("hide-ko") && !d.querySelector("#ls-in .dlg-line.reveal") && koBtn.textContent === "해석 가리기", "해석 보기로 되돌아가지 않음");
     }
     if (L.phase === "feedback" || L.phase === "intro") { click($("#ls-main"), "계속 버튼"); await sleep(3); continue; }
     const st = L.queue[0];
