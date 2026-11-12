@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-13
+- 새 단원 '공항에서' (passport, boarding pass, gate, flight, window seat, suitcase, luggage, delayed, security, on time 10단어 + 항공사 직원과의 체크인 대화)
+- 문법 33과 'be + -ing (정해 둔 가까운 계획)', 오늘의 표현 'I'm here on vacation.'
+- 며칠(3일 이상) 쉬었다 돌아오면 학습 탭 인사가 '오랜만이에요! N일 만이에요'로 바뀌고 약한 단어 복습부터 권해요 (저장 키 추가 없음) · 점검 항목 추가 · 캐시 v15
+- 다듬기: 최근 3일(이웃·병원·마트) 다시 확인, 고칠 곳 없음
+- 리서치: Anki FSRS 간격 반복·HelloTalk 원어민 교정 (`research/2026-11-13.md`)
+
 ## 2026-11-12
 - 새 단원 '마트에서 장보기' (grocery store, cart, aisle, on sale, fresh, frozen, a dozen, checkout, coupon, bag 10단어 + 마트 직원과의 대화)
 - 문법 32과 'a few · a little (조금 있어요)', 오늘의 표현 'Where can I find the eggs?'

@@ -846,6 +846,8 @@ function renderSync(){
 }
 
 /* ═════════ 진도 · 보상 ═════════ */
+/* 마지막으로 공부한 날(오늘 제외)부터 며칠 지났는지. S.last(목표 달성일)와 S.hist(XP 기록) 중 최근 날짜 기준 */
+function awayDays(){ const t = todayStr(); let last = S.last && S.last < t ? S.last : ""; Object.keys(S.hist || {}).forEach(k => { if (k < t && k > last) last = k; }); return last ? todayNum() - dayNumOf(last) : 0; }
 function streakNow(){ if (!S.last) return 0; return todayNum() - dayNumOf(S.last) <= 1 ? S.streak : 0; }
 function award(xp){
   ensureDay();
@@ -977,6 +979,7 @@ function renderLearn(){
   const msg = S.day.goalMet ? GOAL_MSGS[todayNum() % GOAL_MSGS.length]
     : S.day.xp === 0 ? (!S.lessons ? "안녕하세요! 저랑 영어 첫걸음 떼 봐요."
       : st > 0 ? "연속 " + st + "일째 공부 중이에요! 오늘도 목표를 채워서 이어 가 봐요."
+      : awayDays() >= 3 ? "오랜만이에요! " + awayDays() + "일 만이에요. " + (seenN >= 4 ? "약한 단어 복습으로 가볍게 몸 풀고 다시 시작해요." : "오늘부터 천천히 다시 시작해요.") + ((S.best || 0) >= 2 ? " 최고 기록은 " + S.best + "일이에요." : "")
       : (S.best || 0) >= 2 ? "괜찮아요, 오늘부터 다시 시작하면 돼요. 최고 기록은 " + S.best + "일이에요."
       : "다시 왔네요! 오늘도 한 걸음 가 볼까요?")
     : "좋아요! 오늘 목표까지 " + left + " XP 남았어요.";

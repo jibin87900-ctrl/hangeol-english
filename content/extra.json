@@ -1440,6 +1440,129 @@
           "ko": "네. 저쪽 계산대에서 계산하시면 돼요."
         }
       ]
+    },
+    {
+      "id": "d20261113",
+      "date": "2026-11-13",
+      "name": "공항에서",
+      "roles": {
+        "A": "항공사 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "passport",
+          "ko": "여권",
+          "ex": "Can I see your passport?",
+          "exKo": "여권 좀 보여 주시겠어요?",
+          "emo": "🛂"
+        },
+        {
+          "en": "boarding pass",
+          "ko": "탑승권",
+          "ex": "Here's your boarding pass.",
+          "exKo": "탑승권 여기 있어요.",
+          "emo": "🎫"
+        },
+        {
+          "en": "gate",
+          "ko": "탑승구, 게이트",
+          "ex": "Your flight leaves from gate 12.",
+          "exKo": "손님 비행기는 12번 게이트에서 출발해요.",
+          "emo": "🚪"
+        },
+        {
+          "en": "flight",
+          "ko": "비행기, 항공편",
+          "ex": "My flight is at 3 p.m.",
+          "exKo": "제 비행기는 오후 3시예요.",
+          "emo": "✈️"
+        },
+        {
+          "en": "window seat",
+          "ko": "창가 자리",
+          "ex": "Can I get a window seat?",
+          "exKo": "창가 자리로 주실 수 있어요?",
+          "emo": "🪟"
+        },
+        {
+          "en": "suitcase",
+          "ko": "여행 가방",
+          "ex": "My suitcase is very heavy.",
+          "exKo": "제 여행 가방이 아주 무거워요.",
+          "emo": "🧳"
+        },
+        {
+          "en": "luggage",
+          "ko": "짐, 수하물",
+          "ex": "Where can I pick up my luggage?",
+          "exKo": "짐은 어디서 찾아요?",
+          "emo": "🛄"
+        },
+        {
+          "en": "delayed",
+          "ko": "지연된, 늦어진",
+          "ex": "Our flight is delayed.",
+          "exKo": "저희 비행기가 지연됐어요.",
+          "emo": "⏳"
+        },
+        {
+          "en": "security",
+          "ko": "보안 검색(대)",
+          "ex": "The security line is long.",
+          "exKo": "보안 검색 줄이 길어요.",
+          "emo": "👮"
+        },
+        {
+          "en": "on time",
+          "ko": "제시간에",
+          "ex": "Is the flight on time?",
+          "exKo": "비행기는 제시간에 떠요?",
+          "emo": "⏱️"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hi there. Where are you flying today?",
+          "ko": "안녕하세요. 오늘 어디로 가세요?"
+        },
+        {
+          "who": "B",
+          "en": "To New York. Here's my passport.",
+          "ko": "뉴욕이요. 여기 여권이요."
+        },
+        {
+          "who": "A",
+          "en": "Thank you. Are you checking any bags?",
+          "ko": "감사합니다. 부치실 짐 있으세요?"
+        },
+        {
+          "who": "B",
+          "en": "Just this suitcase. Can I get a window seat?",
+          "ko": "이 여행 가방 하나요. 창가 자리로 주실 수 있어요?"
+        },
+        {
+          "who": "A",
+          "en": "Sure. Here's your boarding pass. You're at gate 23.",
+          "ko": "네. 탑승권 여기 있어요. 23번 게이트예요."
+        },
+        {
+          "who": "B",
+          "en": "Thanks. Is the flight on time?",
+          "ko": "고마워요. 비행기는 제시간에 떠요?"
+        },
+        {
+          "who": "A",
+          "en": "It's delayed by about 30 minutes. Boarding starts at 2:30.",
+          "ko": "30분 정도 지연됐어요. 탑승은 2시 30분에 시작해요."
+        },
+        {
+          "who": "B",
+          "en": "Okay. Thank you!",
+          "ko": "알겠어요. 고마워요!"
+        }
+      ]
     }
   ],
   "grammar": [
@@ -2078,6 +2201,59 @@
           "k": "질문이 몇 개 있어요."
         }
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "level": "A2",
+      "t": "be + -ing (정해 둔 가까운 계획)",
+      "s": "이미 정해 둔 계획 말하기",
+      "b": "<b>be + -ing</b>는 '지금 하는 중'뿐 아니라 <b>이미 정해 둔 가까운 계획</b>에도 써요<br>I'm <b>leaving</b> tomorrow. = 저 내일 떠나요.<br>tomorrow, tonight, this weekend처럼 <b>때를 나타내는 말</b>과 함께 자주 써요<br>질문: <b>Are you</b> + -ing? / What time <b>are you</b> + -ing?<br>비행기·기차 시간표처럼 정해진 일정은 현재형도 써요: The flight <b>leaves</b> at 3.",
+      "ex": [
+        [
+          "I'm flying to Jeju tomorrow.",
+          "저 내일 비행기로 제주도에 가요."
+        ],
+        [
+          "We're meeting at the airport at nine.",
+          "우리는 9시에 공항에서 만나기로 했어요."
+        ],
+        [
+          "What are you doing this weekend?",
+          "이번 주말에 뭐 해요?"
+        ]
+      ],
+      "qz": [
+        {
+          "q": "I'm ___ to Tokyo tomorrow.",
+          "o": [
+            "flying",
+            "fly",
+            "flies"
+          ],
+          "a": 0,
+          "k": "저 내일 비행기로 도쿄에 가요."
+        },
+        {
+          "q": "We ___ leaving at seven tonight.",
+          "o": [
+            "are",
+            "is",
+            "do"
+          ],
+          "a": 0,
+          "k": "우리는 오늘 밤 7시에 떠나요."
+        },
+        {
+          "q": "What time ___ you leaving?",
+          "o": [
+            "are",
+            "do",
+            "is"
+          ],
+          "a": 0,
+          "k": "몇 시에 떠나요?"
+        }
+      ]
     }
   ],
   "expressions": [
@@ -2380,6 +2556,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-13",
+      "en": "I'm here on vacation.",
+      "ko": "휴가로 왔어요.",
+      "note": "외국 공항 입국 심사에서 방문 목적을 물을 때 이렇게 대답해요. 일 때문에 왔으면 I'm here on business.라고 해요.",
+      "ex": [
+        [
+          "I'm here on vacation for a week.",
+          "일주일 동안 휴가로 왔어요."
+        ],
+        [
+          "We're here on vacation with our kids.",
+          "아이들이랑 휴가로 왔어요."
+        ]
+      ],
+      "quiz": {
+        "q": "입국 심사에서 '휴가로 왔어요'라고 하려면?",
+        "o": [
+          "I'm here on vacation.",
+          "I'm here in vacation.",
+          "I'm on here vacation."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -2457,6 +2658,11 @@
       "date": "2026-11-12",
       "title": "새 단원 '마트에서 장보기' + 해석 가리기",
       "body": "카트, 할인 중, 냉동, 계산대처럼 마트에서 장 볼 때 쓰는 말을 배워요. 문법은 '조금'을 말하는 a few · a little이에요. 이제 회화 듣기에서 '해석 가리기'를 누르면 한국어 해석이 가려져요. 영어만 보고 뜻을 떠올린 뒤, 말풍선을 눌러 해석을 확인해 보세요."
+    },
+    {
+      "date": "2026-11-13",
+      "title": "새 단원 '공항에서' + 오랜만 인사",
+      "body": "여권, 탑승권, 창가 자리, 지연처럼 공항에서 체크인할 때 쓰는 말을 배워요. 문법은 이미 정해 둔 계획을 말하는 be + -ing예요. 이제 며칠 쉬었다가 돌아오면 '오랜만이에요!' 인사와 함께 약한 단어 복습부터 가볍게 하라고 알려 드려요."
     }
   ]
 }

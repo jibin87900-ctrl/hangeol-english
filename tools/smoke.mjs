@@ -161,6 +161,8 @@ try {
     check(/연속 3일째/.test(await bubble()), "연속 학습 중 인사 문구가 없음");
     S.last = ymd(Date.now() - 3 * 864e5); S.best = 5;
     check(/다시 시작.*최고 기록은 5일/.test(await bubble()), "연속 기록이 끊겼을 때 인사 문구가 없음");
+    S.last = ymd(Date.now() - 5 * 864e5);
+    check(/오랜만이에요! 5일 만이에요/.test(await bubble()), "며칠 만에 돌아왔을 때 '오랜만이에요' 인사가 없음");
     Object.assign(S, JSON.parse(saved));
   }
   for (const v of ["chat", "words", "me", "learn"]) {
