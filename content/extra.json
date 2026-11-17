@@ -1563,6 +1563,129 @@
           "ko": "알겠어요. 고마워요!"
         }
       ]
+    },
+    {
+      "id": "d20261118",
+      "date": "2026-11-18",
+      "name": "전화 통화하기",
+      "roles": {
+        "A": "치과 접수 직원",
+        "B": "나"
+      },
+      "words": [
+        {
+          "en": "call back",
+          "ko": "다시 전화하다",
+          "ex": "Can I call you back later?",
+          "exKo": "나중에 다시 전화해도 될까요?",
+          "emo": "📞"
+        },
+        {
+          "en": "hold on",
+          "ko": "(전화) 잠깐 기다리다",
+          "ex": "Hold on a second, please.",
+          "exKo": "잠시만 기다려 주세요.",
+          "emo": "✋"
+        },
+        {
+          "en": "leave a message",
+          "ko": "메시지를 남기다",
+          "ex": "Can I leave a message?",
+          "exKo": "메시지 남겨도 될까요?",
+          "emo": "📝"
+        },
+        {
+          "en": "wrong number",
+          "ko": "잘못 건 번호",
+          "ex": "Sorry, you have the wrong number.",
+          "exKo": "죄송하지만, 전화 잘못 거셨어요.",
+          "emo": "🙅"
+        },
+        {
+          "en": "hang up",
+          "ko": "전화를 끊다",
+          "ex": "Please don't hang up yet.",
+          "exKo": "아직 끊지 마세요.",
+          "emo": "📴"
+        },
+        {
+          "en": "text",
+          "ko": "문자를 보내다",
+          "ex": "I'll text you the address.",
+          "exKo": "주소는 문자로 보내 드릴게요.",
+          "emo": "💬"
+        },
+        {
+          "en": "voicemail",
+          "ko": "음성 메시지",
+          "ex": "I got your voicemail this morning.",
+          "exKo": "오늘 아침에 음성 메시지 받았어요.",
+          "emo": "📩"
+        },
+        {
+          "en": "speak up",
+          "ko": "더 크게 말하다",
+          "ex": "Could you speak up a little?",
+          "exKo": "조금만 더 크게 말씀해 주시겠어요?",
+          "emo": "🔊"
+        },
+        {
+          "en": "phone number",
+          "ko": "전화번호",
+          "ex": "What's your phone number?",
+          "exKo": "전화번호가 어떻게 되세요?",
+          "emo": "🔢"
+        },
+        {
+          "en": "available",
+          "ko": "시간이 되는",
+          "ex": "Are you available tomorrow?",
+          "exKo": "내일 시간 괜찮으세요?",
+          "emo": "🗓️"
+        }
+      ],
+      "dialog": [
+        {
+          "who": "A",
+          "en": "Hello, Smile Dental. How can I help you?",
+          "ko": "안녕하세요, 스마일 치과예요. 무엇을 도와드릴까요?"
+        },
+        {
+          "who": "B",
+          "en": "Hi, I'd like to make an appointment.",
+          "ko": "안녕하세요, 예약하고 싶어요."
+        },
+        {
+          "who": "A",
+          "en": "Sure. Are you available tomorrow at ten?",
+          "ko": "네. 내일 10시 괜찮으세요?"
+        },
+        {
+          "who": "B",
+          "en": "Sorry, could you speak up a little?",
+          "ko": "죄송한데, 조금만 더 크게 말씀해 주시겠어요?"
+        },
+        {
+          "who": "A",
+          "en": "Of course. Are you available tomorrow at ten?",
+          "ko": "그럼요. 내일 10시 괜찮으세요?"
+        },
+        {
+          "who": "B",
+          "en": "Yes, that works. My phone number is 555-0123.",
+          "ko": "네, 좋아요. 제 전화번호는 555-0123이에요."
+        },
+        {
+          "who": "A",
+          "en": "Great. We'll text you a reminder.",
+          "ko": "좋아요. 예약 알림 문자를 보내 드릴게요."
+        },
+        {
+          "who": "B",
+          "en": "Thank you. Bye!",
+          "ko": "고맙습니다. 안녕히 계세요!"
+        }
+      ]
     }
   ],
   "grammar": [
@@ -2254,6 +2377,59 @@
           "k": "몇 시에 떠나요?"
         }
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "level": "A2",
+      "t": "I'll ~ (제가 ~할게요)",
+      "s": "그 자리에서 정한 일·약속 말하기",
+      "b": "<b>I'll</b> = I will. 말하는 <b>그 순간 정한 일</b>이나 <b>약속</b>에 써요<br>I'll call you back. = 다시 전화 드릴게요.<br>I'll have a coffee. = 저는 커피로 할게요.<br>미리 정해 둔 계획에는 <b>be going to</b>나 <b>be + -ing</b>를 써요<br>I'll 뒤에는 <b>동사원형</b>: I'll calls (X) · I'll to call (X)",
+      "ex": [
+        [
+          "I'll call you back in five minutes.",
+          "5분 뒤에 다시 전화 드릴게요."
+        ],
+        [
+          "It's cold. I'll close the window.",
+          "춥네요. 창문 닫을게요."
+        ],
+        [
+          "Don't worry. I'll text you later.",
+          "걱정 마요. 이따가 문자할게요."
+        ]
+      ],
+      "qz": [
+        {
+          "q": "I'm busy now. I'll ___ you back.",
+          "o": [
+            "call",
+            "calls",
+            "calling"
+          ],
+          "a": 0,
+          "k": "지금 바빠요. 다시 전화할게요."
+        },
+        {
+          "q": "The phone is ringing. I'll ___ it.",
+          "o": [
+            "answers",
+            "answer",
+            "to answer"
+          ],
+          "a": 1,
+          "k": "전화 오네요. 제가 받을게요."
+        },
+        {
+          "q": "Don't worry. I ___ text you tonight.",
+          "o": [
+            "am",
+            "do",
+            "will"
+          ],
+          "a": 2,
+          "k": "걱정 마요. 오늘 밤에 문자할게요."
+        }
+      ]
     }
   ],
   "expressions": [
@@ -2581,6 +2757,31 @@
         ],
         "a": 0
       }
+    },
+    {
+      "date": "2026-11-18",
+      "en": "Sorry, I missed your call.",
+      "ko": "미안해요, 전화 못 받았어요.",
+      "note": "부재중 전화를 보고 다시 걸었을 때 처음에 하는 말이에요. 친구에게도, 회사 사람에게도 편하게 쓸 수 있어요.",
+      "ex": [
+        [
+          "Sorry, I missed your call. What's up?",
+          "미안해요, 전화 못 받았어요. 무슨 일이에요?"
+        ],
+        [
+          "Sorry, I missed your call. I was in a meeting.",
+          "미안해요, 전화 못 받았어요. 회의 중이었어요."
+        ]
+      ],
+      "quiz": {
+        "q": "부재중 전화를 보고 다시 걸어서 '미안해요, 전화 못 받았어요'라고 하려면?",
+        "o": [
+          "Sorry, I missed your call.",
+          "Sorry, I lost your call.",
+          "Sorry, I didn't take your phone."
+        ],
+        "a": 0
+      }
     }
   ],
   "news": [
@@ -2663,6 +2864,11 @@
       "date": "2026-11-13",
       "title": "새 단원 '공항에서' + 오랜만 인사",
       "body": "여권, 탑승권, 창가 자리, 지연처럼 공항에서 체크인할 때 쓰는 말을 배워요. 문법은 이미 정해 둔 계획을 말하는 be + -ing예요. 이제 며칠 쉬었다가 돌아오면 '오랜만이에요!' 인사와 함께 약한 단어 복습부터 가볍게 하라고 알려 드려요."
+    },
+    {
+      "date": "2026-11-18",
+      "title": "새 단원 '전화 통화하기'",
+      "body": "다시 전화하다, 잠깐 기다리다, 메시지를 남기다처럼 전화로 예약하고 통화할 때 쓰는 말을 배워요. 문법은 그 자리에서 정한 일이나 약속을 말하는 I'll ~(제가 ~할게요)예요."
     }
   ]
 }

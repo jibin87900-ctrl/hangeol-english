@@ -5,12 +5,15 @@
 ## 후보 (우선순위 순)
 | 아이디어 | 근거·출처 | 크기 | 위험 |
 |---|---|---|---|
+| 레슨 결과 화면 맨 위에 '오늘 꼭 기억할 단어 하나' (가장 많이 틀린 단어 + 듣기, 저장 키 추가 없음) | Loora key takeaway (research/2026-11-18.md) | S | 낮음 |
 | 문장 만들기 오답 화면에 '내 답 ↔ 정답' 나란히, 틀린 단어만 색 표시 | HelloTalk 인라인 교정 (research/2026-11-13.md) | M | 낮음 |
 | 약한 단어 복습에서 최근 연달아 2번 맞힌 단어는 뒤로 (저장 키 추가 없음) | Anki FSRS·SM-2 'Ease Hell' (research/2026-11-13.md) | M | 낮음 |
 | 문법 퀴즈에 '왜 이 답인지' 한 줄 설명 (qz[].why 선택 필드) | Duolingo Explain My Answer (research/2026-11-02.md) | M | 낮음 |
 | 회화 듣기에서 내 역할(B) 문장 가리기 → 떠올린 뒤 탭해서 확인 | Speak 말하기 드릴 (research/2026-10-28.md), Pimsleur 기대 원리 (research/2026-11-04.md), Rosetta Stone Milestone (research/2026-11-05.md), Duolingo Falstaff 통화 (research/2026-11-12.md) | M | 낮음 |
 | 위 'B 문장 가리기'에 막힐 때 '첫 단어 힌트' 버튼 | Duolingo Falstaff 표현 제안 (research/2026-11-12.md) | M | 낮음 |
 | 문법 탭에 '문법 카드' 목록 (끝낸 과의 제목·핵심 한 줄·예문 1개, 저장 키 추가 없음) | LingoDeer 지식 카드 (research/2026-11-04.md) | M | 낮음 |
+| 문법 탭에서 끝낸 과 '다시 풀기' (퀴즈 3문제만, 저장 키 추가 없음) | Busuu Grammar Review (research/2026-11-18.md) | M | 낮음 |
+| 문법 퀴즈를 틀린 과를 기억해 문법 탭 위에 '다시 풀어 볼까요?' 카드 (저장 키 추가) | Busuu Mistake Repair (research/2026-11-18.md) | M | 낮음 |
 | 지난 매일 단원 대화를 단원 목록에서 바로 다시 듣기 | Pimsleur '지난 대화 찾기 어렵다' 불만 (research/2026-11-04.md) | M | 낮음 |
 | 말하기 판정 '너그럽게/보통' 설정 (저장 키 추가) | Rosetta Stone TruAccent 민감도 조절 (research/2026-11-05.md) | M | 낮음 |
 | 오늘의 표현 따라 말하기(마이크) 버튼 | Cake 표현 말하기 (research/2026-10-29.md) | M | 낮음 |
@@ -35,7 +38,7 @@
 | 끊긴 다음 날 레슨 3개 하면 연속 기록 되살리기 | Duolingo 스트릭 되찾기 이벤트 (research/2026-10-31.md) | M | 중간 |
 | 기본 단원 레슨에서 이미 아는 단어 '알아요'로 빼기 (단어장엔 남김, 저장 키 추가) | Drops 위로 밀어 건너뛰기 (research/2026-11-03.md) | M | 중간 |
 | 매일 단원에 문화 팁 한 줄 (tip 선택 필드, 회화 화면 아래) | Mango 문화 노트 (research/2026-11-06.md) | M | 낮음 |
-| 말하기 채점에서 틀린 단어 하나만 짚어 주기 ('중요한 피드백만') | Duolingo 초보자 통화 원칙 (research/2026-11-12.md) | M | 중간 |
+| 말하기 채점에서 틀린 단어 하나만 짚어 주기 ('중요한 피드백만') | Duolingo 초보자 통화 원칙 (research/2026-11-12.md), Loora 핵심 한 가지 (research/2026-11-18.md) | M | 중간 |
 | 첫 실행 때 1분 수준 확인으로 시작 단원 추천 | 산타 짧은 진단 (research/2026-11-12.md) | L | 중간 |
 | 영어·한국어 대응 부분 색깔 맞춤 | Mango 색깔 맞춤·직역 보기 (research/2026-11-06.md) | L | 중간 |
 | 내 목소리 녹음 후 원래 발음과 번갈아 듣기 | Speak 녹음 비교 (research/2026-10-28.md) | L | 중간 |
@@ -72,3 +75,4 @@
 | 2026-11-06 | Mango Languages 대화 중심 수업·색깔 맞춤·직역·문화 노트, Beelinguapp 노래방식 읽기·길게 눌러 뜻 보기 — 소리와 글자 함께 따라가기 관점 |
 | 2026-11-12 | Duolingo Video Call 초보자용 Falstaff 통화·피드백 원칙, 산타(AI 토익) 진단·오답노트 — 초보자 말하기 부담·오답 관리 관점 |
 | 2026-11-13 | Anki FSRS 간격 반복·Again/Good 채점 권장, HelloTalk 원어민 교정 — 복습 시점·스스로 채점 부담·오답 보여 주기 관점 |
+| 2026-11-18 | Busuu Grammar Review·Mistake Repair, Loora 대화 중 교정·'핵심 한 가지' 피드백 — 배운 문법 다시 꺼내기·초보자 피드백 양 관점 |

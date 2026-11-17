@@ -1,5 +1,12 @@
 # 변경 기록
 
+## 2026-11-18
+- 새 단원 '전화 통화하기' (call back, hold on, leave a message, wrong number, hang up, text, voicemail, speak up, phone number, available 10단어 + 치과 접수 직원과의 예약 전화 대화)
+- 문법 34과 'I'll ~ (제가 ~할게요)', 오늘의 표현 'Sorry, I missed your call.'
+- 기능 변경 없음 (오늘은 바로 넣을 만한 S·낮은 위험 아이디어가 없어 콘텐츠만 추가)
+- 다듬기: 최근 3일(마트·공항·전화) 다시 확인, 고칠 곳 없음
+- 리서치: Busuu Grammar Review·Mistake Repair, Loora '핵심 한 가지' 피드백 (`research/2026-11-18.md`)
+
 ## 2026-11-13
 - 새 단원 '공항에서' (passport, boarding pass, gate, flight, window seat, suitcase, luggage, delayed, security, on time 10단어 + 항공사 직원과의 체크인 대화)
 - 문법 33과 'be + -ing (정해 둔 가까운 계획)', 오늘의 표현 'I'm here on vacation.'
